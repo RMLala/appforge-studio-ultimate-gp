@@ -33,3 +33,7 @@ Ouvrir `index.html` dans Chrome ou Edge. Aucun build n'est requis.
 
 ## Développement
 Travailler sur une branche dédiée et proposer les modifications par Pull Request. Ne pas pousser directement sur `main`.
+
+
+## Cahier des charges V3 + D1 + R2
+La spécification consolidée est dans [docs/CAHIER-DES-CHARGES-V3-R2.md](docs/CAHIER-DES-CHARGES-V3-R2.md). Elle distingue les exigences cibles des fonctions effectivement intégrées. À ce stade, Worker V3, D1, R2 et la synchronisation offline-first ne sont pas implémentés dans cette fondation.
