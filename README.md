@@ -10,7 +10,8 @@ Ouvrir `index.html` dans Chrome ou Edge. Aucun build n'est requis.
 - Clients / CRM, catalogue, devis
 - Commandes, factures, paiements et encaissements
 - Projets, tâches de production, livraisons
-- Suivi manuel des licences et support
+- Suivi manuel des licences commerciales et support
+- Écran « Licence & Worker V3 » : URL officielle préconfigurée, validation HTTPS/domaine, mémorisation locale et test public GET /v1/config avec affichage de la réponse
 - Studio / brief, sauvegarde locale et paramètres
 
 ## Données et contrôles
@@ -23,7 +24,7 @@ Ouvrir `index.html` dans Chrome ou Edge. Aucun build n'est requis.
 - Les encaissements du tableau de bord ne comptent que les paiements au statut « Confirmé ».
 
 ## Limites non levées
-- Worker central V3 configuré en référence mais pas encore intégré : aucun appel /v1/config, /v1/activate, /v1/status, /v1/cloud/token ni /v1/cloud/snapshot.
+- Worker V3 : écran de configuration ajouté; le test public GET /v1/config est déclenché manuellement depuis le navigateur. L’activation /v1/activate, le statut /v1/status, le jeton /v1/cloud/token, les snapshots D1 et les fichiers/quota R2 ne sont pas encore raccordés au workflow métier.
 - Pas de synchronisation D1/R2, pas de cloud partagé, pas de gestion de fichiers distants.
 - Les identifiants client/devis/facture sont actuellement saisis en texte : les relations strictes et listes de sélection restent à construire.
 - Les flux de conversion devis→commande→facture et la génération de reçus numérotés restent à implémenter.
