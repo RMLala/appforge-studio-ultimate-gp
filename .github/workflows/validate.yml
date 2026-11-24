@@ -1,0 +1,31 @@
+name: Validate standalone app
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main, "work/**"]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check HTML structure and inline JavaScript syntax
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          html = Path("index.html").read_text(encoding="utf-8")
+          assert "<!doctype html>" in html.lower(), "DOCTYPE missing"
+          assert 'name="viewport"' in html, "Viewport meta missing"
+          scripts = re.findall(r"<script[^>]*>(.*?)</script>", html, flags=re.S|re.I)
+          assert scripts, "No inline JavaScript found"
+          Path("/tmp/appforge-inline.js").write_text("\n".join(scripts), encoding="utf-8")
+          print(f"HTML checks passed; extracted {len(scripts)} inline script(s)")
+          PY
+          node --check /tmp/appforge-inline.js
