@@ -24,7 +24,7 @@ Worker central : https://appforge-license-api.lalainaadclick.workers.dev
 - POST /v1/cloud/token
 - GET/PUT /v1/cloud/snapshot?resource=default
 
-D1 stocke les données structurées et métadonnées. R2 ne doit contenir que les pièces jointes nécessaires. L'application doit rester offline-first. La fusion Cloud doit éviter l'écrasement silencieux et proposer une restauration contrôlée.
+D1 stocke les données structurées et métadonnées; R2 stocke uniquement les pièces jointes binaires. Le Worker est le seul point d'accès autorisé. Synchronisation offline-first par opérations idempotentes, versions et gestion explicite des conflits. Les routes et payloads R2 (upload/download/delete/quotas/restauration) restent à découvrir ou spécifier; ne pas les inventer. Aucun état « synchronisé R2 » avant preuve serveur. Voir [CAHIER-DES-CHARGES-V3-R2.md](CAHIER-DES-CHARGES-V3-R2.md) pour les critères complets.
 
 ## Sécurité et limites actuelles
 La fondation HTML actuelle utilise localStorage. Elle ne fournit ni authentification réelle, ni isolation multi-utilisateur, ni protection contre un utilisateur ayant accès au navigateur. Aucune clé secrète ne doit être incluse dans le code client. Les appels privilégiés nécessitent une validation côté Worker.
