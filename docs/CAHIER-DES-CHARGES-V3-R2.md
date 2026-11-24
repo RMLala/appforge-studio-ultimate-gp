@@ -46,9 +46,14 @@ Base unique : `https://appforge-license-api.lalainaadclick.workers.dev`.
 - `GET /v1/config` : configuration publique/protocole.
 - `POST /v1/activate` : activation licence/appareil.
 - `POST /v1/status` : vérification statut, droits et appareil.
-- `POST /v1/cloud/token` : jeton Cloud temporaire.
-- `GET /v1/cloud/snapshot?resource=default` : lecture snapshot.
-- `PUT /v1/cloud/snapshot?resource=default` : écriture snapshot.
+- `POST /v1/trial` : création/lecture de l’essai 72 h lié à l’installation (route Worker existante).
+- `POST /v1/cloud/token` : émission/renouvellement du jeton Cloud temporaire à partir de `productId`, `installationId` et `licenseToken`.
+- `GET /v1/cloud/quota` : mesures authentifiées D1 + R2.
+- `GET /v1/cloud/files` : liste des fichiers binaires de la licence/application.
+- `GET /v1/cloud/file?fileId=...` : téléchargement binaire; réponse avec `X-AppForge-Revision` et `X-AppForge-SHA256`.
+- `PUT /v1/cloud/file?fileId=...` : upload binaire avec `X-AppForge-Expected-Revision` obligatoire; `201` à la création, `200` au remplacement, `409` en cas de conflit et `413` en cas de quota/taille dépassé.
+- `GET /v1/cloud/snapshot?resource=default` : lecture snapshot D1.
+- `PUT /v1/cloud/snapshot?resource=default` : écriture snapshot D1 avec `{ expectedRevision, snapshot }` et contrôle optimiste `409`.
 Les schémas JSON, codes d'erreur et versions doivent être repris du Worker/SDK existant avant implémentation. Ne pas inventer de champs ni modifier le protocole par supposition.
 Parcours : paiement MVola validé par opérateur → licence activée → vérification Worker → jeton temporaire lié à licence/appareil → synchronisation automatique si droits et quotas le permettent. Aucun compte Cloud client.
 Appeler `POST /v1/status` au lancement, au retour premier plan et après reconnexion. Contrôler côté serveur licence, application, appareil, expiration, révocation, droits et quotas. Renouveler le jeton après vérification. Une révocation bloque l'accès distant au prochain contrôle; les données locales restent exportables. Hors ligne, afficher que le statut serveur ne peut être confirmé.
@@ -71,7 +76,7 @@ R2 stocke uniquement les binaires (images, PDF, Word/Excel, audio/vidéo si rée
 - Quotas par licence/application : capacité, utilisé, restant, nombre de fichiers et erreurs visibles.
 - Transfert réessayable/reprenable; empreinte pour corruption/doublons; suppression logique, rétention et suppression physique contrôlée.
 - Définir versionnement, sauvegarde et restauration R2 avant production.
-**Contrat R2 non établi par les routes V3 listées :** les routes/payloads d'upload, download, delete, quota et restore doivent être découvertes dans le Worker existant ou spécifiées dans une évolution backend. Ne pas inventer d'URL ni de payload. Tant que non vérifié, conserver les fichiers localement/en attente et ne jamais afficher « synchronisé R2 ».
+**Contrat R2 constaté dans le Worker (source `RMLala/appforg`, `main`, déployée le 24/11/2026) :** upload `PUT /v1/cloud/file?fileId=...`, download `GET` sur la même route, liste `GET /v1/cloud/files`, quota `GET /v1/cloud/quota`. Toutes ces routes exigent `Authorization: Bearer <jeton Cloud>` lié au produit et à l'installation. Les identifiants de fichier sont limités à 80 caractères alphanumériques, `_` ou `-`. L'upload exige `X-AppForge-Expected-Revision`; le téléchargement renvoie la révision et le SHA-256. Le bucket est configuré privé sous le binding Worker `FILE_BUCKET`; D1 conserve les métadonnées et clés opaques. **Aucune route HTTP de suppression ou de restauration R2 n'existe dans le code audité.** Le remplacement d'un fichier supprime l'ancien objet après mise à jour du pointeur D1, mais ce n'est pas une suppression utilisateur. Le client doit donc conserver les pièces jointes locales et ne pas présenter de fonction « supprimer du Cloud » ou « restauration complète R2 » comme disponible avant évolution backend. Limites configurées : 10 Mio par fichier, 100 fichiers, 20 Mio par essai et 100 Mio par licence payée (valeurs techniques de `wrangler.toml`, à confirmer par API à l'exécution). Les binaires sont transmis en `application/octet-stream`; aucun chiffrement de bout en bout n'est appliqué par le Worker. Chiffrer côté client les pièces jointes sensibles avant upload.
 
 ## 7. Offline-first
 Toute écriture métier est validée localement avant réseau. File durable avec dépendances, idempotence, temporisation progressive et reprise automatique. États visibles : local, en attente, synchronisé, conflit, erreur, hors ligne. D1 et R2 ont des états de transfert distincts. Une panne Worker ne bloque pas les opérations locales autorisées. La synchronisation manuelle est disponible. Pas de remplacement global de snapshot sans fusion et confirmation.
@@ -92,13 +97,13 @@ Inventaire des sources, sauvegarde immuable et empreinte, cartographie ancien→
 **Métier :** client→devis→commande→facture→paiement partiel→reçu; calculs et soldes cohérents; MVola en attente exclu des encaissements; confirmation comptée une seule fois; projet avec quatre onglets; KPI reliés aux sources.
 **V3 :** activation licence de test dédiée sans compte Cloud; appareil non autorisé refusé; renouvellement/expiration/révocation; jeton expiré refusé; vérification lancement/retour/reconnexion; aucun secret dans HTML/APK/logs/exports.
 **D1/offline :** deux appareils sous même licence; deux licences isolées; coupure réseau/redémarrage/reprise sans perte ni doublon; conflits référentiels et financiers arbitrés; restauration avec rapprochement.
-**R2 :** upload/read/download/delete/restore; refus inter-licences; fichier trop volumineux, MIME trompeur, corruption, quota dépassé; reprise et empreinte; bucket privé et expiration des accès temporaires.
+**R2 :** quota authentifié; upload/download/list; comparaison binaire et SHA-256; conflit de révision; isolation inter-installations/licences; fichier trop volumineux et quota dépassé; refus sans jeton. À compléter avant validation finale : suppression utilisateur, restauration complète/sélective, reprise des transferts, validation MIME/type réel, chiffrement client, nettoyage des objets orphelins et tests physiques.
 **Qualité :** tests unitaires, navigateur responsive, navigation, formulaires, import/export, CI; tests Worker séparés. Chaque preuve consigne commit, environnement, données de test, résultat et traces expurgées.
 
 ## 13. État initial et écarts
 La branche `work/initial-foundation` contient une fondation HTML locale : navigation, CRUD générique, stockage navigateur, import/export JSON, commandes/paiements manuels et KPI locaux.
 Non démontrés comme implémentés : intégration Worker V3, jetons Cloud, D1, API/transferts R2, file offline-first, conflits, relations complètes, conversions commerciales, projets unifiés, migration legacy, tests multi-appareils et builds Android.
-Le smoke test Worker mentionné dans le Standard V3 (22/11/2026) est limité à /health, /v1/config, migration SQL R2 et refus d'un snapshot non authentifié. Il ne certifie pas le parcours licence/Cloud/R2.
+Le déploiement manuel R2 du 24/11/2026 (run GitHub Actions `45380687909`, commit Worker `bce1407d...`) a terminé avec succès : contrôle des secrets sans affichage, contrôle/création du bucket privé, vérification des migrations en attente, application de `0008_cloud_files_r2.sql`, présence de la table `cloud_files`, déploiement Worker, `/health`, `/v1/config` et refus HTTP 401 d'une lecture R2 sans jeton. Cela prouve le déploiement et le contrôle d'accès anonyme, **pas** un upload/download authentifié en production. Le workflow de test réel proposé dans la PR `RMLala/appforg#47` n'est pas fusionné et n'a pas été exécuté. Le test actuel proposé utilise des essais temporaires de production, pas une licence de test dédiée; il ne doit pas être lancé sans validation préalable de la politique de test et du nettoyage. Aucun relevé D1 read-only plus récent que le 20/11 n'a été trouvé dans les exécutions consultées.
 
 ## 14. Ordre de réalisation
 1. Modèle de données et relations métier.
@@ -113,3 +118,7 @@ Le smoke test Worker mentionné dans le Standard V3 (22/11/2026) est limité à 
 10. Livrables sélectionnés et validation avant fusion.
 
 **Gouvernance :** branche et PR uniquement; aucun push direct sur `main`. PR en brouillon tant que les exigences bloquantes et preuves ne sont pas satisfaites.
+
+
+## 15. Audit Worker V3/R2 — 24 novembre 2026
+Le relevé technique détaillé, les routes et limites confirmées, les preuves CI/déploiement et les réserves de sécurité sont consignés dans [AUDIT-WORKER-V3-R2-2026-11-24.md](AUDIT-WORKER-V3-R2-2026-11-24.md).
