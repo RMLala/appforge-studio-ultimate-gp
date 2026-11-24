@@ -24,11 +24,11 @@ Worker central : https://appforge-license-api.lalainaadclick.workers.dev
 - POST /v1/cloud/token
 - GET/PUT /v1/cloud/snapshot?resource=default
 
-D1 stocke les données structurées et métadonnées; R2 stocke uniquement les pièces jointes binaires. Le Worker est le seul point d'accès autorisé. Synchronisation offline-first par opérations idempotentes, versions et gestion explicite des conflits. Les routes et payloads R2 (upload/download/delete/quotas/restauration) restent à découvrir ou spécifier; ne pas les inventer. Aucun état « synchronisé R2 » avant preuve serveur. Voir [CAHIER-DES-CHARGES-V3-R2.md](CAHIER-DES-CHARGES-V3-R2.md) pour les critères complets.
+D1 stocke les données structurées et métadonnées; R2 stocke uniquement les pièces jointes binaires. Le Worker est le seul point d'accès autorisé. Synchronisation offline-first par opérations idempotentes, versions et gestion explicite des conflits. Le Worker expose quota, liste, upload et téléchargement R2 authentifiés. Aucun endpoint DELETE ni restauration R2 n'est présent. Upload/download en production restent à tester avec licence dédiée; les tests locaux simulés ne suffisent pas. Voir [CAHIER-DES-CHARGES-V3-R2.md](CAHIER-DES-CHARGES-V3-R2.md) et [AUDIT-WORKER-V3-R2-2026-11-24.md](AUDIT-WORKER-V3-R2-2026-11-24.md).
 
 ## Sécurité et limites actuelles
 La fondation HTML actuelle utilise localStorage. Elle ne fournit ni authentification réelle, ni isolation multi-utilisateur, ni protection contre un utilisateur ayant accès au navigateur. Aucune clé secrète ne doit être incluse dans le code client. Les appels privilégiés nécessitent une validation côté Worker.
 
-## État au 22 novembre 2026
+## État au 24 novembre 2026
 Implémenté dans la fondation : navigation responsive, référentiels locaux, CRUD générique, recherche simple, export/import JSON, commandes et registre de paiements manuel, KPI locaux.
 Non implémenté : relations référentielles strictes, conversion automatisée des documents, facturation et reçus numérotés, workflow complet du projet, Worker V3, D1/R2, migration legacy, builds Android.
