@@ -32,10 +32,9 @@ jobs:
       - name: Build four APK variants
         run: gradle --no-daemon assembleApi23Debug assembleApi23Release assembleApi29Debug assembleApi29Release
       - name: Verify APK outputs and signatures
-        env:
-          PATH: ${{ env.ANDROID_HOME }}/build-tools/35.0.0:${{ env.PATH }}
         run: |
           set -e
+          export PATH="$ANDROID_HOME/build-tools/35.0.0:$PATH"
           for apk in app/build/outputs/apk/*/*/*.apk; do
             test -s "$apk"
             apksigner verify --verbose "$apk"
