@@ -1,0 +1,2289 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<!-- Release: v1.1.1 | AppForge Business Ultimate V3 + R2 | 2026-11-25 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>AppForge Studio Business Ultimate — V3 + R2 · v1.1.1</title>
+<style>
+:root{--p1:#2563eb;--p2:#7c3aed;--grad:linear-gradient(135deg,#2563eb,#7c3aed);--bg:#f4f5fb;--card:#fff;--tx:#18192b;--mu:#666c86;--bd:#e4e7f2;--r:12px;color-scheme:light}
+[data-theme=dark]{--bg:#0e1020;--card:#171a2e;--tx:#e9ebfa;--mu:#9da3c4;--bd:#2a2f4a;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--tx)}
+.shell{display:grid;grid-template-columns:232px 1fr;min-height:100vh}
+aside{background:var(--card);border-right:1px solid var(--bd);padding:18px 12px;position:sticky;top:0;height:100vh;overflow:auto}
+.brand{font-weight:800;font-size:18px;margin:0 8px 16px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+aside nav a,.soon{display:block;padding:9px 12px;border-radius:9px;color:var(--tx);text-decoration:none;margin:2px 0}
+aside nav a.active{background:var(--grad);color:#fff}
+.soon{color:var(--mu);cursor:default}
+.soon small{font-size:11px;background:var(--bd);padding:1px 6px;border-radius:6px;margin-left:4px}
+main{min-width:0;padding:22px 26px 100px}
+.top{display:flex;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.top h1{font-size:22px;margin:0}
+.sub{color:var(--mu);font-size:13px;margin-top:2px;max-width:70ch}
+.right{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.gap{margin-top:12px}
+button{font:inherit;border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:7px 12px;border-radius:9px;cursor:pointer;white-space:nowrap}
+button.primary{background:var(--grad);color:#fff;border-color:transparent}
+button.ghost{background:transparent}
+button.small{padding:4px 9px;font-size:13px}
+button.on{background:var(--grad);color:#fff;border-color:transparent}
+button:disabled{opacity:.5;cursor:not-allowed}
+input,select,textarea{font:inherit;color:var(--tx);background:var(--card);border:1px solid var(--bd);border-radius:9px;padding:8px 10px;width:100%}
+label{display:block;font-size:13px;color:var(--mu);margin-bottom:8px}
+label input,label select,label textarea{margin-top:4px}
+.check{display:flex;gap:8px;align-items:center;color:var(--tx)}
+.check input{width:auto;margin:0}
+.note{font-size:13px;color:var(--mu);margin:0 0 10px}
+.search{max-width:320px;margin:12px 0}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:16px;margin-bottom:16px}
+.card h2{font-size:16px;margin:0 0 10px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(176px,1fr));gap:12px;margin-bottom:16px}
+.kpi{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:11px;border-top:3px solid var(--p1)}
+.kpi span{display:block;color:var(--mu);font-size:13px}
+.kpi strong{display:block;font-size:17px;margin:4px 0}
+.kpi small{color:var(--mu);font-size:12px}
+.kpi.ok{border-top-color:#16a34a}.kpi.warn{border-top-color:#f59e0b}.kpi.bad{border-top-color:#ef4444}
+.tablewrap{overflow-x:auto;border:1px solid var(--bd);border-radius:var(--r);background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:560px}
+th,td{padding:9px 10px;text-align:left;border-bottom:1px solid var(--bd);vertical-align:middle;font-size:14px}
+th{color:var(--mu);font-weight:600;font-size:13px}
+.mu{color:var(--mu);font-size:13px}.warnText{color:#b45309;font-size:12px;margin:10px 0 0}[data-theme=dark] .warnText{color:#fbbf24}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:600;background:var(--bd);color:var(--tx)}
+.badge.ok{background:#dcfce7;color:#166534}.badge.warn{background:#fef3c7;color:#92400e}.badge.danger{background:#fee2e2;color:#991b1b}.badge.info{background:#e0e7ff;color:#3730a3}
+[data-theme=dark] .badge.ok{background:#14532d;color:#bbf7d0}[data-theme=dark] .badge.warn{background:#78350f;color:#fde68a}[data-theme=dark] .badge.danger{background:#7f1d1d;color:#fecaca}[data-theme=dark] .badge.info{background:#312e81;color:#c7d2fe}
+.empty{padding:26px;text-align:center;color:var(--mu);border:1px dashed var(--bd);border-radius:var(--r)}
+.kanban{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(210px,1fr);gap:10px;overflow-x:auto;padding-bottom:6px}
+.col{background:var(--bg);border:1px solid var(--bd);border-radius:var(--r);padding:8px;min-height:120px}
+.col h3{font-size:13px;margin:4px 4px 8px;color:var(--mu)}
+.lead{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:10px;margin-bottom:8px}
+.lead strong{display:block}.lead small{color:var(--mu)}.lead p{margin:6px 0;font-size:13px}
+.overlay{position:fixed;inset:0;background:rgba(10,12,25,.55);display:none;align-items:center;justify-content:center;padding:14px;z-index:50}
+.overlay.open{display:flex}
+.modal{background:var(--card);color:var(--tx);border-radius:14px;width:min(780px,100%);max-height:92vh;overflow:auto;border:1px solid var(--bd);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.modal>header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--bd)}
+.modal h2{margin:0;font-size:17px}
+.mbody{padding:16px 18px}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+.formgrid .full{grid-column:1/-1}
+footer.actions{display:flex;justify-content:flex-end;gap:8px;margin-top:14px;flex-wrap:wrap}
+.line{display:grid;grid-template-columns:1.1fr 2fr .7fr 1fr .7fr auto;gap:6px;margin-bottom:6px}
+.line input,.line select{margin:0}
+.steps{padding-left:0;list-style:none;margin:0 0 14px}
+.steps li{padding:7px 10px;border-radius:8px;margin-bottom:4px;border:1px solid var(--bd);color:var(--mu)}
+.steps li.done{color:var(--tx);border-color:#16a34a}
+.steps li.cur{color:#fff;background:var(--grad);border-color:transparent}
+.menu a{display:block;padding:10px 12px;border-radius:9px;color:var(--tx);text-decoration:none}
+.menu a:hover{background:var(--bg)}
+pre{white-space:pre-wrap;word-break:break-word;background:var(--bg);padding:10px;border-radius:8px;font-size:12px;max-height:260px;overflow:auto}
+.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);padding:10px 16px;border-radius:10px;color:#fff;background:#111827;z-index:99;display:none;max-width:92vw;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.toast.show{display:block}.toast.err{background:#b91c1c}.toast.ok{background:#15803d}
+.mnav{display:none}
+#printArea{display:none}
+@media (max-width:900px){
+  .shell{grid-template-columns:1fr}
+  aside{display:none}
+  main{padding:16px 14px 110px}
+  .grid2,.formgrid{grid-template-columns:1fr}
+  .line{grid-template-columns:1fr 1fr}
+  .mnav{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:1px solid var(--bd);padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));z-index:40}
+  .mnav button{border:0;background:transparent;font-size:12px;padding:8px 2px}
+  .mnav button.on{color:#fff;background:var(--grad);border-radius:10px}
+  .search{max-width:none}
+}
+@media print{
+  body>*:not(#printArea){display:none!important}
+  #printArea{display:block!important;padding:24px;color:#000;background:#fff}
+  #printArea table{min-width:0}
+}
+@media(max-width:520px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.kpi{padding:9px}.kpi strong{font-size:15px;word-break:break-word}.kpi span{font-size:12px}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <aside>
+    <div class="brand">AppForge Studio Business Ultimate</div>
+    <nav id="nav"></nav>
+  </aside>
+  <main>
+    <div class="top">
+      <div>
+        <h1 id="title"></h1>
+        <div class="sub" id="sub"></div>
+      </div>
+      <div class="right">
+        <div class="row" id="actions"></div>
+        <select data-change="user" id="userSel" aria-label="Profil actif" style="width:auto"></select>
+        <button data-act="toggleTheme" aria-label="Mode clair ou sombre">◐</button>
+      </div>
+    </div>
+    <div class="row gap" id="tabs"></div>
+    <div id="toolbar"></div>
+    <div id="body"></div>
+  </main>
+</div>
+<nav class="mnav" id="mnav"></nav>
+<div class="overlay" id="overlay"><div class="modal" id="modal" role="dialog" aria-modal="true"></div></div>
+<div class="toast" id="toast" role="status"></div>
+<div id="printArea"></div>
+<input type="file" id="importFile" accept="application/json" hidden>
+
+<script>
+/* @domain-start */
+const Domain = (() => {
+  class DomainError extends Error {}
+  const fail = (m) => { throw new DomainError(m); };
+  const EPS = 0.005;
+  const round2 = (n) => Math.round((Number(n) || 0) * 100) / 100;
+  const pad = (n) => String(n).padStart(2, '0');
+  const isoDay = (d = new Date()) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+  const uid = () => (typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : 'u' + Date.now().toString(36) + Math.random().toString(36).slice(2, 10));
+  const trimmed = (d, k) => String(d[k] ?? '').trim();
+  const requireText = (v, msg) => { const s = String(v ?? '').trim(); if (!s) fail(msg); return s; };
+  const find = (arr, id, msg) => { const x = arr.find((e) => e.id === id); if (!x) fail(msg || 'Élément introuvable.'); return x; };
+  const clone = (o) => JSON.parse(JSON.stringify(o));
+  const sum = (arr, f) => round2(arr.reduce((s, x) => s + f(x), 0));
+  const pct = (v, msg) => { const n = Number(v) || 0; if (n < 0 || n > 100) fail(msg); return n; };
+
+  const RESOURCES = ['dashboard', 'crm', 'catalogue', 'ventes', 'paiements', 'projets', 'licences', 'support', 'admin', 'journal'];
+  const PERMS = {
+    'Administrateur': { dashboard: 'rw', crm: 'rw', catalogue: 'rw', ventes: 'rw', paiements: 'rw', projets: 'rw', licences: 'rw', support: 'rw', admin: 'rw', journal: 'rw' },
+    'Direction': { dashboard: 'r', crm: 'r', catalogue: 'r', ventes: 'r', paiements: 'rw', projets: 'r', licences: 'r', support: 'r', admin: 'r', journal: 'r' },
+    'Commercial': { dashboard: 'r', crm: 'rw', catalogue: 'r', ventes: 'rw', paiements: 'r', projets: 'r', support: 'r' },
+    'Gestionnaire de projets': { dashboard: 'r', crm: 'r', ventes: 'r', projets: 'rw', licences: 'r', support: 'r' },
+    'Développeur': { projets: 'rw' },
+    'Responsable livraison': { ventes: 'r', projets: 'rw', licences: 'r', support: 'r' },
+    'Support': { crm: 'r', projets: 'r', licences: 'r', support: 'rw' }
+  };
+  const ROLES = Object.keys(PERMS);
+  const LEAD_STAGES = ['Nouveau', 'Contacté', 'Besoin identifié', 'Offre présentée', 'Devis envoyé', 'Négociation', 'Gagné', 'Perdu'];
+  const LEAD_CLOSED = ['Gagné', 'Perdu'];
+  const PROJECT_STAGES = ['Analyse', 'Cahier des charges', 'Proposition', 'Devis accepté', 'Acompte reçu', 'Conception', 'Développement', 'Tests', 'Validation client', 'Livraison', 'Solde reçu', 'Maintenance'];
+  const QUOTE_FLOW = { 'brouillon': ['envoyé'], 'envoyé': ['accepté', 'refusé'], 'accepté': [], 'refusé': ['brouillon'] };
+  const ORDER_FLOW = { 'confirmée': ['en production'], 'en production': ['livrée'], 'livrée': [] };
+  const INVOICE_TYPES = ['acompte', 'solde', 'standard'];
+  const PRODUCT_TYPES = ['standard', 'sur mesure', 'prestation', 'extension', 'maintenance', 'support', 'renouvellement'];
+  const LICENSE_TYPES = ['essai 72 heures', 'mensuelle', 'annuelle', 'à vie'];
+  const UPDATABLE = {
+    clients: ['type', 'name', 'contact', 'email', 'phone', 'nif', 'stat', 'address'],
+    products: ['name', 'category', 'duration', 'description', 'status', 'licenseType'],
+    leads: ['name', 'company', 'email', 'phone', 'need', 'source'],
+    projects: ['name', 'deadline', 'notes']
+  };
+  const RES_OF = { clients: 'crm', leads: 'crm', products: 'catalogue', projects: 'projets' };
+
+  function emptyState() {
+    return { schema: 1, company: { name: '', nif: '', stat: '', address: '', phone: '', email: '' },
+      users: [{ id: 'usr-admin', name: 'Administrateur local', role: 'Administrateur' }], activeUserId: 'usr-admin',
+      counters: {}, clients: [], leads: [], products: [], quotes: [], orders: [], invoices: [], credits: [],
+      payments: [], projects: [], licenses: [], paymentModes: ['MVola', 'Espèces', 'Virement'], audit: [], tasks: [], deliveries: [], tickets: [], relances: [], licenseRegister: [],
+      createdAt: new Date().toISOString() };
+  }
+  function activeUser(state) { return state.users.find((u) => u.id === state.activeUserId) || state.users[0]; }
+  function can(role, res, level = 'r') { const p = (PERMS[role] || {})[res] || ''; return level === 'r' ? p.length > 0 : p === 'rw'; }
+  function assertCan(state, res, level) {
+    const u = activeUser(state);
+    if (!u) fail('Aucun profil actif.');
+    if (!can(u.role, res, level)) fail(`Action refusée : le profil « ${u.role} » n'a pas le droit ${level === 'w' ? 'de modification' : 'de lecture'} sur « ${res} ».`);
+    return u;
+  }
+  function audit(state, action, entity, label, now = new Date()) {
+    const u = activeUser(state);
+    state.audit.push({ id: uid(), at: now.toISOString(), user: u ? u.name : '—', role: u ? u.role : '—', action, entity, label });
+  }
+  function nextNumber(state, prefix, now = new Date()) {
+    const y = now.getFullYear(); const k = `${prefix}-${y}`;
+    state.counters[k] = (state.counters[k] || 0) + 1;
+    return `${prefix}-${y}-${String(state.counters[k]).padStart(4, '0')}`;
+  }
+
+  /* Utilisateurs, profils, paramètres */
+  function createUser(state, d, now = new Date()) {
+    assertCan(state, 'admin', 'w');
+    const name = requireText(d.name, 'Nom de l’utilisateur obligatoire.');
+    if (!ROLES.includes(d.role)) fail('Profil inconnu.');
+    const u = { id: uid(), name, role: d.role };
+    state.users.push(u); audit(state, 'création', 'utilisateurs', name, now); return u;
+  }
+  function saveCompany(state, d, now = new Date()) {
+    assertCan(state, 'admin', 'w');
+    state.company = { name: requireText(d.name, 'Nom de l’entreprise obligatoire.'), nif: trimmed(d, 'nif'), stat: trimmed(d, 'stat'), address: trimmed(d, 'address'), phone: trimmed(d, 'phone'), email: trimmed(d, 'email') };
+    audit(state, 'modification', 'entreprise', state.company.name, now); return state.company;
+  }
+  function createPaymentMode(state, name, now = new Date()) {
+    assertCan(state, 'admin', 'w');
+    const n = requireText(name, 'Nom du mode de paiement obligatoire.');
+    if (state.paymentModes.some((m) => m.toLowerCase() === n.toLowerCase())) fail('Ce mode de paiement existe déjà.');
+    state.paymentModes.push(n); audit(state, 'création', 'modes de paiement', n, now); return n;
+  }
+
+  /* CRM */
+  function createClient(state, d, now = new Date()) {
+    assertCan(state, 'crm', 'w');
+    const name = requireText(d.name, 'Nom du client obligatoire.');
+    const c = { id: uid(), number: nextNumber(state, 'CLI', now), type: d.type === 'particulier' ? 'particulier' : 'entreprise', name,
+      contact: trimmed(d, 'contact'), email: trimmed(d, 'email'), phone: trimmed(d, 'phone'), nif: trimmed(d, 'nif'), stat: trimmed(d, 'stat'),
+      address: trimmed(d, 'address'), createdAt: isoDay(now), fromLeadId: d.fromLeadId || null };
+    state.clients.push(c); audit(state, 'création', 'clients', name, now); return c;
+  }
+  function createLead(state, d, now = new Date()) {
+    assertCan(state, 'crm', 'w');
+    const name = requireText(d.name, 'Nom du prospect obligatoire.');
+    const l = { id: uid(), name, company: trimmed(d, 'company'), email: trimmed(d, 'email'), phone: trimmed(d, 'phone'),
+      need: trimmed(d, 'need'), source: trimmed(d, 'source'), stage: 'Nouveau', clientId: null, createdAt: isoDay(now),
+      history: [{ at: isoDay(now), stage: 'Nouveau', comment: 'Création' }] };
+    state.leads.push(l); audit(state, 'création', 'prospects', name, now); return l;
+  }
+  function moveLead(state, id, stage, comment = '', now = new Date()) {
+    assertCan(state, 'crm', 'w');
+    const l = find(state.leads, id, 'Prospect introuvable.');
+    if (!LEAD_STAGES.includes(stage)) fail('Étape inconnue.');
+    if (LEAD_CLOSED.includes(l.stage)) fail('Un prospect clôturé ne peut plus changer d’étape.');
+    if (stage === l.stage) return l;
+    l.stage = stage; l.history.push({ at: isoDay(now), stage, comment: String(comment || '').trim() });
+    audit(state, 'changement d’étape', 'prospects', `${l.name} → ${stage}`, now); return l;
+  }
+  function convertLead(state, id, now = new Date()) {
+    assertCan(state, 'crm', 'w');
+    const l = find(state.leads, id, 'Prospect introuvable.');
+    if (l.clientId) fail('Ce prospect est déjà converti en client.');
+    const c = createClient(state, { type: l.company ? 'entreprise' : 'particulier', name: l.company || l.name,
+      contact: l.company ? l.name : '', email: l.email, phone: l.phone, fromLeadId: l.id }, now);
+    l.clientId = c.id; audit(state, 'conversion', 'prospects', `${l.name} → client ${c.number}`, now); return c;
+  }
+
+  /* Catalogue */
+  function createProduct(state, d, now = new Date()) {
+    assertCan(state, 'catalogue', 'w');
+    const name = requireText(d.name, 'Nom du produit obligatoire.');
+    const identifiant = requireText(d.identifiant, 'Identifiant produit obligatoire.');
+    if (state.products.some((p) => p.identifiant.toLowerCase() === identifiant.toLowerCase())) fail('Cet identifiant produit existe déjà.');
+    if (!PRODUCT_TYPES.includes(d.type)) fail('Type de produit inconnu.');
+    const price = round2(d.price);
+    if (!(price >= 0)) fail('Prix invalide.');
+    const licenseType = d.licenseType || '';
+    if (licenseType && !LICENSE_TYPES.includes(licenseType)) fail('Type de licence inconnu.');
+    const p = { id: uid(), name, identifiant, type: d.type, category: trimmed(d, 'category'), price, licenseType,
+      duration: trimmed(d, 'duration'), description: trimmed(d, 'description'), status: d.status === 'inactif' ? 'inactif' : 'actif', createdAt: isoDay(now) };
+    state.products.push(p); audit(state, 'création', 'produits', name, now); return p;
+  }
+  function updateEntity(state, coll, id, patch, now = new Date()) {
+    assertCan(state, RES_OF[coll] || 'admin', 'w');
+    if (!UPDATABLE[coll]) fail('Modification non autorisée sur ce type de données.');
+    const rec = find(state[coll], id, 'Élément introuvable.');
+    UPDATABLE[coll].forEach((k) => { if (k in patch) rec[k] = typeof patch[k] === 'string' ? patch[k].trim() : patch[k]; });
+    if (coll === 'products') {
+      if ('price' in patch) { const p = round2(patch.price); if (!(p >= 0)) fail('Prix invalide.'); rec.price = p; }
+      if (rec.status !== 'actif' && rec.status !== 'inactif') fail('Statut produit invalide.');
+    }
+    if (coll === 'clients' && !['particulier', 'entreprise'].includes(rec.type)) fail('Type de client invalide.');
+    if (!rec.name) fail('Le nom ne peut pas être vide.');
+    audit(state, 'modification', coll, rec.name, now); return rec;
+  }
+
+  /* Devis */
+  function computeLines(lines, globalDiscount = 0) {
+    const rows = (lines || []).map((l) => {
+      const qty = Number(l.qty); const pu = Number(l.price); const d = Number(l.discount) || 0;
+      const designation = String(l.designation ?? '').trim();
+      if (!designation || !(qty > 0)) fail('Chaque ligne doit avoir une désignation et une quantité supérieure à 0.');
+      if (!(pu >= 0)) fail('Prix unitaire invalide.');
+      if (d < 0 || d > 100) fail('Remise de ligne entre 0 et 100 %.');
+      return { designation, productId: l.productId || null, qty, price: round2(pu), discount: d, total: round2(qty * pu * (1 - d / 100)) };
+    });
+    if (!rows.length) fail('Le document doit contenir au moins une ligne.');
+    const subtotal = round2(rows.reduce((s, r) => s + r.total, 0));
+    const gd = pct(globalDiscount, 'Remise globale entre 0 et 100 %.');
+    const discount = round2(subtotal * gd / 100);
+    return { lines: rows, subtotal, globalDiscount: gd, discount, total: round2(subtotal - discount) };
+  }
+  function createQuote(state, d, now = new Date()) {
+    assertCan(state, 'ventes', 'w');
+    const client = find(state.clients, d.clientId, 'Client introuvable.');
+    const c = computeLines(d.lines, d.globalDiscount);
+    const q = { id: uid(), number: nextNumber(state, 'DEV', now), clientId: client.id, status: 'brouillon', revisions: 0,
+      createdAt: isoDay(now), validUntil: trimmed(d, 'validUntil'), paymentTerms: trimmed(d, 'paymentTerms'),
+      depositPct: pct(d.depositPct, 'Acompte entre 0 et 100 %.'), ...c };
+    state.quotes.push(q); audit(state, 'création', 'devis', q.number, now); return q;
+  }
+  function setQuoteStatus(state, id, status, now = new Date()) {
+    assertCan(state, 'ventes', 'w');
+    const q = find(state.quotes, id, 'Devis introuvable.');
+    if (!(QUOTE_FLOW[q.status] || []).includes(status)) fail(`Passage de « ${q.status} » à « ${status} » impossible.`);
+    if (q.status === 'refusé' && status === 'brouillon') q.revisions += 1;
+    q.status = status; audit(state, 'statut', 'devis', `${q.number} → ${status}`, now); return q;
+  }
+
+  /* Commandes */
+  function createOrderFromQuote(state, quoteId, now = new Date()) {
+    assertCan(state, 'ventes', 'w');
+    const q = find(state.quotes, quoteId, 'Devis introuvable.');
+    if (q.status !== 'accepté') fail('Seul un devis accepté peut devenir une commande.');
+    if (state.orders.some((o) => o.quoteId === q.id)) fail('Ce devis a déjà une commande.');
+    const o = { id: uid(), number: nextNumber(state, 'CMD', now), quoteId: q.id, quoteNumber: q.number, clientId: q.clientId,
+      lines: clone(q.lines), subtotal: q.subtotal, globalDiscount: q.globalDiscount, discount: q.discount, total: q.total,
+      depositPct: q.depositPct, status: 'confirmée', createdAt: isoDay(now) };
+    state.orders.push(o); audit(state, 'création', 'commandes', o.number, now); return o;
+  }
+  function setOrderStatus(state, id, status, now = new Date()) {
+    assertCan(state, 'ventes', 'w');
+    const o = find(state.orders, id, 'Commande introuvable.');
+    if (!(ORDER_FLOW[o.status] || []).includes(status)) fail(`Passage de « ${o.status} » à « ${status} » impossible.`);
+    o.status = status; audit(state, 'statut', 'commandes', `${o.number} → ${status}`, now); return o;
+  }
+
+  /* Factures, avoirs, paiements : montants séparés */
+  function invoiceCredits(state, id) { return sum(state.credits.filter((c) => c.invoiceId === id), (c) => c.amount); }
+  function invoiceNet(state, inv) { return round2(inv.amount - invoiceCredits(state, inv.id)); }
+  function invoicePaid(state, id) { return sum(state.payments.filter((p) => p.invoiceId === id && p.status === 'confirmé'), (p) => p.amount); }
+  function invoiceDue(state, inv) { return round2(invoiceNet(state, inv) - invoicePaid(state, inv.id)); }
+  function orderSummary(state, orderId) {
+    const o = find(state.orders, orderId, 'Commande introuvable.');
+    const invs = state.invoices.filter((i) => i.orderId === o.id);
+    const invoiced = sum(invs, (i) => invoiceNet(state, i));
+    const paid = sum(invs, (i) => invoicePaid(state, i.id));
+    return { total: o.total, invoiced, toInvoice: round2(o.total - invoiced), paid, due: round2(invoiced - paid), unpaidTotal: round2(o.total - paid) };
+  }
+  function createInvoice(state, d, now = new Date()) {
+    assertCan(state, 'ventes', 'w');
+    const o = find(state.orders, d.orderId, 'Commande introuvable.');
+    if (!INVOICE_TYPES.includes(d.type)) fail('Type de facture inconnu.');
+    const amount = round2(d.amount);
+    if (!(amount > 0)) fail('Le montant de la facture doit être supérieur à 0.');
+    const s = orderSummary(state, o.id);
+    if (amount > s.toInvoice + EPS) fail(`Montant supérieur au reste à facturer (${s.toInvoice}).`);
+    const inv = { id: uid(), number: nextNumber(state, 'FAC', now), orderId: o.id, clientId: o.clientId, type: d.type, amount,
+      issuedAt: isoDay(now), dueDate: trimmed(d, 'dueDate'), status: 'émise' };
+    state.invoices.push(inv); audit(state, 'émission', 'factures', `${inv.number} (${inv.type})`, now); return inv;
+  }
+  function createCredit(state, d, now = new Date()) {
+    assertCan(state, 'ventes', 'w');
+    const inv = find(state.invoices, d.invoiceId, 'Facture introuvable.');
+    const amount = round2(d.amount);
+    if (!(amount > 0)) fail('Le montant de l’avoir doit être supérieur à 0.');
+    const credited = invoiceCredits(state, inv.id);
+    if (amount > round2(inv.amount - credited) + EPS) fail('Montant supérieur à ce qui reste avoir sur cette facture.');
+    if (invoicePaid(state, inv.id) > round2(inv.amount - credited - amount) + EPS) fail('Cet avoir ferait passer la facture sous le montant déjà encaissé.');
+    const reason = requireText(d.reason, 'Motif de l’avoir obligatoire.');
+    const c = { id: uid(), number: nextNumber(state, 'AV', now), invoiceId: inv.id, amount, reason, issuedAt: isoDay(now) };
+    state.credits.push(c); audit(state, 'avoir', 'avoirs', `${c.number} sur ${inv.number}`, now); return c;
+  }
+  function createPayment(state, d, now = new Date()) {
+    assertCan(state, 'ventes', 'w');
+    const inv = find(state.invoices, d.invoiceId, 'Facture introuvable.');
+    const amount = round2(d.amount);
+    if (!(amount > 0)) fail('Le montant du paiement doit être supérieur à 0.');
+    const pending = sum(state.payments.filter((p) => p.invoiceId === inv.id && p.status === 'en attente'), (p) => p.amount);
+    const available = round2(invoiceDue(state, inv) - pending);
+    if (amount > available + EPS) fail(`Montant supérieur au solde disponible sur cette facture (${available}).`);
+    if (!state.paymentModes.includes(d.method)) fail('Mode de paiement inconnu.');
+    const reference = trimmed(d, 'reference');
+    if (d.method === 'MVola' && !reference) fail('Référence MVola obligatoire pour valider ultérieurement la transaction.');
+    const p = { id: uid(), number: nextNumber(state, 'PAY', now), invoiceId: inv.id, amount, method: d.method, reference,
+      proof: trimmed(d, 'proof'), status: 'en attente', createdAt: isoDay(now), confirmedAt: null, rejectReason: '' };
+    state.payments.push(p); audit(state, 'paiement déclaré', 'paiements', `${p.number} · ${amount}`, now); return p;
+  }
+  function confirmPayment(state, id, now = new Date()) {
+    assertCan(state, 'paiements', 'w');
+    const p = find(state.payments, id, 'Paiement introuvable.');
+    if (p.status !== 'en attente') fail('Seul un paiement en attente peut être confirmé.');
+    p.status = 'confirmé'; p.confirmedAt = isoDay(now);
+    audit(state, 'encaissement confirmé', 'paiements', p.number, now); return p;
+  }
+  function rejectPayment(state, id, reason, now = new Date()) {
+    assertCan(state, 'paiements', 'w');
+    const p = find(state.payments, id, 'Paiement introuvable.');
+    if (p.status !== 'en attente') fail('Seul un paiement en attente peut être rejeté.');
+    p.status = 'rejeté'; p.rejectReason = requireText(reason, 'Motif du rejet obligatoire.');
+    audit(state, 'paiement rejeté', 'paiements', p.number, now); return p;
+  }
+
+  /* Projets : circuit B, garde-fous financiers */
+  function createProject(state, d, now = new Date()) {
+    assertCan(state, 'projets', 'w');
+    const name = requireText(d.name, 'Nom du projet obligatoire.');
+    const personal = !!d.personal;
+    let clientId = null, orderId = null;
+    if (!personal) {
+      const c = find(state.clients, d.clientId, 'Client requis pour un projet client.');
+      clientId = c.id;
+      if (d.orderId) {
+        const o = find(state.orders, d.orderId, 'Commande introuvable.');
+        if (o.clientId !== c.id) fail('La commande ne correspond pas à ce client.');
+        orderId = o.id;
+      }
+    }
+    const p = { id: uid(), number: nextNumber(state, 'PRJ', now), name, personal, clientId, orderId,
+      stage: PROJECT_STAGES[0], deadline: trimmed(d, 'deadline'), notes: trimmed(d, 'notes'), createdAt: isoDay(now),
+      history: [{ at: isoDay(now), stage: PROJECT_STAGES[0], comment: 'Création' }] };
+    state.projects.push(p); audit(state, 'création', 'projets', name, now); return p;
+  }
+  const STAGE_GUARDS = {
+    'Acompte reçu': (state, p) => (!p.orderId ? 'Lier une commande avant ce passage.' : (orderSummary(state, p.orderId).paid > EPS ? null : 'Acompte non encaissé : le projet ne peut pas avancer.')),
+    'Conception': (state, p) => (!p.orderId ? 'Lier une commande avant la conception.' : (orderSummary(state, p.orderId).paid > EPS ? null : 'Acompte non encaissé : la conception ne peut pas démarrer.')),
+    'Solde reçu': (state, p) => (!p.orderId ? 'Lier une commande pour enregistrer le solde.' : (orderSummary(state, p.orderId).unpaidTotal > EPS ? 'Solde non encaissé.' : null))
+  };
+  function advanceProject(state, id, now = new Date()) {
+    assertCan(state, 'projets', 'w');
+    const p = find(state.projects, id, 'Projet introuvable.');
+    const i = PROJECT_STAGES.indexOf(p.stage);
+    if (i < 0 || i >= PROJECT_STAGES.length - 1) fail('Ce projet ne peut pas avancer.');
+    const next = PROJECT_STAGES[i + 1];
+    if (!p.personal && STAGE_GUARDS[next]) { const err = STAGE_GUARDS[next](state, p); if (err) fail(err); }
+    p.stage = next; p.history.push({ at: isoDay(now), stage: next, comment: '' });
+    audit(state, 'étape', 'projets', `${p.name} → ${next}`, now); return p;
+  }
+
+  /* Licences : lecture seule, rien n'est inventé */
+  /* Tableau de bord : KPI calculés à partir des données */
+  function prevMonth(m) { const [y, mo] = m.split('-').map(Number); const d = new Date(y, mo - 2, 1); return `${d.getFullYear()}-${pad(d.getMonth() + 1)}`; }
+  function kpis(state, now = new Date()) {
+    const day = isoDay(now), month = day.slice(0, 7), prev = prevMonth(month);
+    const invs = state.invoices;
+    const ca = sum(invs, (i) => invoiceNet(state, i));
+    const ventesMois = sum(invs.filter((i) => i.issuedAt.startsWith(month)), (i) => invoiceNet(state, i));
+    const ventesPrec = sum(invs.filter((i) => i.issuedAt.startsWith(prev)), (i) => invoiceNet(state, i));
+    const conf = state.payments.filter((p) => p.status === 'confirmé');
+    const encaisse = sum(conf, (p) => p.amount);
+    const encaisseMois = sum(conf.filter((p) => (p.confirmedAt || '').startsWith(month)), (p) => p.amount);
+    const creances = sum(invs, (i) => invoiceDue(state, i));
+    const impayes = sum(invs.filter((i) => i.dueDate && i.dueDate < day && invoiceDue(state, i) > EPS), (i) => invoiceDue(state, i));
+    const in30 = isoDay(new Date(now.getTime() + 30 * 864e5));
+    const lic = state.licenses || [];
+    return {
+      ca, ventesMois, ventesPrec, encaisse, encaisseMois, creances, impayes,
+      devisAttente: state.quotes.filter((q) => q.status === 'envoyé').length,
+      commandesEnCours: state.orders.filter((o) => o.status !== 'livrée').length,
+      projetsProduction: state.projects.filter((p) => ['Conception', 'Développement', 'Tests'].includes(p.stage)).length,
+      projetsRetard: state.projects.filter((p) => p.deadline && p.deadline < day && p.stage !== 'Maintenance').length,
+      livraisonsAttente: (state.deliveries || []).filter((d) => d.status === 'en cours').length,
+      ticketsOuverts: (state.tickets || []).filter((t) => TICKET_OPEN.includes(t.status)).length,
+      ticketsRetard: (state.tickets || []).filter((t) => isTicketLate(t, now)).length,
+      appsCommercialisees: state.products.filter((p) => p.type === 'standard' && p.status === 'actif').length,
+      licencesActives: lic.filter((l) => l.status === 'active').length,
+      licencesExpirant: lic.filter((l) => l.status === 'active' && l.expiresAt && l.expiresAt >= day && l.expiresAt <= in30).length
+    };
+  }
+
+  /* ================= PHASE 2 : production, livraisons, support, renouvellement, reporting ================= */
+  const TASK_STATUS = ['À faire', 'En cours', 'Bloqué', 'Terminé'];
+  const PRIORITIES = ['Haute', 'Moyenne', 'Basse'];
+  const DELIVERY_STEPS = ['Préparation', 'Contrôle technique', 'Tests fonctionnels', 'Validation interne', 'Validation client', 'Mise à disposition', 'Réception', 'Archivage'];
+  const DELIVERY_RECEPTION = DELIVERY_STEPS.indexOf('Réception');
+  const DELIVERY_MISE = DELIVERY_STEPS.indexOf('Mise à disposition');
+  const ARTIFACT_KEYS = ['apkDebug', 'apkApi23', 'apkApi29', 'sources', 'documentation'];
+  const ARTIFACT_LABELS = { apkDebug: 'APK Debug', apkApi23: 'APK API23', apkApi29: 'APK API29', sources: 'Sources', documentation: 'Documentation' };
+  const TICKET_SLA = { 'Critique': 24, 'Haute': 48, 'Normale': 120, 'Basse': 240 };
+  const TICKET_STATUS = ['ouvert', 'en cours', 'en attente client', 'résolu', 'clos'];
+  const TICKET_OPEN = ['ouvert', 'en cours', 'en attente client'];
+  const has = (o, k) => Object.prototype.hasOwnProperty.call(o, k);
+
+  function ensureP2(state) {
+    ['tasks', 'deliveries', 'tickets', 'relances', 'licenseRegister'].forEach((k) => { if (!Array.isArray(state[k])) state[k] = []; });
+    return state;
+  }
+
+  /* Production */
+  function createTask(state, d, now = new Date()) {
+    assertCan(state, 'projets', 'w');
+    const project = find(state.projects, d.projectId, 'Projet introuvable.');
+    const title = requireText(d.title, 'Titre de la tâche obligatoire.');
+    if (!PRIORITIES.includes(d.priority)) fail('Priorité inconnue.');
+    let dependsOn = null;
+    if (d.dependsOn) {
+      const dep = find(state.tasks, d.dependsOn, 'Tâche de dépendance introuvable.');
+      if (dep.projectId !== project.id) fail('La dépendance doit appartenir au même projet.');
+      dependsOn = dep.id;
+    }
+    const t = { id: uid(), number: nextNumber(state, 'TSK', now), projectId: project.id, title, responsable: trimmed(d, 'responsable'),
+      priority: d.priority, deadline: trimmed(d, 'deadline'), status: 'À faire', dependsOn, blocage: '', createdAt: isoDay(now),
+      history: [{ at: isoDay(now), status: 'À faire', comment: 'Création' }] };
+    state.tasks.push(t); audit(state, 'création', 'tâches', title, now); return t;
+  }
+  function setTaskStatus(state, id, status, comment = '', now = new Date()) {
+    assertCan(state, 'projets', 'w');
+    const t = find(state.tasks, id, 'Tâche introuvable.');
+    if (!TASK_STATUS.includes(status)) fail('Statut inconnu.');
+    const c = String(comment || '').trim();
+    if (status === 'Bloqué' && !c) fail('Un blocage doit être décrit.');
+    if (status === 'Terminé' && t.dependsOn) {
+      const dep = find(state.tasks, t.dependsOn);
+      if (dep.status !== 'Terminé') fail(`Dépendance non terminée : « ${dep.title} ».`);
+    }
+    if (status === t.status) return t;
+    t.status = status; t.blocage = status === 'Bloqué' ? c : '';
+    t.history.push({ at: isoDay(now), status, comment: c });
+    audit(state, 'statut', 'tâches', `${t.title} → ${status}`, now); return t;
+  }
+
+  /* Livraisons : processus en 8 étapes, aucune clôture sans contrôle */
+  function createDelivery(state, d, now = new Date()) {
+    assertCan(state, 'projets', 'w');
+    const project = find(state.projects, d.projectId, 'Projet introuvable.');
+    const version = requireText(d.version, 'Version livrée obligatoire.');
+    const dl = { id: uid(), number: nextNumber(state, 'LIV', now), projectId: project.id, version, status: 'en cours', step: 0,
+      artifacts: Object.fromEntries(ARTIFACT_KEYS.map((k) => [k, ''])), pv: null, createdAt: isoDay(now),
+      steps: DELIVERY_STEPS.map((name) => ({ name, done: false, at: null, by: null, comment: '' })) };
+    state.deliveries.push(dl); audit(state, 'création', 'livraisons', `${dl.number} · ${version}`, now); return dl;
+  }
+  function setDeliveryArtifacts(state, id, d, now = new Date()) {
+    assertCan(state, 'projets', 'w');
+    const dl = find(state.deliveries, id, 'Livraison introuvable.');
+    if (dl.status !== 'en cours') fail('Cette livraison est clôturée.');
+    if (dl.step >= DELIVERY_MISE) fail('Les fichiers ne peuvent plus changer après la mise à disposition.');
+    ARTIFACT_KEYS.forEach((k) => { if (k in d) dl.artifacts[k] = trimmed(d, k); });
+    audit(state, 'modification', 'livraisons', dl.number, now); return dl;
+  }
+  function recordDeliveryPV(state, id, d, now = new Date()) {
+    assertCan(state, 'projets', 'w');
+    const dl = find(state.deliveries, id, 'Livraison introuvable.');
+    if (dl.step < DELIVERY_RECEPTION) fail('Le procès-verbal se rédige à l’étape Réception.');
+    const receivedBy = requireText(d.receivedBy, 'Nom du réceptionnaire obligatoire.');
+    dl.pv = { receivedBy, date: trimmed(d, 'date') || isoDay(now), reserves: trimmed(d, 'reserves'), at: isoDay(now) };
+    audit(state, 'procès-verbal', 'livraisons', dl.number, now); return dl;
+  }
+  function advanceDelivery(state, id, comment = '', now = new Date()) {
+    assertCan(state, 'projets', 'w');
+    const dl = find(state.deliveries, id, 'Livraison introuvable.');
+    if (dl.status === 'archivée') fail('Cette livraison est déjà archivée.');
+    const idx = dl.step; const name = DELIVERY_STEPS[idx];
+    if (name === 'Contrôle technique' && !dl.artifacts.apkDebug && !dl.artifacts.sources) fail('Renseigner au moins un APK ou les sources avant le contrôle technique.');
+    if (name === 'Réception' && !dl.pv) fail('Procès-verbal de réception requis avant de valider la réception.');
+    dl.steps[idx] = { name, done: true, at: isoDay(now), by: activeUser(state).name, comment: String(comment || '').trim() };
+    dl.step = idx + 1;
+    if (idx === DELIVERY_RECEPTION) dl.status = 'livrée';
+    if (dl.step === DELIVERY_STEPS.length) dl.status = 'archivée';
+    audit(state, 'étape livraison', 'livraisons', `${dl.number} · ${name}`, now); return dl;
+  }
+
+  /* Support */
+  function createTicket(state, d, now = new Date()) {
+    assertCan(state, 'support', 'w');
+    const client = find(state.clients, d.clientId, 'Client introuvable.');
+    const title = requireText(d.title, 'Objet du ticket obligatoire.');
+    if (!has(TICKET_SLA, d.priority)) fail('Priorité inconnue.');
+    let productId = null, projectId = null;
+    if (d.productId) productId = find(state.products, d.productId, 'Produit introuvable.').id;
+    if (d.projectId) {
+      const p = find(state.projects, d.projectId, 'Projet introuvable.');
+      if (p.personal) fail('Un projet personnel ne peut pas être relié à un ticket client.');
+      if (p.clientId !== client.id) fail('Le projet ne correspond pas à ce client.');
+      projectId = p.id;
+    }
+    const due = new Date(now.getTime() + TICKET_SLA[d.priority] * 36e5);
+    const t = { id: uid(), number: nextNumber(state, 'TCK', now), clientId: client.id, productId, projectId, title,
+      description: trimmed(d, 'description'), priority: d.priority, status: 'ouvert', assignee: null,
+      dueAt: due.toISOString(), createdAt: now.toISOString(), resolution: '', satisfaction: null, comments: [] };
+    state.tickets.push(t); audit(state, 'création', 'tickets', `${t.number} · ${title}`, now); return t;
+  }
+  function assignTicket(state, id, userId, now = new Date()) {
+    assertCan(state, 'support', 'w');
+    const t = find(state.tickets, id, 'Ticket introuvable.');
+    if (userId) find(state.users, userId, 'Utilisateur introuvable.');
+    t.assignee = userId || null;
+    audit(state, 'affectation', 'tickets', t.number, now); return t;
+  }
+  function commentTicket(state, id, text, now = new Date()) {
+    assertCan(state, 'support', 'w');
+    const t = find(state.tickets, id, 'Ticket introuvable.');
+    const s = requireText(text, 'Commentaire vide.');
+    t.comments.push({ at: now.toISOString(), by: activeUser(state).name, text: s });
+    audit(state, 'commentaire', 'tickets', t.number, now); return t;
+  }
+  function setTicketStatus(state, id, status, d = {}, now = new Date()) {
+    assertCan(state, 'support', 'w');
+    const t = find(state.tickets, id, 'Ticket introuvable.');
+    if (!TICKET_STATUS.includes(status)) fail('Statut inconnu.');
+    if (status === 'résolu') t.resolution = requireText(d.resolution, 'Décrire la résolution pour passer à « résolu ».');
+    if (status === 'clos' && t.status !== 'résolu') fail('Un ticket doit être résolu avant d’être clos.');
+    if (status === t.status) return t;
+    t.status = status;
+    if (status === 'en cours' && !t.assignee) t.assignee = activeUser(state).id;
+    audit(state, 'statut', 'tickets', `${t.number} → ${status}`, now); return t;
+  }
+  function rateTicket(state, id, score, now = new Date()) {
+    assertCan(state, 'support', 'w');
+    const t = find(state.tickets, id, 'Ticket introuvable.');
+    if (!['résolu', 'clos'].includes(t.status)) fail('La satisfaction se note une fois le ticket résolu.');
+    const n = Number(score);
+    if (!Number.isInteger(n) || n < 1 || n > 5) fail('Note entre 1 et 5.');
+    t.satisfaction = n; audit(state, 'satisfaction', 'tickets', `${t.number} : ${n}/5`, now); return t;
+  }
+  function isTicketLate(t, now = new Date()) { return TICKET_OPEN.includes(t.status) && new Date(t.dueAt) < now; }
+  function supportStats(state, now = new Date()) {
+    const scores = state.tickets.filter((t) => t.satisfaction !== null).map((t) => t.satisfaction);
+    return {
+      open: state.tickets.filter((t) => TICKET_OPEN.includes(t.status)).length,
+      late: state.tickets.filter((t) => isTicketLate(t, now)).length,
+      avgSatisfaction: scores.length ? Math.round(scores.reduce((s, x) => s + x, 0) / scores.length * 10) / 10 : null
+    };
+  }
+
+  /* Renouvellement et fidélisation */
+  function createRelance(state, d, now = new Date()) {
+    assertCan(state, 'ventes', 'w');
+    const client = find(state.clients, d.clientId, 'Client introuvable.');
+    const r = { id: uid(), clientId: client.id, note: requireText(d.note, 'Motif de la relance obligatoire.'), dueDate: trimmed(d, 'dueDate'), done: false, createdAt: isoDay(now) };
+    state.relances.push(r); audit(state, 'création', 'relances', client.name, now); return r;
+  }
+  function toggleRelance(state, id, now = new Date()) {
+    assertCan(state, 'ventes', 'w');
+    const r = find(state.relances, id, 'Relance introuvable.');
+    r.done = !r.done; audit(state, r.done ? 'relance faite' : 'relance rouverte', 'relances', r.note, now); return r;
+  }
+  function clientLastActivity(state, clientId) {
+    const dates = [];
+    state.quotes.filter((q) => q.clientId === clientId).forEach((q) => dates.push(q.createdAt));
+    state.orders.filter((o) => o.clientId === clientId).forEach((o) => dates.push(o.createdAt));
+    state.tickets.filter((t) => t.clientId === clientId).forEach((t) => dates.push(t.createdAt.slice(0, 10)));
+    dates.sort();
+    return dates.length ? dates[dates.length - 1] : null;
+  }
+  function inactiveClients(state, now = new Date(), days = 180) {
+    const cutoff = isoDay(new Date(now.getTime() - days * 864e5));
+    return state.clients
+      .map((c) => ({ client: c, last: clientLastActivity(state, c.id) }))
+      .filter((x) => (x.last ? x.last < cutoff : x.client.createdAt < cutoff));
+  }
+
+  /* Reporting : analyses à partir des données réelles */
+  function pareto(state) {
+    const byKey = {};
+    state.orders.forEach((o) => {
+      const ratio = o.subtotal ? o.total / o.subtotal : 1;
+      o.lines.forEach((l) => {
+        const key = l.productId || `libre:${l.designation}`;
+        const name = l.productId ? ((state.products.find((p) => p.id === l.productId) || {}).name || l.designation) : l.designation;
+        byKey[key] = byKey[key] || { key, name, value: 0 };
+        byKey[key].value = round2(byKey[key].value + l.total * ratio);
+      });
+    });
+    const rows = Object.values(byKey).sort((a, b) => b.value - a.value);
+    const total = sum(rows, (r) => r.value);
+    let cum = 0;
+    return rows.map((r) => { cum = round2(cum + r.value); return { ...r, share: total ? round2(r.value / total * 100) : 0, cumShare: total ? round2(cum / total * 100) : 0 }; });
+  }
+  function paymentsByMethod(state) {
+    const m = {};
+    state.payments.forEach((p) => {
+      m[p.method] = m[p.method] || { method: p.method, confirmed: 0, pending: 0, rejected: 0 };
+      if (p.status === 'confirmé') m[p.method].confirmed = round2(m[p.method].confirmed + p.amount);
+      else if (p.status === 'en attente') m[p.method].pending = round2(m[p.method].pending + p.amount);
+      else m[p.method].rejected = round2(m[p.method].rejected + p.amount);
+    });
+    return Object.values(m);
+  }
+  function salesByMonth(state, now = new Date(), months = 12) {
+    const out = [];
+    for (let i = months - 1; i >= 0; i--) {
+      const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
+      const key = `${d.getFullYear()}-${pad(d.getMonth() + 1)}`;
+      out.push({ month: key, value: sum(state.invoices.filter((x) => x.issuedAt.startsWith(key)), (x) => invoiceNet(state, x)) });
+    }
+    return out;
+  }
+  function topClients(state, n = 5) {
+    const m = {};
+    state.orders.forEach((o) => { m[o.clientId] = round2((m[o.clientId] || 0) + o.total); });
+    return Object.entries(m)
+      .map(([id, value]) => ({ client: state.clients.find((c) => c.id === id) || { name: '—' }, value }))
+      .sort((a, b) => b.value - a.value).slice(0, n);
+  }
+
+  /* Registre local des licences (codes archivés, chiffrés côté interface) */
+  function addLicenseRecord(state, rec, now = new Date()) {
+    assertCan(state, 'licences', 'w');
+    const name = requireText(rec.customerName, 'Nom du client obligatoire.');
+    const productId = requireText(rec.productId, 'Application obligatoire.').toUpperCase();
+    if (!rec.id) fail('Identifiant de licence manquant.');
+    if (state.licenseRegister.some((l) => l.id === rec.id)) fail('Cette licence est déjà archivée.');
+    const r = { id: rec.id, productId, customerName: name, customerEmail: trimmed(rec, 'customerEmail'), plan: trimmed(rec, 'plan'),
+      maxDevices: Number(rec.maxDevices) || 1, paymentReference: trimmed(rec, 'paymentReference'),
+      createdAt: rec.createdAt || isoDay(now), expiresAt: rec.expiresAt || null, status: 'active', code: rec.code || null, syncedAt: null,
+      cloud: rec.cloud || { enabled: false, maxBytes: 104857600, requestsDay: 10000, updatedAt: null } };
+    state.licenseRegister.push(r); audit(state, 'licence archivée', 'licences', `${name} · ${r.plan}`, now); return r;
+  }
+  function revokeLicenseRecord(state, id, now = new Date()) {
+    assertCan(state, 'licences', 'w');
+    const r = find(state.licenseRegister, id, 'Licence introuvable.');
+    r.status = 'revoked'; audit(state, 'licence révoquée', 'licences', r.customerName, now); return r;
+  }
+  function syncLicenseStatuses(state, serverItems, now = new Date()) {
+    assertCan(state, 'licences', 'r');
+    let n = 0;
+    (serverItems || []).forEach((s) => {
+      const r = state.licenseRegister.find((x) => x.id === s.id);
+      if (r) { r.status = s.status === 'active' ? 'active' : 'revoked'; r.expiresAt = s.expiresAt || null; r.syncedAt = isoDay(now); n++; }
+    });
+    return n;
+  }
+  const CLOUD_LIMITS = { minBytes: 1024, maxBytes: 1073741824, minReq: 1, maxReq: 100000 };
+  function setLicenseCloud(state, id, c, now = new Date()) {
+    assertCan(state, 'licences', 'w');
+    const r = find(state.licenseRegister, id, 'Licence introuvable.');
+    if (typeof c.enabled !== 'boolean') fail('Indiquer si le Cloud est activé.');
+    const bytes = Number(c.maxBytes), req = Number(c.requestsDay);
+    if (!Number.isSafeInteger(bytes) || bytes < CLOUD_LIMITS.minBytes || bytes > CLOUD_LIMITS.maxBytes) fail('Quota de stockage entre 1 Ko et 1 Go.');
+    if (!Number.isSafeInteger(req) || req < CLOUD_LIMITS.minReq || req > CLOUD_LIMITS.maxReq) fail('Requêtes par jour entre 1 et 100 000.');
+    r.cloud = { enabled: c.enabled, maxBytes: bytes, requestsDay: req, updatedAt: isoDay(now) };
+    audit(state, 'droits Cloud', 'licences', `${r.customerName} : ${c.enabled ? 'activé' : 'désactivé'}`, now);
+    return r;
+  }
+  function cloudLabel(r) {
+    if (!r.cloud || !r.cloud.enabled) return 'Désactivé';
+    return `${Math.round(r.cloud.maxBytes / 1048576 * 100) / 100} Mo · ${r.cloud.requestsDay} req/j`;
+  }
+  function updateLicenseRecord(state, id, patch, now = new Date()) {
+    assertCan(state, 'licences', 'w');
+    const r = find(state.licenseRegister, id, 'Licence introuvable.');
+    const name = requireText(patch.customerName, 'Nom du client obligatoire (2 caractères minimum).');
+    if (name.length < 2 || name.length > 120) fail('Nom du client entre 2 et 120 caractères.');
+    const max = Number(patch.maxDevices);
+    if (!Number.isInteger(max) || max < 1 || max > 10) fail('Appareils autorisés entre 1 et 10.');
+    r.customerName = name;
+    r.customerEmail = trimmed(patch, 'customerEmail');
+    r.paymentReference = trimmed(patch, 'paymentReference');
+    r.maxDevices = max;
+    audit(state, 'licence modifiée', 'licences', name, now);
+    return r;
+  }
+  function deleteLicenseRecord(state, id, now = new Date()) {
+    assertCan(state, 'licences', 'w');
+    const r = find(state.licenseRegister, id, 'Licence introuvable.');
+    state.licenseRegister = state.licenseRegister.filter((x) => x.id !== id);
+    audit(state, 'licence supprimée', 'licences', r.customerName, now);
+    return r;
+  }
+  function searchLicenses(state, q) {
+    const s = String(q || '').trim().toLowerCase();
+    return state.licenseRegister.filter((l) => !s || [l.customerName, l.customerEmail, l.productId, l.plan].join(' ').toLowerCase().includes(s));
+  }
+
+  return { DomainError, RESOURCES, PERMS, ROLES, LEAD_STAGES, LEAD_CLOSED, PROJECT_STAGES, INVOICE_TYPES, PRODUCT_TYPES, LICENSE_TYPES,
+    TASK_STATUS, PRIORITIES, DELIVERY_STEPS, ARTIFACT_KEYS, ARTIFACT_LABELS, TICKET_SLA, TICKET_STATUS, TICKET_OPEN,
+    emptyState, activeUser, can, assertCan, round2, isoDay, uid, computeLines, nextNumber, audit, ensureP2,
+    createUser, saveCompany, createPaymentMode, createClient, createLead, moveLead, convertLead,
+    createProduct, updateEntity, createQuote, setQuoteStatus, createOrderFromQuote, setOrderStatus, orderSummary,
+    createInvoice, createCredit, createPayment, confirmPayment, rejectPayment,
+    invoiceNet, invoicePaid, invoiceDue, createProject, advanceProject, kpis, prevMonth,
+    createTask, setTaskStatus, createDelivery, setDeliveryArtifacts, recordDeliveryPV, advanceDelivery,
+    createTicket, assignTicket, commentTicket, setTicketStatus, rateTicket, isTicketLate, supportStats,
+    createRelance, toggleRelance, clientLastActivity, inactiveClients,
+    pareto, paymentsByMethod, salesByMonth, topClients,
+    addLicenseRecord, revokeLicenseRecord, syncLicenseStatuses, searchLicenses, setLicenseCloud, cloudLabel, CLOUD_LIMITS, updateLicenseRecord, deleteLicenseRecord };
+})();
+/* @domain-end */
+
+/* ===================== INTERFACE ===================== */
+const APP = { KEY: 'asu_v1', THEME: 'asu_theme', WORKER: 'https://appforge-license-api.lalainaadclick.workers.dev', PRODUCT: 'APPFORGE-STUDIO', LICENSE_TOKEN: 'asu_license_token_enc', CLOUD_TOKEN: 'asu_cloud_token_enc', LICENSE_META: 'asu_license_meta', INSTALL: 'asu_install_id', CLOUD_RESOURCE: 'business_ultimate' };
+const D = Domain;
+let S = loadState();
+const UI = { route: 'dashboard', tab: 'devis', crmTab: 'prospects', q: '', prodView: 'kanban', prodProject: '', openDeliveryId: null, tq: {}, quotas: null, apps: null, appCounts: {}, cloudRevision: 0, cloudFiles: [], cloudQuota: null, cloudStatus: 'Non vérifié', filters: { apps: { status: '', sort: 'nom' }, lic: { status: '', product: '', sort: 'client' } } };
+let formHandler = null;
+
+const ROUTES = [
+  { id: 'dashboard', label: 'Tableau de bord', short: 'Accueil', res: 'dashboard' },
+  { id: 'crm', label: 'CRM', short: 'CRM', res: 'crm' },
+  { id: 'catalogue', label: 'Catalogue', short: 'Catalogue', res: 'catalogue' },
+  { id: 'ventes', label: 'Ventes', short: 'Ventes', res: 'ventes' },
+  { id: 'projets', label: 'Projets', short: 'Projets', res: 'projets' },
+  { id: 'production', label: 'Production', short: 'Prod.', res: 'projets' },
+  { id: 'livraisons', label: 'Livraisons', short: 'Livr.', res: 'projets' },
+  { id: 'support', label: 'Support', short: 'Support', res: 'support' },
+  { id: 'renouvellement', label: 'Renouvellement', short: 'Renouv.', res: 'ventes' },
+  { id: 'reporting', label: 'Reporting', short: 'Rapports', res: 'dashboard' },
+  { id: 'licences', label: 'Licences', short: 'Licences', res: 'licences' },
+  { id: 'activation', label: 'Activation', short: 'Accès', res: 'dashboard' },
+  { id: 'cloud', label: 'Cloud V3 + R2', short: 'Cloud', res: 'dashboard' },
+  { id: 'applications', label: 'Applications', short: 'Apps', res: 'licences' },
+  { id: 'admin', label: 'Administration', short: 'Admin', res: 'admin' },
+  { id: 'journal', label: 'Journal d’audit', short: 'Journal', res: 'journal' }
+];
+const PHASE2 = ['Migration'];
+
+function loadState() {
+  try {
+    const raw = localStorage.getItem(APP.KEY);
+    if (raw) { const s = JSON.parse(raw); if (s && s.schema === 1) return D.ensureP2(s); }
+  } catch (e) { console.error(e); }
+  return D.emptyState();
+}
+function save() {
+  try { localStorage.setItem(APP.KEY, JSON.stringify(S)); return true; }
+  catch (e) { toast('Sauvegarde locale impossible (stockage plein ?). Exportez vos données.', 'err'); return false; }
+}
+
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const money = (n) => new Intl.NumberFormat('fr-FR', { maximumFractionDigits: 2 }).format(Number(n) || 0) + ' Ar';
+const dateFr = (iso) => (iso ? iso.split('-').reverse().join('/') : '—');
+const byId = (arr, id) => arr.find((x) => x.id === id);
+const clientName = (id) => { const c = byId(S.clients, id); return c ? c.name : '—'; };
+const W = (res) => D.can(D.activeUser(S).role, res, 'w');
+const R = (res) => D.can(D.activeUser(S).role, res, 'r');
+function badgeKind(t) {
+  if (/confirm|accept|livr|gagn|actif|active|soldé|payé/i.test(t)) return 'ok';
+  if (/attente|envoy|cours|production|nouveau|contact|brouillon|besoin|offre|négo|devis/i.test(t)) return 'warn';
+  if (/refus|rejet|perdu|inactif|retard|impay|révoqu/i.test(t)) return 'danger';
+  return 'info';
+}
+const statusBadge = (t) => `<span class="badge ${badgeKind(t)}">${esc(t)}</span>`;
+const btn = (label, act, data = {}) => `<button class="small" data-act="${act}" ${Object.entries(data).map(([k, v]) => `data-${k}="${esc(v)}"`).join(' ')}>${esc(label)}</button>`;
+const round2 = (n) => D.round2(n);
+
+function toast(msg, kind = 'ok') {
+  const el = document.getElementById('toast');
+  el.textContent = msg; el.className = `toast show ${kind}`;
+  clearTimeout(toast._t); toast._t = setTimeout(() => { el.className = 'toast'; }, 3200);
+}
+async function runAsync(fn) {
+  try { await fn(); save(); toast('Enregistré.', 'ok'); render(); return true; }
+  catch (e) { toast(e.message || 'Erreur inattendue.', 'err'); return false; }
+}
+function run(fn) {
+  try {
+    fn(); save(); toast('Enregistré.', 'ok'); render();
+    if (UI.openDeliveryId && document.getElementById('overlay').classList.contains('open')) showDelivery(UI.openDeliveryId);
+    return true;
+  } catch (e) {
+    if (e instanceof D.DomainError) toast(e.message, 'err');
+    else { console.error(e); toast('Erreur inattendue : ' + e.message, 'err'); }
+    return false;
+  }
+}
+
+/* Tables et modales */
+let TSEQ = 0;
+const TABLES = {};
+// Un tableau = sa zone de recherche + son contenu. Taper dans la recherche ne reconstruit que le contenu du tableau :
+// le champ garde le focus et le reste de la page ne bouge pas.
+function table(items, cols, opts = {}) {
+  const id = opts.id || (UI.route + ':' + (UI.route === 'ventes' ? UI.tab : '') + ':' + (++TSEQ));
+  TABLES[id] = { items, cols, opts };
+  const box = `<div class="row" style="margin:6px 0"><input class="search" data-qt="${esc(id)}" placeholder="Rechercher dans ce tableau…" aria-label="Rechercher dans ce tableau" value="${esc(UI.tq[id] || '')}" style="max-width:320px"></div>`;
+  return `<div data-tblwrap="${esc(id)}">${box}<div data-tbody="${esc(id)}">${tableContent(id)}</div></div>`;
+}
+function tableContent(id) {
+  const t = TABLES[id]; if (!t) return '';
+  const { items, cols, opts } = t;
+  const q = String(UI.tq[id] || '').trim().toLowerCase();
+  const textOf = opts.textOf || ((e) => Object.values(e).filter((v) => typeof v === 'string').join(' '));
+  const rows = items.filter((e) => !q || textOf(e).toLowerCase().includes(q));
+  if (!rows.length) return `<div class="empty">${q ? `Aucun résultat pour « ${esc(UI.tq[id])} ».` : esc(opts.empty || 'Aucun élément pour le moment.')}</div>`;
+  return `<div class="tablewrap"><table><thead><tr>${cols.map((c) => `<th>${esc(c.h)}</th>`).join('')}</tr></thead><tbody>${rows.map((r) => `<tr>${cols.map((c) => `<td>${c.f(r)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+}
+function showModal(title, html) {
+  UI.openDeliveryId = null;
+  document.getElementById('modal').innerHTML = `<header><h2>${esc(title)}</h2><button class="ghost small" data-act="close" aria-label="Fermer">✕</button></header><div class="mbody">${html}</div>`;
+  document.getElementById('overlay').classList.add('open');
+}
+function closeModal() {
+  UI.openDeliveryId = null;
+  document.getElementById('overlay').classList.remove('open');
+  document.getElementById('modal').innerHTML = '';
+  formHandler = null;
+}
+function field(f) {
+  const req = f.required ? 'required' : '';
+  const wrap = f.full ? ' class="full"' : '';
+  if (f.type === 'note') return `<p class="note full">${esc(f.label)}</p>`;
+  if (f.type === 'select') {
+    const opts = (f.options || []).map((o) => { const [v, l] = Array.isArray(o) ? o : [o, o]; return `<option value="${esc(v)}" ${String(v) === String(f.value ?? '') ? 'selected' : ''}>${esc(l)}</option>`; }).join('');
+    return `<label${wrap}>${esc(f.label)}<select name="${f.name}" ${req}>${opts}</select></label>`;
+  }
+  if (f.type === 'textarea') return `<label${wrap}>${esc(f.label)}<textarea name="${f.name}" rows="2">${esc(f.value ?? '')}</textarea></label>`;
+  if (f.type === 'checkbox') return `<label class="check full"><input type="checkbox" name="${f.name}" ${f.value ? 'checked' : ''}> ${esc(f.label)}</label>`;
+  return `<label${wrap}>${esc(f.label)}<input type="${f.type || 'text'}" name="${f.name}" value="${esc(f.value ?? '')}" ${f.step ? `step="${f.step}"` : ''} ${req}></label>`;
+}
+function openForm(o) {
+  const fields = o.fields || [];
+  const body = `<div class="formgrid">${fields.map(field).join('')}</div>${o.custom ? o.custom.html : ''}`;
+  formHandler = (fd, form) => {
+    const vals = {};
+    fields.forEach((f) => {
+      if (f.type === 'note') return;
+      vals[f.name] = f.type === 'checkbox' ? form.elements[f.name].checked : (fd[f.name] ?? '');
+    });
+    if (o.custom) vals.lines = o.custom.read(form);
+    Promise.resolve(o.async ? runAsync(() => o.submit(vals)) : run(() => o.submit(vals))).then((ok) => { if (ok && !o.keepOpen) closeModal(); });
+  };
+  showModal(o.title, `<form id="mform">${body}<footer class="actions"><button type="button" class="ghost" data-act="close">Annuler</button><button class="primary" type="submit">${esc(o.submitLabel || 'Enregistrer')}</button></footer></form>`);
+}
+
+/* ===================== APPFORGE V3 + D1 + R2 ===================== */
+function installationId(){
+  let id=localStorage.getItem(APP.INSTALL);
+  if(!id){const bytes=crypto.getRandomValues(new Uint8Array(24));id=[...bytes].map(x=>x.toString(16).padStart(2,'0')).join('');localStorage.setItem(APP.INSTALL,id)}
+  return id;
+}
+function b64uDecode(s){const b=s.replace(/-/g,'+').replace(/_/g,'/');return Uint8Array.from(atob(b+'='.repeat((4-b.length%4)%4)),c=>c.charCodeAt(0))}
+async function verifyLicenseProof(token,publicKey){
+  const parts=String(token||'').split('.');if(parts.length!==2)throw new Error('Preuve de licence mal formée.');
+  const key=await crypto.subtle.importKey('jwk',publicKey,{name:'ECDSA',namedCurve:'P-256'},false,['verify']);
+  const ok=await crypto.subtle.verify({name:'ECDSA',hash:'SHA-256'},key,b64uDecode(parts[1]),new TextEncoder().encode(parts[0]));
+  if(!ok)throw new Error('Signature de licence invalide.');
+  const claims=JSON.parse(new TextDecoder().decode(b64uDecode(parts[0])));
+  if(claims.v!==1||claims.app!==APP.PRODUCT)throw new Error('Cette preuve ne correspond pas à AppForge Studio.');
+  if(claims.exp&&Date.parse(claims.exp)<=Date.now())throw new Error('Preuve de licence expirée.');
+  return claims;
+}
+async function v3Request(path,opts={}){
+  const response=await fetch(APP.WORKER+path,{method:opts.method||'GET',cache:'no-store',headers:{'Accept':'application/json',...(opts.token?{Authorization:'Bearer '+opts.token}:{}),...(opts.body?{'Content-Type':'application/json'}:{}),...(opts.headers||{})},body:opts.body?(opts.raw?opts.body:JSON.stringify(opts.body)):undefined});
+  const type=response.headers.get('content-type')||'';
+  const data=type.includes('application/json')?await response.json():await response.arrayBuffer();
+  if(!response.ok){const message=data&&data.error?data.error:`Erreur HTTP ${response.status}`;const e=new Error(message);e.status=response.status;e.data=data;throw e}
+  return {response,data};
+}
+async function saveAppLicense(token,meta){await localStorage.setItem(APP.LICENSE_TOKEN,JSON.stringify(await seal(token)));localStorage.setItem(APP.LICENSE_META,JSON.stringify(meta||{}));localStorage.removeItem(APP.CLOUD_TOKEN)}
+async function appLicenseToken(){const raw=localStorage.getItem(APP.LICENSE_TOKEN);if(!raw)return null;return unseal(JSON.parse(raw))}
+function appLicenseMeta(){try{return JSON.parse(localStorage.getItem(APP.LICENSE_META)||'{}')}catch{return {}}}
+async function saveCloudToken(token,expiresAt){localStorage.setItem(APP.CLOUD_TOKEN,JSON.stringify(await seal(token)));localStorage.setItem('asu_cloud_expiry',expiresAt||'')}
+async function cloudBearer(force=false){
+  const licenseToken=await appLicenseToken();if(!licenseToken)throw new Error('Active d’abord ton accès AppForge.');
+  const exp=Date.parse(localStorage.getItem('asu_cloud_expiry')||'');
+  if(!force&&exp>Date.now()+60000){const cached=localStorage.getItem(APP.CLOUD_TOKEN);if(cached)return unseal(JSON.parse(cached))}
+  const {data}=await v3Request('/v1/cloud/token',{method:'POST',body:{productId:APP.PRODUCT,installationId:installationId(),licenseToken}});
+  if(!data.enabled||!data.token)throw new Error('Le Worker ne donne pas de droit Cloud à cet accès. Vérifie le plan et les droits Cloud de la licence.');
+  await saveCloudToken(data.token,data.expiresAt);return data.token;
+}
+async function cloudApi(path,opts={}){const token=await cloudBearer();return v3Request(path,{...opts,token})}
+const CLOUD_PREF_KEY='appforge-business-cloud-preferences-v1';
+function cloudPrefs(){try{return {attachments:JSON.parse(localStorage.getItem(CLOUD_PREF_KEY)||'{}').attachments===true}}catch{return {attachments:false}}}
+function setCloudAttachments(enabled){localStorage.setItem(CLOUD_PREF_KEY,JSON.stringify({attachments:!!enabled,updatedAt:new Date().toISOString()}))}
+function pinInput(id,label,placeholder='PIN à 4 chiffres'){return `<label>${label}<input id="${id}" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" minlength="4" autocomplete="off" placeholder="${placeholder}"></label>`}
+function getBackupPin(confirmPin=false){const p=document.getElementById('cloudPass')?.value||'';if(!/^\d{4}$/.test(p))throw new Error('PIN invalide : 4 chiffres requis.');if(confirmPin){const c=document.getElementById('cloudPinConfirm')?.value||'';if(c!==p)throw new Error('La confirmation du PIN ne correspond pas.')}return p}
+function getRestoreKey(){const legacy=document.getElementById('cloudLegacyPassphrase')?.value||'';if(legacy)return legacy;const p=document.getElementById('cloudPass')?.value||'';if(!/^\d{4}$/.test(p))throw new Error('Pour restaurer, saisis le PIN à 4 chiffres ou l’ancienne phrase de sauvegarde dans le champ dédié.');return p}
+
+function b64encode(bytes){let bin='';for(let i=0;i<bytes.length;i++)bin+=String.fromCharCode(bytes[i]);return btoa(bin)}
+function b64decode(text){return Uint8Array.from(atob(text),c=>c.charCodeAt(0))}
+async function backupKey(pass,salt){const material=await crypto.subtle.importKey('raw',new TextEncoder().encode(pass),'PBKDF2',false,['deriveKey']);return crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:310000,hash:'SHA-256'},material,{name:'AES-GCM',length:256},false,['encrypt','decrypt'])}
+async function encryptCloudSnapshot(snapshot,pass){if(!/^\d{4}$/.test(pass))throw new Error('Saisis un PIN de sauvegarde composé de 4 chiffres.');const salt=crypto.getRandomValues(new Uint8Array(16)),iv=crypto.getRandomValues(new Uint8Array(12)),key=await backupKey(pass,salt),plain=new TextEncoder().encode(JSON.stringify(snapshot)),cipher=await crypto.subtle.encrypt({name:'AES-GCM',iv},key,plain);return {format:'appforge-business-ultimate-encrypted-v1',kdf:'PBKDF2-SHA256',iterations:310000,salt:b64encode(salt),iv:b64encode(iv),ciphertext:b64encode(new Uint8Array(cipher)),createdAt:new Date().toISOString()}}
+async function decryptCloudSnapshot(envelope,pass){if(!envelope||envelope.format!=='appforge-business-ultimate-encrypted-v1')throw new Error('Format de sauvegarde Cloud inconnu.');const key=await backupKey(pass,b64decode(envelope.salt));const plain=await crypto.subtle.decrypt({name:'AES-GCM',iv:b64decode(envelope.iv)},key,b64decode(envelope.ciphertext));const data=JSON.parse(new TextDecoder().decode(plain));if(!data||data.schema!==1)throw new Error('Structure de sauvegarde incompatible.');return D.ensureP2(data)}
+async function encryptR2Bytes(bytes,pass){if(!/^\d{4}$/.test(pass))throw new Error('Saisis un PIN de sauvegarde composé de 4 chiffres.');const salt=crypto.getRandomValues(new Uint8Array(16)),iv=crypto.getRandomValues(new Uint8Array(12)),key=await backupKey(pass,salt),cipher=await crypto.subtle.encrypt({name:'AES-GCM',iv},key,bytes);const header=new TextEncoder().encode('APFR2ENC1');const out=new Uint8Array(header.length+salt.length+iv.length+cipher.byteLength);out.set(header,0);out.set(salt,header.length);out.set(iv,header.length+salt.length);out.set(new Uint8Array(cipher),header.length+salt.length+iv.length);return out}
+async function decryptR2Bytes(bytes,pass){const header=new TextDecoder().decode(bytes.slice(0,9));if(header!=='APFR2ENC1')throw new Error('Format R2 chiffré non reconnu.');const salt=bytes.slice(9,25),iv=bytes.slice(25,37),cipher=bytes.slice(37),key=await backupKey(pass,salt);return new Uint8Array(await crypto.subtle.decrypt({name:'AES-GCM',iv},key,cipher))}
+function mergeBusinessState(remote){
+  const merged=JSON.parse(JSON.stringify(S));
+  for(const key of Object.keys(merged)){if(Array.isArray(merged[key])&&Array.isArray(remote[key])){const map=new Map(remote[key].filter(x=>x&&x.id).map(x=>[x.id,x]));for(const item of merged[key])if(item&&item.id)map.set(item.id,item);merged[key]=[...map.values()]}else if(key==='company'&&remote.company){merged.company={...remote.company,...merged.company}}else if(key==='counters'&&remote.counters){merged.counters={...remote.counters,...merged.counters}}}
+  return D.ensureP2(merged);
+}
+async function readCloudSnapshot(){const {data}=await cloudApi('/v1/cloud/snapshot?resource='+encodeURIComponent(APP.CLOUD_RESOURCE));UI.cloudRevision=Number(data.revision)||0;return data}
+async function cloudQuota(){const {data}=await cloudApi('/v1/cloud/quota');UI.cloudQuota=data;return data}
+async function renderCloudFiles(){const {data}=await cloudApi('/v1/cloud/files');UI.cloudFiles=data.items||[];return data}
+function cloudFileTable(){if(!UI.cloudFiles.length)return '<div class="empty">Aucun fichier dans R2 pour cet accès.</div>';return `<div class="tablewrap"><table><thead><tr><th>Fichier</th><th>Taille</th><th>Révision</th><th>SHA-256</th><th>Action</th></tr></thead><tbody>${UI.cloudFiles.map(f=>`<tr><td>${esc(f.fileId)}</td><td>${(f.sizeBytes/1024).toFixed(1)} Ko</td><td>${f.revision}</td><td><small>${esc(String(f.sha256||'').slice(0,16))}…</small></td><td>${btn('Télécharger','cloudDownload',{id:f.fileId})}</td></tr>`).join('')}</tbody></table></div>`}
+
+/* Pages */
+const PAGES = {};
+
+PAGES.dashboard = () => {
+  const k = D.kpis(S, new Date());
+  const today = D.isoDay();
+  const delta = k.ventesPrec ? ((k.ventesMois - k.ventesPrec) / k.ventesPrec * 100) : null;
+  const KPI_ROUTES = {'Chiffre d’affaires net':'ventes','Ventes du mois':'ventes','Encaissements':'ventes','Créances clients':'ventes','Impayés':'ventes','Devis en attente':'ventes','Commandes en cours':'ventes','Projets en production':'projets','Projets en retard':'projets','Livraisons en cours':'livraisons','Tickets support ouverts':'support','Tickets en retard':'support','Applications commercialisées':'applications','Licences actives':'licences','Licences expirant (30 j)':'licences'};
+  const card = (l, v, s = '', c = '') => `<button class="kpi ${c}" data-act="dashboardKpi" data-v="${KPI_ROUTES[l]||'reporting'}" title="Afficher le détail"><span>${esc(l)}</span><strong>${v}</strong>${s ? `<small>${s}</small>` : ''}</button>`;
+  const cards = [
+    card('Chiffre d’affaires net', money(k.ca), 'Factures émises moins avoirs'),
+    card('Ventes du mois', money(k.ventesMois), delta === null ? 'Pas de données le mois précédent' : `${delta >= 0 ? '+' : ''}${delta.toFixed(1)} % vs mois précédent`),
+    card('Encaissements', money(k.encaisse), `Ce mois : ${money(k.encaisseMois)}`, 'ok'),
+    card('Créances clients', money(k.creances), 'Factures non soldées', k.creances > 0 ? 'warn' : ''),
+    card('Impayés', money(k.impayes), 'Échéance dépassée', k.impayes > 0 ? 'bad' : ''),
+    card('Devis en attente', k.devisAttente, 'Envoyés, sans réponse'),
+    card('Commandes en cours', k.commandesEnCours, 'Non livrées'),
+    card('Projets en production', k.projetsProduction, 'Conception, développement, tests'),
+    card('Projets en retard', k.projetsRetard, 'Échéance dépassée', k.projetsRetard ? 'bad' : ''),
+    card('Livraisons en cours', k.livraisonsAttente, 'Non archivées'),
+    card('Tickets support ouverts', k.ticketsOuverts, 'Ouverts ou en attente client'),
+    card('Tickets en retard', k.ticketsRetard, 'Délai de priorité dépassé', k.ticketsRetard ? 'bad' : ''),
+    card('Applications commercialisées', k.appsCommercialisees, 'Produits standard actifs'),
+    card('Licences actives', k.licencesActives, 'Reçues du serveur'),
+    card('Licences expirant (30 j)', k.licencesExpirant, '', k.licencesExpirant ? 'warn' : '')
+  ].join('');
+  const late = S.invoices.filter((i) => i.dueDate && i.dueDate < today && D.invoiceDue(S, i) > 0.005);
+  const lateP = S.projects.filter((p) => p.deadline && p.deadline < today && p.stage !== 'Maintenance');
+  const alerts = [
+    ...late.map((i) => `<li>Facture ${esc(i.number)} impayée (${money(D.invoiceDue(S, i))}), échue le ${dateFr(i.dueDate)}</li>`),
+    ...lateP.map((p) => `<li>Projet ${esc(p.name)} en retard (échéance ${dateFr(p.deadline)})</li>`)
+  ];
+  const empty = !S.clients.length && !S.invoices.length;
+  return {
+    title: 'Tableau de bord', sub: 'Tous les chiffres sont calculés à partir des données saisies. Aucun chiffre factice.',
+    actions: '', search: false,
+    body: () => `
+      ${empty ? `<div class="card"><h2>Bienvenue</h2><p class="note">Aucune donnée pour le moment. Vous pouvez saisir vos clients et produits, ou charger des données de démonstration (préfixées « [Démo] ») pour tester les workflows.</p>${W('admin') ? btn('Charger la démonstration', 'loadDemo') : ''}</div>` : ''}
+      <div class="kpis">${cards}</div>
+      <div class="grid2">
+        <div class="card"><h2>Alertes</h2>${alerts.length ? `<ul>${alerts.join('')}</ul>` : '<p class="mu">Aucune alerte.</p>'}</div>
+        <div class="card"><h2>Dernières opérations</h2>${S.audit.length ? `<ul>${S.audit.slice(-5).reverse().map((a) => `<li>${esc(a.action)} — ${esc(a.label)} <span class="mu">(${esc(a.user)})</span></li>`).join('')}</ul>` : '<p class="mu">Aucune opération.</p>'}</div>
+      </div>
+      <p class="note">Revenus récurrents : non affichés, prévus en Phase 3. Aucune donnée n’est simulée.</p>`
+  };
+};
+
+PAGES.crm = () => {
+  const tab = UI.crmTab;
+  const tabs = `<button class="${tab === 'prospects' ? 'on' : ''}" data-act="crmTab" data-v="prospects">Prospects (${S.leads.filter((l) => !l.clientId).length})</button><button class="${tab === 'clients' ? 'on' : ''}" data-act="crmTab" data-v="clients">Clients (${S.clients.length})</button>`;
+  const actions = W('crm') ? `<button class="primary" data-act="newLead">+ Prospect</button><button data-act="newClient">+ Client</button>` : '';
+  return {
+    title: 'CRM', sub: 'Un prospect se convertit en client sans ressaisie.', tabs, actions, search: true,
+    body: () => {
+      if (tab === 'clients') {
+        return table(S.clients, [
+          { h: 'Client', f: (c) => `<strong>${esc(c.name)}</strong><br><small class="mu">${esc(c.number)} · ${esc(c.type)}</small>` },
+          { h: 'Contact', f: (c) => esc(c.contact || '—') },
+          { h: 'E-mail', f: (c) => esc(c.email || '—') },
+          { h: 'Téléphone', f: (c) => esc(c.phone || '—') },
+          { h: 'NIF / STAT', f: (c) => esc([c.nif, c.stat].filter(Boolean).join(' / ') || '—') },
+          { h: '', f: (c) => (W('crm') ? btn('Modifier', 'editClient', { id: c.id }) : '') }
+        ], { textOf: (c) => [c.name, c.contact, c.email, c.phone, c.nif, c.stat].join(' '), empty: 'Aucun client. Convertissez un prospect ou créez un client.' });
+      }
+      const q = UI.q.trim().toLowerCase();
+      const leads = S.leads.filter((l) => !q || [l.name, l.company, l.need].join(' ').toLowerCase().includes(q));
+      const card = (l) => {
+        const closed = D.LEAD_CLOSED.includes(l.stage);
+        const cl = byId(S.clients, l.clientId);
+        return `<div class="lead"><strong>${esc(l.name)}</strong><small>${esc(l.company || 'Particulier')}${l.source ? ' · ' + esc(l.source) : ''}</small><p>${esc(l.need || '')}</p>
+          ${cl ? `<span class="badge ok">Client : ${esc(cl.number)}</span>` : (W('crm') ? btn('Convertir en client', 'convertLead', { id: l.id }) : '')}
+          ${W('crm') && !closed ? `<div class="gap"><select data-change="moveLead" data-id="${l.id}" aria-label="Étape">${D.LEAD_STAGES.map((s) => `<option value="${esc(s)}" ${s === l.stage ? 'selected' : ''}>${esc(s)}</option>`).join('')}</select></div>` : `<div class="gap">${statusBadge(l.stage)}</div>`}</div>`;
+      };
+      return `<div class="kanban">${D.LEAD_STAGES.map((st) => { const items = leads.filter((l) => l.stage === st); return `<div class="col"><h3>${esc(st)} · ${items.length}</h3>${items.map(card).join('')}</div>`; }).join('')}</div>`;
+    }
+  };
+};
+
+PAGES.catalogue = () => ({
+  title: 'Catalogue', sub: 'Applications standard, prestations sur mesure, maintenance et support. Une application peut être vendue à plusieurs clients.',
+  actions: W('catalogue') ? '<button class="primary" data-act="newProduct">+ Produit</button>' : '', search: true,
+  body: () => table(S.products, [
+    { h: 'Nom', f: (p) => `<strong>${esc(p.name)}</strong><br><small class="mu">${esc(p.identifiant)}</small>` },
+    { h: 'Type', f: (p) => esc(p.type) },
+    { h: 'Catégorie', f: (p) => esc(p.category || '—') },
+    { h: 'Prix', f: (p) => money(p.price) },
+    { h: 'Licence', f: (p) => esc(p.licenseType || '—') },
+    { h: 'Statut', f: (p) => statusBadge(p.status) },
+    { h: '', f: (p) => (W('catalogue') ? `<div class="row">${btn('Modifier', 'editProduct', { id: p.id })}${btn(p.status === 'actif' ? 'Désactiver' : 'Activer', 'toggleProduct', { id: p.id })}</div>` : '') }
+  ], { textOf: (p) => [p.name, p.identifiant, p.type, p.category].join(' '), empty: 'Aucun produit dans le catalogue.' })
+});
+
+function quoteRowActions(q) {
+  if (!W('ventes')) return btn('Imprimer', 'printQuote', { id: q.id });
+  const b = [];
+  if (q.status === 'brouillon') b.push(btn('Envoyer', 'quoteStatus', { id: q.id, status: 'envoyé' }));
+  if (q.status === 'envoyé') { b.push(btn('Accepté', 'quoteStatus', { id: q.id, status: 'accepté' })); b.push(btn('Refusé', 'quoteStatus', { id: q.id, status: 'refusé' })); }
+  if (q.status === 'refusé') b.push(btn('Réviser', 'quoteStatus', { id: q.id, status: 'brouillon' }));
+  if (q.status === 'accepté' && !S.orders.some((o) => o.quoteId === q.id)) b.push(btn('Créer la commande', 'quoteOrder', { id: q.id }));
+  b.push(btn('Imprimer', 'printQuote', { id: q.id }));
+  return `<div class="row">${b.join('')}</div>`;
+}
+function orderRowActions(o) {
+  if (!W('ventes')) return '';
+  const s = D.orderSummary(S, o.id); const b = [];
+  const hasInv = S.invoices.some((i) => i.orderId === o.id);
+  if (!hasInv && o.depositPct > 0) b.push(btn('Facture d’acompte', 'orderInvoice', { id: o.id, type: 'acompte' }));
+  if (s.toInvoice > EPS_UI) b.push(btn('Facturer le reste', 'orderInvoice', { id: o.id, type: 'solde' }));
+  if (o.status === 'confirmée') b.push(btn('En production', 'orderStatus', { id: o.id, status: 'en production' }));
+  if (o.status === 'en production') b.push(btn('Livrée', 'orderStatus', { id: o.id, status: 'livrée' }));
+  return `<div class="row">${b.join('')}</div>`;
+}
+const EPS_UI = 0.005;
+function invoiceRowActions(i) {
+  const due = D.invoiceDue(S, i); const net = D.invoiceNet(S, i); const b = [];
+  if (W('ventes') && due > EPS_UI) b.push(btn('Paiement', 'invoicePay', { id: i.id }));
+  if (W('ventes') && net > EPS_UI) b.push(btn('Avoir', 'invoiceCredit', { id: i.id }));
+  b.push(btn('Imprimer', 'printInvoice', { id: i.id }));
+  return `<div class="row">${b.join('')}</div>`;
+}
+function paymentRowActions(p) {
+  if (p.status !== 'en attente') return '';
+  const b = [];
+  if (W('paiements')) { b.push(btn('Confirmer', 'paymentConfirm', { id: p.id })); b.push(btn('Rejeter', 'paymentReject', { id: p.id })); }
+  return `<div class="row">${b.join('') || '<span class="mu">Validation réservée à la direction</span>'}</div>`;
+}
+
+PAGES.ventes = () => {
+  const t = UI.tab;
+  const tabs = [['devis', 'Devis'], ['commandes', 'Commandes'], ['factures', 'Factures'], ['paiements', 'Paiements'], ['avoirs', 'Avoirs']]
+    .map(([k, l]) => `<button class="${t === k ? 'on' : ''}" data-act="ventesTab" data-v="${k}">${l}</button>`).join('');
+  const actions = W('ventes') && t === 'devis' ? '<button class="primary" data-act="quoteNew">+ Devis</button>' : '';
+  const bodies = {
+    devis: () => table(S.quotes, [
+      { h: 'Numéro', f: (q) => `<strong>${esc(q.number)}</strong>${q.revisions ? `<br><small class="mu">révision ${q.revisions}</small>` : ''}` },
+      { h: 'Client', f: (q) => esc(clientName(q.clientId)) },
+      { h: 'Date', f: (q) => dateFr(q.createdAt) },
+      { h: 'Total', f: (q) => money(q.total) },
+      { h: 'Statut', f: (q) => statusBadge(q.status) },
+      { h: 'Actions', f: quoteRowActions }
+    ], { textOf: (q) => [q.number, clientName(q.clientId), q.status].join(' '), empty: 'Aucun devis. Créez-en un depuis un client.' }),
+    commandes: () => table(S.orders, [
+      { h: 'Numéro', f: (o) => `<strong>${esc(o.number)}</strong><br><small class="mu">devis ${esc(o.quoteNumber)}</small>` },
+      { h: 'Client', f: (o) => esc(clientName(o.clientId)) },
+      { h: 'Total', f: (o) => money(o.total) },
+      { h: 'Facturé', f: (o) => money(D.orderSummary(S, o.id).invoiced) },
+      { h: 'Encaissé', f: (o) => money(D.orderSummary(S, o.id).paid) },
+      { h: 'Solde dû', f: (o) => money(D.orderSummary(S, o.id).due) },
+      { h: 'Statut', f: (o) => statusBadge(o.status) },
+      { h: 'Actions', f: orderRowActions }
+    ], { textOf: (o) => [o.number, o.quoteNumber, clientName(o.clientId), o.status].join(' '), empty: 'Aucune commande. Acceptez un devis puis créez la commande.' }),
+    factures: () => table(S.invoices, [
+      { h: 'Numéro', f: (i) => `<strong>${esc(i.number)}</strong><br><small class="mu">${esc(i.type)}</small>` },
+      { h: 'Client', f: (i) => esc(clientName(i.clientId)) },
+      { h: 'Montant net', f: (i) => money(D.invoiceNet(S, i)) },
+      { h: 'Encaissé', f: (i) => money(D.invoicePaid(S, i.id)) },
+      { h: 'Dû', f: (i) => money(D.invoiceDue(S, i)) },
+      { h: 'Échéance', f: (i) => dateFr(i.dueDate) },
+      { h: 'Actions', f: invoiceRowActions }
+    ], { textOf: (i) => [i.number, i.type, clientName(i.clientId)].join(' '), empty: 'Aucune facture émise.' }),
+    paiements: () => table(S.payments, [
+      { h: 'Numéro', f: (p) => `<strong>${esc(p.number)}</strong><br><small class="mu">${dateFr(p.createdAt)}</small>` },
+      { h: 'Facture', f: (p) => esc((byId(S.invoices, p.invoiceId) || {}).number || '—') },
+      { h: 'Montant', f: (p) => money(p.amount) },
+      { h: 'Mode', f: (p) => esc(p.method) },
+      { h: 'Référence', f: (p) => esc(p.reference || '—') },
+      { h: 'Statut', f: (p) => statusBadge(p.status) + (p.rejectReason ? `<br><small class="mu">${esc(p.rejectReason)}</small>` : '') },
+      { h: 'Actions', f: paymentRowActions }
+    ], { textOf: (p) => [p.number, p.method, p.reference, p.status].join(' '), empty: 'Aucun paiement déclaré.' }),
+    avoirs: () => table(S.credits, [
+      { h: 'Numéro', f: (c) => `<strong>${esc(c.number)}</strong>` },
+      { h: 'Facture', f: (c) => esc((byId(S.invoices, c.invoiceId) || {}).number || '—') },
+      { h: 'Montant', f: (c) => money(c.amount) },
+      { h: 'Motif', f: (c) => esc(c.reason) },
+      { h: 'Date', f: (c) => dateFr(c.issuedAt) }
+    ], { textOf: (c) => [c.number, c.reason].join(' '), empty: 'Aucun avoir.' })
+  };
+  return { title: 'Ventes', sub: 'Montants facturés, encaissés et soldes dus sont séparés. Une facture émise ne se modifie pas : on passe par un avoir.', tabs, actions, search: true, body: bodies[t] || bodies.devis };
+};
+
+PAGES.projets = () => ({
+  title: 'Projets', sub: 'Circuit B : conception et développement sur mesure. Les garde-fous financiers bloquent certaines étapes tant que l’acompte ou le solde n’est pas encaissé.',
+  actions: W('projets') ? '<button class="primary" data-act="projectNew">+ Projet</button>' : '', search: true,
+  body: () => table(S.projects, [
+    { h: 'Projet', f: (p) => `<strong>${esc(p.name)}</strong><br><small class="mu">${esc(p.number)}</small>` },
+    { h: 'Client', f: (p) => (p.personal ? '<span class="badge info">Personnel</span>' : esc(clientName(p.clientId))) },
+    { h: 'Commande', f: (p) => { if (p.personal) return '—'; const o = byId(S.orders, p.orderId); return o ? esc(o.number) : '<span class="badge warn">non liée</span>'; } },
+    { h: 'Étape', f: (p) => `<span class="badge info">${esc(p.stage)}</span>` },
+    { h: 'Échéance', f: (p) => dateFr(p.deadline) },
+    { h: 'Actions', f: (p) => `<div class="row">${btn('Détail', 'projectDetail', { id: p.id })}${W('projets') && p.stage !== D.PROJECT_STAGES[D.PROJECT_STAGES.length - 1] ? btn('Étape suivante', 'projectAdvance', { id: p.id }) : ''}</div>` }
+  ], { textOf: (p) => [p.name, p.number, p.stage].join(' '), empty: 'Aucun projet.' })
+});
+
+function filterBar(scope, selects) {
+  return `<div class="row" style="margin:8px 0">${selects.map((s) => `<select data-change="filter" data-scope="${scope}" data-key="${s.key}" aria-label="${esc(s.label)}" style="max-width:230px">${s.options.map(([v, l]) => `<option value="${esc(v)}" ${String(UI.filters[scope][s.key] || '') === String(v) ? 'selected' : ''}>${esc(l)}</option>`).join('')}</select>`).join('')}</div>`;
+}
+function applyApps() {
+  const f = UI.filters.apps;
+  const cnt = (a) => UI.appCounts[a.productId] || { active: 0, revoked: 0 };
+  const list = (UI.apps || []).filter((a) => !f.status || (f.status === 'actif' ? a.status === 'active' : a.status !== 'active'));
+  const sorters = {
+    nom: (a, b) => a.name.localeCompare(b.name, 'fr'),
+    actives: (a, b) => cnt(b).active - cnt(a).active || a.name.localeCompare(b.name, 'fr'),
+    revoquees: (a, b) => cnt(b).revoked - cnt(a).revoked || a.name.localeCompare(b.name, 'fr'),
+    recent: (a, b) => String(b.createdAt || '').localeCompare(String(a.createdAt || ''))
+  };
+  return list.slice().sort(sorters[f.sort] || sorters.nom);
+}
+function applyLicences() {
+  const f = UI.filters.lic;
+  const list = S.licenseRegister.filter((l) => (!f.status || l.status === f.status) && (!f.product || l.productId === f.product));
+  const sorters = {
+    client: (a, b) => a.customerName.localeCompare(b.customerName, 'fr'),
+    recent: (a, b) => String(b.createdAt || '').localeCompare(String(a.createdAt || '')),
+    expiration: (a, b) => String(a.expiresAt || '9999').localeCompare(String(b.expiresAt || '9999'))
+  };
+  return list.slice().sort(sorters[f.sort] || sorters.client);
+}
+const APP_FILTERS = [
+  { key: 'status', label: 'Statut', options: [['', 'Tous les statuts'], ['actif', 'Actives'], ['inactif', 'Inactives']] },
+  { key: 'sort', label: 'Tri', options: [['nom', 'Nom A → Z'], ['actives', 'Licences actives ↓'], ['revoquees', 'Révoquées ↓'], ['recent', 'Plus récentes']] }
+];
+PAGES.applications = () => {
+  const canW = W('licences');
+  const apps = UI.apps;
+  const head = `<div class="card"><h2>Catalogue des applications · Worker/D1</h2><p class="note">Enregistrer ici une application crée son éligibilité Trial automatique de 72 h. Le compteur Trial démarre uniquement à la première activation en ligne côté application cliente. Trial n’est pas une licence commerciale à créer manuellement.</p><div class="row">${localStorage.getItem(VAULT.tokenKey) ? btn('+ Enregistrer une application', 'appRegister') + btn('Actualiser', 'refreshApps') : ''}</div></div>`;
+  if (!apps) return { title: 'Applications', sub: 'Applications enregistrées dans le Worker et licences émises pour chacune.', actions: '', search: false,
+    body: () => head + `<p class="mu">${localStorage.getItem(VAULT.tokenKey) ? 'Appuyez sur Actualiser.' : 'Enregistrez d’abord le jeton administrateur dans Licences.'}</p>` };
+  return { title: 'Applications', sub: 'Applications enregistrées dans le Worker et licences émises pour chacune.', actions: '', search: true,
+    body: () => head + filterBar('apps', APP_FILTERS) + table(applyApps(), [
+      { h: 'Application', f: (a) => `<strong>${esc(a.name)}</strong><br><small class="mu">${esc(a.productId)}</small>` },
+      { h: 'Statut', f: (a) => statusBadge(a.status === 'active' ? 'actif' : 'inactif') },
+      { h: 'Licences actives', f: (a) => String((UI.appCounts[a.productId] || {}).active || 0) },
+      { h: 'Révoquées', f: (a) => String((UI.appCounts[a.productId] || {}).revoked || 0) },
+      { h: '', f: (a) => (canW ? `<div class="row">${btn('Renommer', 'appRename', { id: a.productId })}${btn(a.status === 'active' ? 'Désactiver' : 'Activer', 'toggleApp', { id: a.productId })}${btn('Supprimer', 'appDelete', { id: a.productId })}</div>` : '') }
+    ], { textOf: (a) => [a.name, a.productId].join(' '), empty: 'Aucune application dans le Worker.' })
+  };
+};
+PAGES.admin = () => {
+  const c = S.company; const ro = !W('admin'); const dis = ro ? 'disabled' : '';
+  const RES_LABEL = D.RESOURCES;
+  const matrix = `<div class="tablewrap"><table><thead><tr><th>Profil</th>${RES_LABEL.map((r) => `<th>${esc(r)}</th>`).join('')}</tr></thead><tbody>${D.ROLES.map((role) => `<tr><td>${esc(role)}</td>${RES_LABEL.map((r) => { const p = (D.PERMS[role] || {})[r] || ''; return `<td>${p === 'rw' ? 'L + É' : p === 'r' ? 'L' : '—'}</td>`; }).join('')}</tr>`).join('')}</tbody></table></div><p class="note">L = lecture, É = écriture. Les droits sont vérifiés dans la couche domaine à chaque opération.</p>`;
+  const counters = Object.entries(S.counters).sort().map(([k, v]) => `<tr><td>${esc(k)}</td><td>${v}</td></tr>`).join('');
+  return {
+    title: 'Administration', sub: 'Entreprise, utilisateurs, profils, numérotation et sauvegardes.', actions: '', search: false,
+    body: () => `
+      <div class="grid2">
+        <div class="card"><h2>Entreprise</h2>
+          <form data-form="company"><div class="formgrid">
+            ${[['name', 'Nom'], ['nif', 'NIF'], ['stat', 'Numéro STAT'], ['address', 'Adresse'], ['phone', 'Téléphone'], ['email', 'E-mail']].map(([n, l]) => `<label>${l}<input name="${n}" value="${esc(c[n] || '')}" ${dis}></label>`).join('')}
+          </div><div class="row gap">${ro ? '' : '<button class="primary">Enregistrer</button>'}</div></form>
+        </div>
+        <div class="card"><h2>Modes de paiement</h2>
+          <div class="row">${S.paymentModes.map((m) => `<span class="badge info">${esc(m)}</span>`).join('')}</div>
+          ${ro ? '' : '<form data-form="paymentMode" class="row gap"><input name="name" placeholder="Nouveau mode" required style="max-width:240px"><button class="small">Ajouter</button></form>'}
+          <p class="note gap">MVola : validation manuelle obligatoire. BNI et Visa seront ajoutés plus tard.</p>
+        </div>
+      </div>
+      <div class="card"><h2>Utilisateurs et profils</h2>
+        ${table(S.users, [
+          { h: 'Nom', f: (u) => esc(u.name) },
+          { h: 'Profil', f: (u) => esc(u.role) },
+          { h: 'Session', f: (u) => (u.id === S.activeUserId ? '<span class="badge ok">Actif</span>' : '') }
+        ], { textOf: (u) => [u.name, u.role].join(' '), empty: 'Aucun utilisateur.' })}
+        <p class="note">Le profil actif se choisit en haut de l’écran. Ce sélecteur est local : il ne remplace pas une authentification serveur.</p>
+        ${ro ? '' : '<form data-form="user" class="row gap"><input name="name" placeholder="Nom" required style="max-width:240px"><select name="role" style="max-width:240px">' + D.ROLES.map((r) => `<option>${esc(r)}</option>`).join('') + '</select><button class="small">Ajouter</button></form>'}
+      </div>
+      <div class="card"><h2>Matrice des droits</h2>${matrix}</div>
+      <div class="card"><h2>Numérotation</h2>${counters ? `<div class="tablewrap"><table><thead><tr><th>Série</th><th>Dernier numéro</th></tr></thead><tbody>${counters}</tbody></table></div>` : '<p class="mu">Aucun document numéroté.</p>'}</div>
+      <div class="card"><h2>Sauvegarde et données</h2>
+        <p class="note">Exportez régulièrement une sauvegarde JSON. Elle servira aussi de base à la migration.</p>
+        <div class="row">
+          <button data-act="exportJson">Exporter la sauvegarde</button>
+          ${ro ? '' : '<button data-act="importPick">Importer une sauvegarde</button><button data-act="loadDemo">Charger la démonstration</button><button data-act="resetData">Effacer les données locales</button>'}
+        </div></div>`
+  };
+};
+
+PAGES.journal = () => ({
+  title: 'Journal d’audit', sub: 'Chaque opération enregistre l’utilisateur, le profil, l’action et l’objet concerné.', actions: '', search: true,
+  body: () => table([...S.audit].reverse(), [
+    { h: 'Date et heure', f: (a) => esc(new Date(a.at).toLocaleString('fr-FR')) },
+    { h: 'Utilisateur', f: (a) => esc(a.user) },
+    { h: 'Profil', f: (a) => esc(a.role) },
+    { h: 'Action', f: (a) => esc(a.action) },
+    { h: 'Entité', f: (a) => esc(a.entity) },
+    { h: 'Libellé', f: (a) => esc(a.label) }
+  ], { textOf: (a) => [a.user, a.action, a.entity, a.label].join(' '), empty: 'Journal vide.' })
+});
+
+/* ===================== PHASE 2 : PAGES ===================== */
+const CSV_SEP = ';';
+function toCsv(headers, rows) {
+  const cell = (v) => { const s = String(v ?? ''); return /[;"\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
+  return '\uFEFF' + [headers, ...rows].map((r) => r.map(cell).join(CSV_SEP)).join('\r\n');
+}
+function downloadText(name, text, type = 'text/csv') {
+  const blob = new Blob([text], { type: type + ';charset=utf-8' });
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+const projectName = (id) => { const p = byId(S.projects, id); return p ? p.name : '—'; };
+const userName = (id) => { const u = byId(S.users, id); return u ? u.name : 'Non assigné'; };
+const taskBadge = (st) => statusBadge(st === 'Terminé' ? 'Terminé' : st === 'Bloqué' ? 'Bloqué' : st === 'En cours' ? 'En cours' : 'À faire');
+
+PAGES.production = () => {
+  const view = UI.prodView || 'kanban';
+  const pid = UI.prodProject || '';
+  const tabs = `<button class="${view === 'kanban' ? 'on' : ''}" data-act="prodView" data-v="kanban">Kanban</button><button class="${view === 'liste' ? 'on' : ''}" data-act="prodView" data-v="liste">Liste</button>`;
+  const actions = `<select data-change="prodProject" aria-label="Projet" style="max-width:240px"><option value="">Tous les projets</option>${S.projects.map((p) => `<option value="${esc(p.id)}" ${p.id === pid ? 'selected' : ''}>${esc(p.name)}</option>`).join('')}</select>${W('projets') ? '<button class="primary" data-act="newTask">+ Tâche</button>' : ''}`;
+  return {
+    title: 'Production', sub: 'Tâches, responsables, priorités, dépendances et blocages. Une tâche dépendante ne peut pas être terminée avant sa prérequise.',
+    tabs, actions, search: true,
+    body: () => {
+      const q = UI.q.trim().toLowerCase();
+      const tasks = S.tasks.filter((t) => (!pid || t.projectId === pid) && (!q || [t.title, t.responsable, projectName(t.projectId)].join(' ').toLowerCase().includes(q)));
+      if (view === 'liste') {
+        return table(tasks, [
+          { h: 'Tâche', f: (t) => `<strong>${esc(t.title)}</strong><br><small class="mu">${esc(t.number)} · ${esc(projectName(t.projectId))}</small>` },
+          { h: 'Responsable', f: (t) => esc(t.responsable || '—') },
+          { h: 'Priorité', f: (t) => statusBadge(t.priority === 'Haute' ? 'retard' : t.priority === 'Moyenne' ? 'attente' : 'info') + ` <small class="mu">${esc(t.priority)}</small>` },
+          { h: 'Échéance', f: (t) => dateFr(t.deadline) },
+          { h: 'Dépendance', f: (t) => (t.dependsOn ? esc((byId(S.tasks, t.dependsOn) || {}).title || '—') : '—') },
+          { h: 'Statut', f: (t) => taskBadge(t.status) + (t.blocage ? `<br><small class="mu">${esc(t.blocage)}</small>` : '') },
+          { h: 'Changer', f: (t) => (W('projets') ? `<select data-change="taskStatus" data-id="${t.id}" aria-label="Statut">${D.TASK_STATUS.map((s) => `<option ${s === t.status ? 'selected' : ''}>${esc(s)}</option>`).join('')}</select>` : '') }
+        ], { textOf: (t) => [t.title, t.responsable, t.status].join(' '), empty: 'Aucune tâche. Créez-en une depuis un projet.' });
+      }
+      const card = (t) => {
+        const dep = t.dependsOn ? byId(S.tasks, t.dependsOn) : null;
+        const blocked = dep && dep.status !== 'Terminé';
+        return `<div class="lead"><strong>${esc(t.title)}</strong><small>${esc(projectName(t.projectId))} · ${esc(t.responsable || 'Sans responsable')}</small>
+          <div class="gap">${statusBadge(t.priority)} ${t.deadline ? `<span class="mu">Échéance ${dateFr(t.deadline)}</span>` : ''}</div>
+          ${dep ? `<p class="mu">Dépend de : ${esc(dep.title)}${blocked ? ' (non terminée)' : ''}</p>` : ''}
+          ${t.blocage ? `<p class="mu">Blocage : ${esc(t.blocage)}</p>` : ''}
+          ${W('projets') ? `<div class="gap"><select data-change="taskStatus" data-id="${t.id}" aria-label="Statut">${D.TASK_STATUS.map((s) => `<option ${s === t.status ? 'selected' : ''}>${esc(s)}</option>`).join('')}</select></div>` : `<div class="gap">${taskBadge(t.status)}</div>`}</div>`;
+      };
+      return `<div class="kanban">${D.TASK_STATUS.map((st) => { const items = tasks.filter((t) => t.status === st); return `<div class="col"><h3>${esc(st)} · ${items.length}</h3>${items.map(card).join('')}</div>`; }).join('')}</div>`;
+    }
+  };
+};
+
+PAGES.livraisons = () => ({
+  title: 'Livraisons', sub: 'Chaque livraison suit 8 étapes. Un APK ou des sources sont requis pour le contrôle technique, un procès-verbal pour la réception. Une livraison n’est jamais déclarée terminée sans contrôle.',
+  actions: W('projets') ? '<button class="primary" data-act="newDelivery">+ Livraison</button>' : '', search: true,
+  body: () => table(S.deliveries, [
+    { h: 'Livraison', f: (d) => `<strong>${esc(d.number)}</strong><br><small class="mu">${esc(d.version)}</small>` },
+    { h: 'Projet', f: (d) => esc(projectName(d.projectId)) },
+    { h: 'Étape', f: (d) => (d.status === 'en cours' ? esc(D.DELIVERY_STEPS[d.step]) : '—') },
+    { h: 'Avancement', f: (d) => `${d.steps.filter((s) => s.done).length} / ${D.DELIVERY_STEPS.length}` },
+    { h: 'Statut', f: (d) => statusBadge(d.status === 'en cours' ? 'en cours' : d.status) },
+    { h: '', f: (d) => btn('Détail', 'deliveryDetail', { id: d.id }) }
+  ], { textOf: (d) => [d.number, d.version, projectName(d.projectId), d.status].join(' '), empty: 'Aucune livraison. Créez-en une pour un projet.' })
+});
+
+PAGES.support = () => {
+  const st = D.supportStats ? D.supportStats(S, new Date()) : { open: 0, late: 0, avgSatisfaction: null };
+  return {
+    title: 'Support et maintenance', sub: 'Chaque ticket est relié à un client, et s’il y a lieu à un produit et à un projet. Les délais suivent la priorité.',
+    actions: W('support') ? '<button class="primary" data-act="newTicket">+ Ticket</button>' : '', search: true,
+    body: () => `
+      <div class="kpis">
+        <div class="kpi"><span>Tickets ouverts</span><strong>${st.open}</strong></div>
+        <div class="kpi ${st.late ? 'bad' : ''}"><span>En retard</span><strong>${st.late}</strong></div>
+        <div class="kpi ok"><span>Satisfaction moyenne</span><strong>${st.avgSatisfaction === null ? '—' : st.avgSatisfaction + ' / 5'}</strong></div>
+      </div>
+      ${table(S.tickets, [
+        { h: 'Ticket', f: (t) => `<strong>${esc(t.title)}</strong><br><small class="mu">${esc(t.number)} · ${esc(clientName(t.clientId))}${t.projectId ? ' · ' + esc(projectName(t.projectId)) : ''}</small>` },
+        { h: 'Priorité', f: (t) => `<span class="badge info">${esc(t.priority)}</span>` },
+        { h: 'Échéance', f: (t) => `${new Date(t.dueAt).toLocaleString('fr-FR')} ${D.isTicketLate ? (D.isTicketLate(t, new Date()) ? '<span class="badge danger">En retard</span>' : '') : ''}` },
+        { h: 'Statut', f: (t) => statusBadge(t.status) },
+        { h: 'Assigné à', f: (t) => (W('support') ? `<select data-change="ticketAssign" data-id="${t.id}" aria-label="Assigné"><option value="">Non assigné</option>${S.users.map((u) => `<option value="${esc(u.id)}" ${u.id === t.assignee ? 'selected' : ''}>${esc(u.name)}</option>`).join('')}</select>` : esc(userName(t.assignee))) },
+        { h: 'Actions', f: (t) => supportActions(t) }
+      ], { textOf: (t) => [t.number, t.title, clientName(t.clientId), t.status, t.priority].join(' '), empty: 'Aucun ticket.' })}`
+  };
+};
+function supportActions(t) {
+  if (!W('support')) return '';
+  const b = [btn('Commenter', 'ticketComment', { id: t.id })];
+  if (['ouvert', 'en cours', 'en attente client'].includes(t.status)) b.push(btn('Résoudre', 'ticketResolve', { id: t.id }));
+  if (t.status === 'résolu') { b.push(btn('Clore', 'ticketClose', { id: t.id })); b.push(btn('Réouvrir', 'ticketReopen', { id: t.id })); }
+  if (['résolu', 'clos'].includes(t.status)) b.push(btn(t.satisfaction ? `Satisfaction ${t.satisfaction}/5` : 'Noter la satisfaction', 'ticketRate', { id: t.id }));
+  return `<div class="row">${b.join('')}</div>`;
+}
+
+PAGES.renouvellement = () => {
+  const today = D.isoDay();
+  const in30 = D.isoDay(new Date(Date.now() + 30 * 864e5));
+  const expiring = S.licenses.filter((l) => l.status === 'active' && l.expiresAt && l.expiresAt >= today && l.expiresAt <= in30);
+  const inactive = D.inactiveClients(S, new Date(), 180);
+  return {
+    title: 'Renouvellement et fidélisation', sub: 'Alertes avant expiration, relances commerciales et clients inactifs (plus de 180 jours sans commande ni ticket).',
+    actions: W('ventes') ? '<button class="primary" data-act="newRelance">+ Relance</button>' : '', search: true,
+    body: () => `
+      <div class="card"><h2>Licences expirant dans les 30 jours</h2>
+        ${table(expiring, [
+          { h: 'Produit', f: (l) => esc(l.product) },
+          { h: 'Licence', f: (l) => esc(l.type) },
+          { h: 'Expiration', f: (l) => dateFr(l.expiresAt) }
+        ], { textOf: (l) => [l.product, l.type].join(' '), empty: 'Aucune licence n’expire dans les 30 jours (ou aucune licence reçue du serveur).' })}
+      </div>
+      <div class="card"><h2>Relances</h2>
+        ${table(S.relances, [
+          { h: 'Client', f: (r) => esc(clientName(r.clientId)) },
+          { h: 'Motif', f: (r) => esc(r.note) },
+          { h: 'Échéance', f: (r) => dateFr(r.dueDate) },
+          { h: 'Statut', f: (r) => statusBadge(r.done ? 'Faite' : 'À faire') },
+          { h: '', f: (r) => (W('ventes') ? btn(r.done ? 'Rouvrir' : 'Marquer faite', 'relanceToggle', { id: r.id }) : '') }
+        ], { textOf: (r) => [clientName(r.clientId), r.note].join(' '), empty: 'Aucune relance enregistrée.' })}
+      </div>
+      <div class="card"><h2>Clients inactifs (plus de 180 jours)</h2>
+        ${table(inactive, [
+          { h: 'Client', f: (x) => esc(x.client.name) },
+          { h: 'Dernière activité', f: (x) => dateFr(x.last) },
+          { h: '', f: (x) => (W('ventes') ? btn('Créer une relance', 'relanceFor', { id: x.client.id }) : '') }
+        ], { textOf: (x) => x.client.name, empty: 'Aucun client inactif.' })}
+      </div>`
+  };
+};
+
+PAGES.reporting = () => {
+  const now = new Date();
+  const par = D.pareto(S);
+  const months = D.salesByMonth(S, now, 12);
+  const maxM = Math.max(1, ...months.map((m) => m.value));
+  const methods = D.paymentsByMethod(S);
+  const tops = D.topClients(S, 5);
+  return {
+    title: 'Reporting', sub: 'Analyses calculées à partir des données réelles. La valeur commandée n’est pas un encaissement : les deux sont séparés.',
+    actions: `<button data-act="exportCsv" data-v="pareto">Exporter Pareto</button><button data-act="exportCsv" data-v="ventes">Exporter ventes</button><button data-act="exportCsv" data-v="paiements">Exporter paiements</button><button data-act="exportCsv" data-v="tickets">Exporter tickets</button>`,
+    search: false,
+    body: () => `
+      <div class="grid2">
+        <div class="card"><h2>Pareto des produits (valeur commandée)</h2>
+          ${table(par, [
+            { h: 'Produit', f: (r) => esc(r.name) },
+            { h: 'Valeur', f: (r) => money(r.value) },
+            { h: 'Part', f: (r) => `${r.share} %` },
+            { h: 'Cumul', f: (r) => `${r.cumShare} %` }
+          ], { textOf: (r) => r.name, empty: 'Aucune commande : le Pareto apparaîtra après la première commande.' })}
+        </div>
+        <div class="card"><h2>Encaissements par mode</h2>
+          ${table(methods, [
+            { h: 'Mode', f: (m) => esc(m.method) },
+            { h: 'Confirmé', f: (m) => money(m.confirmed) },
+            { h: 'En attente', f: (m) => money(m.pending) },
+            { h: 'Rejeté', f: (m) => money(m.rejected) }
+          ], { textOf: (m) => m.method, empty: 'Aucun paiement.' })}
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="card"><h2>Ventes nettes des 12 derniers mois</h2>
+          ${months.map((m) => `<div class="row" style="margin:4px 0"><span class="mu" style="width:70px">${esc(m.month)}</span><div style="flex:1;background:var(--bd);border-radius:6px;height:14px;overflow:hidden"><div style="height:100%;width:${Math.round(m.value / maxM * 100)}%;background:var(--grad)"></div></div><span style="min-width:120px;text-align:right">${money(m.value)}</span></div>`).join('')}
+        </div>
+        <div class="card"><h2>Top 5 clients (valeur commandée)</h2>
+          ${table(tops, [
+            { h: 'Client', f: (x) => esc(x.client.name) },
+            { h: 'Valeur', f: (x) => money(x.value) }
+          ], { textOf: (x) => x.client.name, empty: 'Aucune commande.' })}
+        </div>
+      </div>`
+  };
+};
+
+/* ===================== LICENCES : jeton et registre ===================== */
+const VAULT = { db: 'asu_vault', store: 'keys', tokenKey: 'asu_admin_token_enc' };
+function openVaultDb() {
+  return new Promise((res, rej) => {
+    const r = indexedDB.open(VAULT.db, 1);
+    r.onupgradeneeded = () => r.result.createObjectStore(VAULT.store);
+    r.onsuccess = () => res(r.result);
+    r.onerror = () => rej(r.error);
+  });
+}
+async function vaultKey() {
+  const db = await openVaultDb();
+  const existing = await new Promise((res, rej) => {
+    const q = db.transaction(VAULT.store, 'readonly').objectStore(VAULT.store).get('aes');
+    q.onsuccess = () => res(q.result); q.onerror = () => rej(q.error);
+  });
+  if (existing) { db.close(); return existing; }
+  // Clé non exportable : elle reste dans le navigateur et ne peut pas être copiée hors de l'appareil
+  const key = await crypto.subtle.generateKey({ name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']);
+  await new Promise((res, rej) => {
+    const t = db.transaction(VAULT.store, 'readwrite');
+    t.objectStore(VAULT.store).put(key, 'aes');
+    t.oncomplete = () => res(); t.onerror = () => rej(t.error);
+  });
+  db.close();
+  return key;
+}
+const b64 = (buf) => btoa(String.fromCharCode(...new Uint8Array(buf)));
+const unb64 = (s) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
+async function seal(text) {
+  const key = await vaultKey();
+  const iv = crypto.getRandomValues(new Uint8Array(12));
+  const ct = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, key, new TextEncoder().encode(String(text)));
+  return { iv: b64(iv), data: b64(ct) };
+}
+async function unseal(box) {
+  const key = await vaultKey();
+  const pt = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: unb64(box.iv) }, key, unb64(box.data));
+  return new TextDecoder().decode(pt);
+}
+async function saveAdminToken(token) { localStorage.setItem(VAULT.tokenKey, JSON.stringify(await seal(token))); }
+async function loadAdminToken() { const raw = localStorage.getItem(VAULT.tokenKey); return raw ? unseal(JSON.parse(raw)) : null; }
+function forgetAdminToken() { localStorage.removeItem(VAULT.tokenKey); }
+async function adminApi(path, opts = {}) {
+  const token = await loadAdminToken();
+  if (!token) throw new Error('Aucun jeton administrateur enregistré sur cet appareil.');
+  const r = await fetch(APP.WORKER + path, {
+    method: opts.method || 'GET', cache: 'no-store',
+    headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+    body: opts.body ? JSON.stringify(opts.body) : undefined
+  });
+  const data = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(data.error || ('Erreur HTTP ' + r.status));
+  return data;
+}
+function codeModal(code, name) {
+  showModal(`Code de licence · ${name || ''}`, `<p class="note">Code d’activation. Il est archivé chiffré dans Licences.</p>
+    <pre style="font-size:16px;letter-spacing:1px">${esc(code)}</pre>
+    <div class="row"><button class="primary" data-act="copyCode" data-code="${esc(code)}">Copier le code</button><button data-act="close">Fermer</button></div>`);
+}
+
+function r2Line(r2) {
+  if (!r2) return 'R2 : non renseigné par le worker';
+  if (r2.available) return `R2 : ${Math.round(r2.usedBytes / 1024 * 10) / 10} Ko dans ${r2.fileCount} fichier(s)`;
+  const why = { not_configured: 'bucket non lié au Worker', table_unavailable: 'migration 0008 non appliquée' };
+  return `R2 indisponible : ${why[r2.reason] || r2.reason}`;
+}
+function quotasCard(canW) {
+  const q = UI.quotas;
+  const head = `<div class="card"><h2>Quotas et consommation</h2>`;
+  if (!q) return head + `<p class="note">Non lus. Ces chiffres viennent du worker et demandent le jeton administrateur.</p>${canW && localStorage.getItem(VAULT.tokenKey) ? btn('Actualiser les quotas', 'refreshQuotas') : ''}</div>`;
+  const pct = (a, b) => (b ? Math.min(100, Math.round(a / b * 100)) : 0);
+  const bar = (p) => `<div style="background:var(--bd);border-radius:6px;height:10px;overflow:hidden;margin:4px 0"><div style="height:100%;width:${p}%;background:${p >= 90 ? '#ef4444' : p >= 70 ? '#f59e0b' : 'var(--grad)'}"></div></div>`;
+  const ko = (n) => (n >= 1048576 ? `${Math.round(n / 1048576 * 100) / 100} Mo` : `${Math.round(n / 1024 * 10) / 10} Ko`);
+  const api = q.api || { totalRequests: 0, softLimit: 50000 };
+  const apiP = pct(api.totalRequests, api.softLimit);
+  return head + `
+    <div class="grid2">
+      <div><strong>Appels API du service</strong><div class="mu">${api.totalRequests} / ${api.softLimit} aujourd’hui</div>${bar(apiP)}<div class="mu">Activations ${api.activationRequests}, statuts ${api.statusRequests}, essais ${api.trialRequests}</div></div>
+      <div><strong>Stockage Cloud (sauvegardes)</strong><div class="mu">${ko(q.storage.usedBytes)} dans ${q.storage.snapshots} instantané(s)</div><div class="mu">Requêtes Cloud aujourd’hui : ${q.cloud.requestsToday}</div><div class="mu">${r2Line(q.r2)}</div></div>
+    </div>
+    <div class="gap">${table(q.licenses || [], [
+      { h: 'Client', f: (l) => esc(l.customerName) },
+      { h: 'Requêtes Cloud', f: (l) => `${l.requestsToday} / ${l.requestsDay}${bar(pct(l.requestsToday, l.requestsDay))}` },
+      { h: 'Stockage', f: (l) => `${ko(l.usedBytes)} / ${ko(l.maxBytes)}${bar(pct(l.usedBytes, l.maxBytes))}` }
+    ], { id: 'quotas-licences', textOf: (l) => l.customerName, empty: 'Aucune licence avec le Cloud activé.' })}</div>
+    <p class="note gap">Compte Cloudflare, formule Free. Limites à confirmer dans votre tableau de bord Cloudflare : 100 000 requêtes Workers par jour ; D1 : 5 millions de lignes lues et 100 000 écritures par jour, 5 Go de stockage. Ces chiffres ne sont pas encore lus automatiquement depuis Cloudflare.</p>
+    ${canW ? btn('Actualiser les quotas', 'refreshQuotas') : ''}</div>`;
+}
+
+PAGES.activation = () => {
+  const meta=appLicenseMeta(),active=!!localStorage.getItem(APP.LICENSE_TOKEN);
+  return {title:'Activation AppForge',sub:'Essai 72 h, activation client et contrôle du statut auprès du Worker V3.',actions:'',search:false,body:()=>`
+    <div class="grid2"><div class="card"><h2>État de l’accès</h2><p>${active?'<span class="badge ok">Preuve enregistrée sur cet appareil</span>':'<span class="badge warn">Non activé</span>'}</p><p><strong>${esc(meta.licenseType||meta.kind||'Aucun accès')}</strong></p><p class="mu">Expiration : ${esc(meta.expiresAt||'—')} · Dernière vérification : ${esc(meta.checkedAt||'—')}</p><div class="row">${btn('Vérifier le statut','appCheckStatus')}${active?btn('Désactiver cet appareil','appForgetLicense'):''}</div></div>
+    <div class="card"><h2>Démarrer l’essai gratuit</h2><p class="note">Essai 72 heures géré par le Worker et lié à cette installation. Une seule période selon l’identifiant appareil reconnu par le serveur.</p>${btn('Démarrer mon essai 72 h','appStartTrial')}</div></div>
+    <div class="card"><h2>Activer une licence</h2><form data-form="appActivate"><div class="formgrid"><label class="full">Code d’activation<input name="code" required minlength="12" maxlength="80" autocomplete="off" placeholder="APF-XXXXX-XXXXX-XXXXX-XXXXX"></label></div><footer class="actions"><button class="primary">Vérifier et activer</button></footer></form></div>
+    <div class="card"><h2>Plans pris en charge</h2><div class="row"><span class="badge info">Essai 72 h</span><span class="badge info">Mensuel</span><span class="badge info">Annuel</span><span class="badge info">À vie</span></div><p class="note gap">Les droits Cloud et les dates effectives proviennent du Worker pour chaque licence. L’application n’invente aucun quota et ne déverrouille pas un plan localement.</p></div>`};
+};
+PAGES.cloud = () => ({title:'Cloud V3 + R2',sub:'Sauvegarde chiffrée D1, fichiers binaires R2, quotas et restauration avec fusion contrôlée.',actions:`${btn('Actualiser état Cloud','cloudRefresh')}`,search:false,body:()=>{
+ const m=appLicenseMeta();return `<div class="grid2"><div class="card"><h2>Accès Cloud</h2><p><span class="badge ${m.cloudEnabled?'ok':'warn'}">${m.cloudEnabled?'Droit Cloud accordé':'Droit Cloud non confirmé'}</span></p><p class="mu">Plan : ${esc(m.licenseType||m.kind||'Non activé')} · Expiration : ${esc(m.expiresAt||'—')}</p><p class="mu" id="cloudStatus">${esc(UI.cloudStatus)}</p></div><div class="card"><h2>Consommation</h2><div id="cloudQuotaView">${UI.cloudQuota?`D1 : ${Math.round((UI.cloudQuota.d1?.usedBytes||0)/1024)} Ko / ${Math.round((UI.cloudQuota.d1?.maxBytes||0)/1024)} Ko · R2 : ${UI.cloudQuota.r2?.available?`${Math.round(UI.cloudQuota.r2.usedBytes/1024)} Ko / ${Math.round(UI.cloudQuota.r2.maxBytes/1024)} Ko`:'Indisponible'}`:'Non chargée · utiliser Actualiser état Cloud'}</div></div></div>
+ <div class="card"><h2>Sauvegarde métier D1</h2><p class="note">Synchronisation des données métier (D1) : clients, projets, devis, commandes, etc. Chiffrement côté navigateur. Le PIN n’est jamais envoyé au Worker. La sauvegarde et la restauration restent manuelles avec ces boutons.</p>${pinInput('cloudPass','PIN de sauvegarde (4 chiffres)','••••')}<label>Confirmer le PIN (pour une nouvelle sauvegarde ou un envoi R2)<input id="cloudPinConfirm" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" minlength="4" autocomplete="off" placeholder="Confirme les 4 chiffres"></label><label>Ancienne phrase secrète (restauration d’une sauvegarde antérieure uniquement)<input id="cloudLegacyPassphrase" type="password" autocomplete="off" placeholder="Facultatif · ancien mot de passe"></label><div class="row gap">${btn('Fusionner depuis le Cloud','cloudMerge')}${btn('Envoyer une sauvegarde','cloudPush')}</div><p class="mu">Révision D1 connue : ${UI.cloudRevision}</p><p class="warnText">Sécurité : un PIN à 4 chiffres est faible pour un chiffrement de sauvegarde exportable. Conserve un appareil protégé et ne partage pas le PIN.</p></div>
+ <div class="card"><h2>Pièces jointes Cloud (R2)</h2><p class="note">Le transfert des pièces jointes est une option distincte. Désactivée par défaut. Quand elle est désactivée, les fichiers restent locaux pour les nouveaux transferts; les fichiers déjà stockés dans R2 ne sont pas supprimés et restent accessibles au téléchargement.</p><label class="row"><input id="cloudAttachmentsToggle" type="checkbox" style="width:auto" ${cloudPrefs().attachments?'checked':''}><span><strong>Synchroniser également les pièces jointes (R2)</strong><br><small>Autoriser l’envoi des nouveaux fichiers dans le Cloud</small></span></label><p class="note">Chiffrement navigateur AES-256-GCM + PBKDF2. Même PIN de 4 chiffres. Taille maximale Worker : 10 Mo par fichier. Suppression distante non disponible.</p><div class="row"><input id="r2File" type="file" style="max-width:360px" ${cloudPrefs().attachments?'':'disabled'}><button class="primary" data-act="cloudUpload" ${cloudPrefs().attachments?'':'disabled'}>Envoyer vers R2</button>${btn('Actualiser la liste','cloudFilesRefresh')}</div><div class="gap" id="r2Files">${cloudFileTable()}</div></div>
+ <div class="card"><h2>Migration des anciennes versions</h2><p class="note">Migration non exécutée (aucune tâche en arrière-plan). Lors d’une mise à jour, sauvegarder les données locales, convertir le format, vérifier les totaux et contrôler les fichiers avant validation. Les anciennes sauvegardes D1/R2 restent restaurables via le champ « Ancienne phrase secrète ». Aucune ancienne donnée ne sera supprimée automatiquement.</p><span class="badge warn">À préparer — aucune migration en cours</span></div><div class="card"><h2>Règles de restauration</h2><ul><li>La restauration fusionne les enregistrements par identifiant, sans écrasement silencieux.</li><li>En cas de conflit de révision HTTP 409, aucune écriture automatique n’est forcée.</li><li>Les fichiers R2 sont téléchargés séparément et leur empreinte SHA-256 est vérifiée.</li><li>Les sauvegardes D1 et fichiers R2 sont séparés : la liste des pièces jointes est conservée dans R2, sans suppression distante.</li></ul></div>`;
+ }});
+
+PAGES.licences = () => {
+  const saved = !!localStorage.getItem(VAULT.tokenKey);
+  const canW = W('licences');
+  const tokenCard = `<div class="card"><h2>Jeton administrateur · usage propriétaire privé</h2>
+    <p class="note">${saved ? 'Jeton administrateur enregistré localement. Utiliser uniquement dans un navigateur propriétaire privé.' : 'Aucun jeton enregistré. Ne jamais distribuer ce jeton dans un HTML client : un secret présent dans un navigateur n’est pas une authentification serveur sécurisée.'}</p>
+    <div class="row">${canW ? (saved ? btn('Oublier le jeton', 'forgetToken') + btn('Synchroniser les statuts', 'syncLicenses') : btn('Enregistrer le jeton', 'saveToken')) : ''}</div></div>`;
+  const createCard = canW && saved ? `<div class="card"><h2>Créer une licence</h2><p class="note">Le code est affiché une seule fois, puis archivé ici.</p><div class="row">${btn('+ Licence', 'newLicense')}</div></div>` : '';
+  const checkCard = `<div class="card"><h2>Worker licences</h2><p class="mu">${esc(APP.WORKER)}</p><div class="row"><button data-act="checkWorker">Vérifier la connexion</button></div><p id="wstatus" class="mu"></p><pre id="wraw" hidden></pre></div>`;
+  return {
+    title: 'Licences', sub: 'Registre des codes créés pour vos clients. Le worker reste la référence pour le statut.', actions: '', search: true,
+    body: () => `${quotasCard(canW)}${tokenCard}${createCard}
+      <div class="card"><h2>Registre des licences</h2><p class="note">Licences créées depuis ce navigateur. Le registre n’est visible que dans ce navigateur.</p>${filterBar('lic', [
+        { key: 'status', label: 'Statut', options: [['', 'Tous les statuts'], ['active', 'Actives'], ['revoked', 'Révoquées']] },
+        { key: 'product', label: 'Application', options: [['', 'Toutes les applications']].concat([...new Set(S.licenseRegister.map((l) => l.productId))].map((p) => [p, p])) },
+        { key: 'sort', label: 'Tri', options: [['client', 'Client A → Z'], ['recent', 'Plus récentes'], ['expiration', 'Expiration la plus proche']] }
+      ])}
+      ${table(applyLicences(), [
+        { h: 'Client', f: (l) => `<strong>${esc(l.customerName)}</strong><br><small class="mu">${esc(l.customerEmail || '')}</small>` },
+        { h: 'Application', f: (l) => esc(l.productId) },
+        { h: 'Type', f: (l) => esc(l.plan) },
+        { h: 'Créée', f: (l) => dateFr(l.createdAt) },
+        { h: 'Expire', f: (l) => dateFr(l.expiresAt) },
+        { h: 'Statut', f: (l) => statusBadge(l.status === 'active' ? 'actif' : 'révoquée') },
+        { h: 'Cloud', f: (l) => `${esc(D.cloudLabel(l))}${canW ? `<br>${btn('Droits Cloud', 'cloudEdit', { id: l.id })}` : ''}` },
+        { h: '', f: (l) => `<div class="row">${l.code ? btn('Voir le code', 'revealCode', { id: l.id }) : ''}${canW ? btn('Modifier', 'licenseEdit', { id: l.id }) : ''}${canW && l.status === 'active' ? btn('Révoquer', 'revokeLicense', { id: l.id }) : ''}${canW ? btn('Supprimer', 'licenseDelete', { id: l.id }) : ''}</div>` }
+      ], { textOf: (l) => [l.customerName, l.customerEmail, l.productId, l.plan, l.status].join(' '), empty: (UI.filters.lic.status || UI.filters.lic.product) ? 'Aucune licence ne correspond aux filtres choisis.' : 'Aucune licence archivée dans ce navigateur. Créez une licence avec « + Licence ».' })}</div>${checkCard}`
+  };
+};
+
+/* Formulaires modaux */
+function lineRowHtml(p = {}) {
+  const opts = ['<option value="">— libre —</option>'].concat(S.products.filter((x) => x.status === 'actif').map((x) => `<option value="${esc(x.id)}" ${p.productId === x.id ? 'selected' : ''}>${esc(x.name)}</option>`)).join('');
+  return `<div class="line" data-line>
+    <select name="l_prod" aria-label="Produit">${opts}</select>
+    <input name="l_des" placeholder="Désignation" value="${esc(p.designation || '')}" aria-label="Désignation">
+    <input name="l_qty" type="number" min="0" step="any" value="${esc(p.qty ?? 1)}" aria-label="Quantité">
+    <input name="l_price" type="number" min="0" step="any" value="${esc(p.price ?? 0)}" aria-label="Prix unitaire">
+    <input name="l_disc" type="number" min="0" max="100" step="any" value="${esc(p.discount ?? 0)}" aria-label="Remise %">
+    <button type="button" class="ghost small" data-act="removeLine" aria-label="Retirer la ligne">✕</button>
+  </div>`;
+}
+const lineReader = (form) => [...form.querySelectorAll('[data-line]')].map((r) => ({
+  productId: r.querySelector('[name=l_prod]').value || null,
+  designation: r.querySelector('[name=l_des]').value,
+  qty: r.querySelector('[name=l_qty]').value,
+  price: r.querySelector('[name=l_price]').value,
+  discount: r.querySelector('[name=l_disc]').value
+}));
+function openInvoiceForm(orderId, type = 'solde') {
+  const o = byId(S.orders, orderId); const s = D.orderSummary(S, orderId);
+  const pre = type === 'acompte' ? round2(o.total * (o.depositPct || 0) / 100) : s.toInvoice;
+  openForm({
+    title: `Facture · commande ${o.number}`, submitLabel: 'Émettre la facture',
+    fields: [
+      { type: 'note', label: `Reste à facturer : ${money(s.toInvoice)}. Une facture émise ne se modifie pas.` },
+      { name: 'type', label: 'Type', type: 'select', options: D.INVOICE_TYPES.map((t) => [t, t]), value: type },
+      { name: 'amount', label: 'Montant', type: 'number', step: 'any', required: true, value: pre },
+      { name: 'dueDate', label: 'Échéance', type: 'date' }
+    ],
+    submit: (v) => D.createInvoice(S, { orderId, type: v.type, amount: v.amount, dueDate: v.dueDate })
+  });
+}
+function openPaymentForm(invId) {
+  const inv = byId(S.invoices, invId);
+  const pending = S.payments.filter((p) => p.invoiceId === inv.id && p.status === 'en attente').reduce((s, p) => s + p.amount, 0);
+  const avail = round2(D.invoiceDue(S, inv) - pending);
+  openForm({
+    title: `Paiement · facture ${inv.number}`, submitLabel: 'Déclarer le paiement',
+    fields: [
+      { type: 'note', label: 'Le paiement reste « en attente » jusqu’à validation manuelle. Un justificatif ne vaut pas confirmation d’encaissement.' },
+      { name: 'amount', label: `Montant (disponible : ${money(avail)})`, type: 'number', step: 'any', required: true, value: avail },
+      { name: 'method', label: 'Mode', type: 'select', options: S.paymentModes.map((m) => [m, m]) },
+      { name: 'reference', label: 'Référence (obligatoire pour MVola)' },
+      { name: 'proof', label: 'Justificatif (numéro ou description)', type: 'textarea' }
+    ],
+    submit: (v) => D.createPayment(S, { invoiceId: inv.id, amount: v.amount, method: v.method, reference: v.reference, proof: v.proof })
+  });
+}
+
+/* Impression */
+function printDocument(title, meta, lines, totals, extra = '') {
+  const c = S.company;
+  const rows = lines.map((l) => `<tr><td style="border-bottom:1px solid #ccc;padding:6px">${esc(l.designation)}</td><td style="border-bottom:1px solid #ccc;padding:6px;text-align:right">${l.qty}</td><td style="border-bottom:1px solid #ccc;padding:6px;text-align:right">${money(l.price)}</td><td style="border-bottom:1px solid #ccc;padding:6px;text-align:right">${money(l.total)}</td></tr>`).join('');
+  document.getElementById('printArea').innerHTML = `
+    <h1 style="font-size:20px">${esc(title)}</h1>
+    <p><strong>${esc(c.name || 'Entreprise')}</strong><br>${esc(c.address || '')}<br>NIF ${esc(c.nif || '—')} · STAT ${esc(c.stat || '—')}</p>
+    ${meta}
+    <table style="width:100%;border-collapse:collapse;margin-top:12px"><thead><tr><th style="text-align:left;border-bottom:2px solid #000;padding:6px">Désignation</th><th style="text-align:right;border-bottom:2px solid #000;padding:6px">Qté</th><th style="text-align:right;border-bottom:2px solid #000;padding:6px">PU</th><th style="text-align:right;border-bottom:2px solid #000;padding:6px">Total</th></tr></thead><tbody>${rows}</tbody></table>
+    <div style="margin-top:12px;text-align:right">${totals}</div>
+    ${extra}`;
+  window.print();
+}
+function printQuote(id) {
+  const q = byId(S.quotes, id); const cl = byId(S.clients, q.clientId);
+  printDocument(`Devis ${q.number}`, `<p>Client : ${esc(cl ? cl.name : '—')}<br>Date : ${dateFr(q.createdAt)}${q.validUntil ? ` · Valide jusqu’au ${dateFr(q.validUntil)}` : ''}</p>`,
+    q.lines, `<p>Sous-total : ${money(q.subtotal)}<br>Remise globale (${q.globalDiscount} %) : ${money(q.discount)}<br><strong>Total : ${money(q.total)}</strong></p>`,
+    `<p>Acompte demandé : ${q.depositPct} %<br>Conditions : ${esc(q.paymentTerms || '—')}</p>`);
+}
+function printInvoice(id) {
+  const inv = byId(S.invoices, id); const o = byId(S.orders, inv.orderId); const cl = byId(S.clients, inv.clientId);
+  printDocument(`Facture ${inv.number}`, `<p>Client : ${esc(cl ? cl.name : '—')}<br>Date : ${dateFr(inv.issuedAt)} · Échéance : ${dateFr(inv.dueDate)}<br>Commande : ${esc(o ? o.number : '—')}</p>`,
+    [{ designation: `Facturation ${inv.type}`, qty: 1, price: inv.amount, total: inv.amount }],
+    `<p>Montant facturé : ${money(inv.amount)}<br>Avoirs : ${money(D.invoiceNet(S, inv) - inv.amount)}<br>Net : ${money(D.invoiceNet(S, inv))}<br>Encaissé : ${money(D.invoicePaid(S, inv.id))}<br><strong>Solde dû : ${money(D.invoiceDue(S, inv))}</strong></p>`);
+}
+
+/* Actions */
+const ACTIONS = {
+  close: () => closeModal(),
+  go: (ds) => { location.hash = '#/' + ds.v; },
+  more: () => {
+    const u = D.activeUser(S);
+    const links = ROUTES.filter((r) => D.can(u.role, r.res)).map((r) => `<a href="#/${r.id}">${esc(r.label)}</a>`).join('');
+    showModal('Menu', `<div class="menu">${links}</div><p class="note gap">Bientôt : ${PHASE2.map(esc).join(', ')}.</p>`);
+  },
+  toggleTheme: () => {
+    const el = document.documentElement; const dark = el.dataset.theme === 'dark';
+    el.dataset.theme = dark ? 'light' : 'dark'; localStorage.setItem(APP.THEME, el.dataset.theme);
+  },
+  crmTab: (ds) => { UI.crmTab = ds.v; UI.q = ''; render(); },
+  ventesTab: (ds) => { UI.tab = ds.v; UI.q = ''; render(); },
+
+  newLead: () => openForm({ title: 'Nouveau prospect', fields: [
+    { name: 'name', label: 'Nom du contact', required: true }, { name: 'company', label: 'Entreprise' },
+    { name: 'email', label: 'E-mail', type: 'email' }, { name: 'phone', label: 'Téléphone' },
+    { name: 'source', label: 'Source' }, { name: 'need', label: 'Besoin', type: 'textarea', full: true }
+  ], submit: (v) => D.createLead(S, v) }),
+  newClient: () => openForm({ title: 'Nouveau client', fields: clientFields(), submit: (v) => D.createClient(S, v) }),
+  editClient: (ds) => { const c = byId(S.clients, ds.id); openForm({ title: 'Modifier le client', fields: clientFields(c), submit: (v) => D.updateEntity(S, 'clients', c.id, v) }); },
+  convertLead: (ds) => run(() => D.convertLead(S, ds.id)),
+
+  newProduct: () => openForm({ title: 'Nouveau produit', fields: productFields(), submit: (v) => D.createProduct(S, v) }),
+  editProduct: (ds) => { const p = byId(S.products, ds.id); openForm({ title: 'Modifier le produit', fields: productFields(p, true), submit: (v) => D.updateEntity(S, 'products', p.id, v) }); },
+  toggleProduct: (ds) => { const p = byId(S.products, ds.id); run(() => D.updateEntity(S, 'products', p.id, { status: p.status === 'actif' ? 'inactif' : 'actif' })); },
+
+  quoteNew: () => {
+    if (!S.clients.length) return toast('Créez d’abord un client.', 'err');
+    openForm({
+      title: 'Nouveau devis', submitLabel: 'Créer le devis',
+      fields: [
+        { name: 'clientId', label: 'Client', type: 'select', required: true, options: S.clients.map((c) => [c.id, c.name]) },
+        { name: 'validUntil', label: 'Valide jusqu’au', type: 'date' },
+        { name: 'depositPct', label: 'Acompte (%)', type: 'number', value: 30 },
+        { name: 'globalDiscount', label: 'Remise globale (%)', type: 'number', value: 0 },
+        { name: 'paymentTerms', label: 'Conditions de paiement', type: 'textarea', full: true, value: 'Acompte à la commande, solde à la livraison.' }
+      ],
+      custom: { html: `<div class="card gap"><h2>Lignes</h2><div id="lines">${lineRowHtml()}</div><button type="button" class="small" data-act="addLine">+ Ligne</button></div>`, read: lineReader },
+      submit: (v) => D.createQuote(S, v)
+    });
+  },
+  addLine: (ds, el) => { el.closest('form').querySelector('#lines').insertAdjacentHTML('beforeend', lineRowHtml()); },
+  removeLine: (ds, el) => { const row = el.closest('[data-line]'); if (row && document.querySelectorAll('[data-line]').length > 1) row.remove(); },
+  quoteStatus: (ds) => run(() => D.setQuoteStatus(S, ds.id, ds.status)),
+  quoteOrder: (ds) => run(() => D.createOrderFromQuote(S, ds.id)),
+  printQuote: (ds) => printQuote(ds.id),
+  orderStatus: (ds) => run(() => D.setOrderStatus(S, ds.id, ds.status)),
+  orderInvoice: (ds) => openInvoiceForm(ds.id, ds.type),
+  invoicePay: (ds) => openPaymentForm(ds.id),
+  invoiceCredit: (ds) => {
+    const inv = byId(S.invoices, ds.id);
+    openForm({ title: `Avoir · facture ${inv.number}`, submitLabel: 'Émettre l’avoir',
+      fields: [
+        { type: 'note', label: 'Un avoir corrige une facture émise. La facture d’origine reste inchangée.' },
+        { name: 'amount', label: `Montant (net : ${money(D.invoiceNet(S, inv))})`, type: 'number', step: 'any', required: true, value: D.invoiceNet(S, inv) },
+        { name: 'reason', label: 'Motif', type: 'textarea', required: true, full: true }
+      ],
+      submit: (v) => D.createCredit(S, { invoiceId: inv.id, amount: v.amount, reason: v.reason }) });
+  },
+  printInvoice: (ds) => printInvoice(ds.id),
+  paymentConfirm: (ds) => run(() => D.confirmPayment(S, ds.id)),
+  paymentReject: (ds) => openForm({ title: 'Rejeter le paiement', submitLabel: 'Rejeter',
+    fields: [{ name: 'reason', label: 'Motif du rejet', type: 'textarea', required: true, full: true }],
+    submit: (v) => D.rejectPayment(S, ds.id, v.reason) }),
+
+  projectNew: () => openForm({ title: 'Nouveau projet', fields: [
+    { name: 'name', label: 'Nom du projet', required: true },
+    { name: 'personal', label: 'Projet personnel (masque les informations commerciales)', type: 'checkbox' },
+    { name: 'clientId', label: 'Client', type: 'select', options: [['', '— aucun —']].concat(S.clients.map((c) => [c.id, c.name])) },
+    { name: 'orderId', label: 'Commande liée', type: 'select', options: [['', '— aucune —']].concat(S.orders.map((o) => [o.id, `${o.number} · ${clientName(o.clientId)}`])) },
+    { name: 'deadline', label: 'Échéance', type: 'date' }
+  ], submit: (v) => D.createProject(S, v) }),
+  projectAdvance: (ds) => run(() => D.advanceProject(S, ds.id)),
+  projectDetail: (ds) => {
+    const p = byId(S.projects, ds.id); const idx = D.PROJECT_STAGES.indexOf(p.stage);
+    showModal(p.name, `<ol class="steps">${D.PROJECT_STAGES.map((s, i) => `<li class="${i < idx ? 'done' : i === idx ? 'cur' : ''}">${esc(s)}</li>`).join('')}</ol>
+      <h2 style="font-size:15px">Historique</h2><ul>${p.history.map((h) => `<li>${dateFr(h.at)} — ${esc(h.stage)} ${esc(h.comment || '')}</li>`).join('')}</ul>`);
+  },
+
+  appStartTrial: () => runAsync(async()=>{
+    const {data}=await v3Request('/v1/trial',{method:'POST',body:{productId:APP.PRODUCT,installationId:installationId()}});
+    if(!data.ok||!data.token)throw new Error(data.error||'Essai non accordé.');
+    const claims=await verifyLicenseProof(data.token,data.publicKey);
+    await saveAppLicense(data.token,{kind:'trial',licenseType:'Essai 72 h',expiresAt:data.expiresAt,startedAt:data.startedAt,cloudEnabled:!!data.cloudAccess?.enabled,checkedAt:new Date().toISOString()});
+    if(data.cloudAccess?.enabled&&data.cloudAccess.token)await saveCloudToken(data.cloudAccess.token,data.cloudAccess.expiresAt);
+    UI.cloudStatus=data.cloudAccess?.enabled?'Essai actif · Cloud autorisé':'Essai actif · Cloud non accordé';
+  }),
+  appForgetLicense:()=>{if(!confirm('Retirer la preuve de licence de cet appareil ? Les données métier locales ne seront pas supprimées.'))return;localStorage.removeItem(APP.LICENSE_TOKEN);localStorage.removeItem(APP.CLOUD_TOKEN);localStorage.removeItem(APP.LICENSE_META);toast('Accès local retiré. Les données métier sont conservées.','ok');render()},
+  appCheckStatus:()=>runAsync(async()=>{
+    const token=await appLicenseToken();if(!token)throw new Error('Aucune preuve enregistrée.');
+    const {data}=await v3Request('/v1/status',{method:'POST',body:{productId:APP.PRODUCT,token,installationId:installationId()}});
+    if(!data.active)throw new Error(data.error||'Licence inactive.');
+    const old=appLicenseMeta();const meta={...old,kind:data.kind||old.kind,licenseType:data.licenseType||old.licenseType,expiresAt:data.expiresAt||null,cloudEnabled:data.cloudEnabled??old.cloudEnabled,checkedAt:data.checkedAt||new Date().toISOString()};localStorage.setItem(APP.LICENSE_META,JSON.stringify(meta));
+  }),
+  cloudRefresh:()=>runAsync(async()=>{
+    const token=await cloudBearer(true);const [q,s,files]=await Promise.all([cloudQuota(),readCloudSnapshot(),renderCloudFiles()]);
+    UI.cloudStatus='Cloud vérifié · jeton valide';
+    document.getElementById('cloudStatus')?.replaceChildren(document.createTextNode(UI.cloudStatus));
+    document.getElementById('cloudQuotaView')?.replaceChildren(document.createTextNode(`D1 : ${Math.round((q.d1?.usedBytes||0)/1024)} Ko / ${Math.round((q.d1?.maxBytes||0)/1024)} Ko · R2 : ${q.r2?.available?`${Math.round(q.r2.usedBytes/1024)} Ko / ${Math.round(q.r2.maxBytes/1024)} Ko`:'Indisponible'}`));
+    const f=document.getElementById('r2Files');if(f)f.innerHTML=cloudFileTable();
+    if(s.snapshot)UI.cloudStatus+=' · instantané distant présent (révision '+s.revision+')';
+  }),
+  cloudPush:()=>runAsync(async()=>{
+    const pass=getBackupPin(true);
+    const current=await readCloudSnapshot();if(current.snapshot&&!confirm(`Un instantané Cloud existe déjà (révision ${current.revision}). Le remplacer par une sauvegarde de cet appareil ? Fais d’abord une fusion si tu veux conserver les deux jeux de données.`))throw new Error('Envoi annulé : aucune donnée distante modifiée.');
+    const envelope=await encryptCloudSnapshot(S,pass);if(JSON.stringify(envelope).length>440000)throw new Error('Sauvegarde trop volumineuse pour le snapshot D1 (limite Worker 450 Ko). Réduis les données ou déplace les pièces jointes dans R2.');
+    await cloudApi('/v1/cloud/snapshot?resource='+encodeURIComponent(APP.CLOUD_RESOURCE),{method:'PUT',body:{expectedRevision:current.revision,snapshot:envelope}});
+    const latest=await readCloudSnapshot();UI.cloudStatus='Sauvegarde D1 enregistrée · révision '+latest.revision;
+  }),
+  cloudMerge:()=>runAsync(async()=>{
+    const pass=getRestoreKey();
+    const remote=await readCloudSnapshot();if(!remote.snapshot)throw new Error('Aucune sauvegarde D1 à restaurer.');
+    const restored=await decryptCloudSnapshot(remote.snapshot,pass);
+    if(!confirm('Fusionner la sauvegarde distante avec les données locales ? Les enregistrements sont réunis par identifiant. En cas de même identifiant, la version locale est conservée.'))throw new Error('Fusion annulée : aucune donnée modifiée.');
+    S=mergeBusinessState(restored);if(!save())throw new Error('Fusion faite en mémoire, mais sauvegarde locale impossible.');
+    const envelope=await encryptCloudSnapshot(S,pass);if(JSON.stringify(envelope).length>440000)throw new Error('Sauvegarde trop volumineuse pour le snapshot D1 (limite Worker 450 Ko). Réduis les données ou déplace les pièces jointes dans R2.');
+    try{await cloudApi('/v1/cloud/snapshot?resource='+encodeURIComponent(APP.CLOUD_RESOURCE),{method:'PUT',body:{expectedRevision:remote.revision,snapshot:envelope}})}catch(e){if(e.status===409)throw new Error('Conflit de révision : les données locales ont été fusionnées, mais le Cloud a changé. Actualise puis vérifie avant de renvoyer.');throw e}
+    const latest=await readCloudSnapshot();UI.cloudStatus='Fusion terminée · D1 révision '+latest.revision;
+  }),
+  cloudFilesRefresh:()=>runAsync(async()=>{await renderCloudFiles();const el=document.getElementById('r2Files');if(el)el.innerHTML=cloudFileTable()}),
+  cloudUpload:()=>runAsync(async()=>{
+    const input=document.getElementById('r2File'),file=input?.files?.[0];if(!file)throw new Error('Choisis un fichier.');if(file.size<1||file.size>9.9*1024*1024)throw new Error('Le fichier doit peser entre 1 octet et 9,9 Mo avant chiffrement.');
+    if(!cloudPrefs().attachments)throw new Error('La synchronisation des pièces jointes R2 est désactivée dans les préférences.');const pass=getBackupPin(true);
+    const safe=file.name.normalize('NFKD').replace(/[^A-Za-z0-9._-]/g,'_').slice(-48)||'piece';const fileId=('f_'+Date.now()+'_'+safe).slice(0,80);
+    const encrypted=await encryptR2Bytes(new Uint8Array(await file.arrayBuffer()),pass);if(encrypted.byteLength>10*1024*1024)throw new Error('Le fichier chiffré dépasse la limite R2 de 10 Mo.');
+    const token=await cloudBearer();await v3Request('/v1/cloud/file?fileId='+encodeURIComponent(fileId),{method:'PUT',token,raw:true,body:encrypted,headers:{'Content-Type':'application/octet-stream','X-AppForge-Expected-Revision':'0'}});
+    input.value='';await renderCloudFiles();const el=document.getElementById('r2Files');if(el)el.innerHTML=cloudFileTable();toast('Fichier envoyé dans R2.','ok');
+  }),
+  cloudDownload:async(ds)=>{
+    try{const token=await cloudBearer();const {response,data}=await v3Request('/v1/cloud/file?fileId='+encodeURIComponent(ds.id),{method:'GET',token});const expected=response.headers.get('X-AppForge-SHA256');const digest=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',data)),n=>n.toString(16).padStart(2,'0')).join('');if(expected&&digest!==expected)throw new Error('Échec de vérification SHA-256 : fichier téléchargé non conforme.');const pass=document.getElementById('cloudPass')?.value||prompt('PIN de sauvegarde à 4 chiffres :')||'';if(!/^\d{4}$/.test(pass))throw new Error('PIN invalide : 4 chiffres requis.');const plain=await decryptR2Bytes(new Uint8Array(data),pass);const blob=new Blob([plain],{type:'application/octet-stream'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=ds.id.replace(/^f_\d+_/,'')||'fichier.bin';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);toast('Téléchargement vérifié.','ok')}catch(e){toast(e.message||'Téléchargement impossible.','err')}
+  },
+  checkWorker: async () => {
+    const el = document.getElementById('wstatus'); const raw = document.getElementById('wraw');
+    el.textContent = 'Vérification…';
+    try {
+      const r = await fetch(APP.WORKER + '/v1/config', { cache: 'no-store' });
+      const text = await r.text();
+      el.textContent = r.ok ? `Worker joignable (HTTP ${r.status}). Réponse brute ci-dessous.` : `Le worker répond avec une erreur (HTTP ${r.status}).`;
+      raw.hidden = false; raw.textContent = text.slice(0, 2000);
+    } catch (e) {
+      el.textContent = `Worker injoignable : ${e.message}. Les licences restent non vérifiées.`;
+      raw.hidden = true;
+    }
+  },
+
+  exportJson: () => {
+    const blob = new Blob([JSON.stringify(S, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+    a.download = `appforge-studio-sauvegarde-${D.isoDay()}.json`;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    toast('Sauvegarde téléchargée.', 'ok');
+  },
+  importPick: () => document.getElementById('importFile').click(),
+  loadDemo: () => {
+    if ((S.clients.length || S.invoices.length) && !confirm('Des données existent déjà. Ajouter la démonstration quand même ?')) return;
+    run(() => seedDemo());
+  },
+  resetData: () => {
+    if (!confirm('Effacer toutes les données locales ? Une copie de sécurité sera conservée dans ce navigateur.')) return;
+    if (!confirm('Confirmer la suppression définitive ?')) return;
+    try { localStorage.setItem(APP.KEY + '_before_reset', JSON.stringify(S)); } catch (e) { /* stockage plein : on continue */ }
+    S = D.emptyState(); run(() => {});
+  }
+};
+
+const FORMS = {
+  company: (form) => { const fd = Object.fromEntries(new FormData(form)); run(() => D.saveCompany(S, fd)); },
+  user: (form) => { const fd = Object.fromEntries(new FormData(form)); if (run(() => D.createUser(S, fd))) form.reset(); },
+  paymentMode: (form) => { const fd = Object.fromEntries(new FormData(form)); if (run(() => D.createPaymentMode(S, fd.name))) form.reset(); }
+};
+const CHANGES = {
+  moveLead: (ds, el) => run(() => D.moveLead(S, ds.id, el.value)),
+  filter: (ds, el) => { UI.filters[ds.scope][ds.key] = el.value; renderBody(); },
+  user: (ds, el) => { S.activeUserId = el.value; save(); render(); }
+};
+
+/* ===================== PHASE 2 : ACTIONS ===================== */
+function deliveryDetailHtml(dl) {
+  const editable = dl.status === 'en cours';
+  const canW = W('projets');
+  const steps = dl.steps.map((s, i) => `<li class="${s.done ? 'done' : (editable && i === dl.step ? 'cur' : '')}">${esc(s.name)}${s.done ? ` — ${dateFr(s.at)} (${esc(s.by)})${s.comment ? ' · ' + esc(s.comment) : ''}` : ''}</li>`).join('');
+  const artEditable = editable && canW && dl.step < D.DELIVERY_STEPS.indexOf('Mise à disposition');
+  const artForm = `<form data-form="artifacts" data-id="${dl.id}" class="card"><h2 style="font-size:15px">Fichiers livrés (références)</h2>
+    <p class="note">Indiquez le chemin, le lien ou l’identifiant de chaque fichier. Les fichiers eux-mêmes ne sont pas stockés dans l’application à cette phase.</p>
+    <div class="formgrid">${D.ARTIFACT_KEYS.map((k) => `<label>${esc(D.ARTIFACT_LABELS[k])}<input name="${k}" value="${esc(dl.artifacts[k] || '')}" ${artEditable ? '' : 'disabled'}></label>`).join('')}</div>
+    ${artEditable ? '<div class="row gap"><button class="small">Enregistrer les références</button></div>' : ''}</form>`;
+  const pvBlock = dl.pv
+    ? `<div class="card"><h2 style="font-size:15px">Procès-verbal de réception</h2><p>Réceptionné par ${esc(dl.pv.receivedBy)} le ${dateFr(dl.pv.date)}${dl.pv.reserves ? '<br>Réserves : ' + esc(dl.pv.reserves) : '<br>Sans réserve'}</p></div>`
+    : (editable && canW && dl.step >= D.DELIVERY_STEPS.indexOf('Réception') - 0
+      ? `<form data-form="pv" data-id="${dl.id}" class="card"><h2 style="font-size:15px">Procès-verbal de réception</h2>
+          <div class="formgrid"><label>Réceptionné par<input name="receivedBy" required></label><label>Date<input type="date" name="date"></label>
+          <label class="full">Réserves (vide si aucune)<textarea name="reserves" rows="2"></textarea></label></div>
+          <div class="row gap"><button class="small">Enregistrer le PV</button></div></form>` : '');
+  const next = editable ? `<div class="row gap">${canW ? `<button class="primary" data-act="deliveryAdvance" data-id="${dl.id}">Valider l’étape « ${esc(D.DELIVERY_STEPS[dl.step])} »</button>` : ''}</div>` : `<p class="gap">${statusBadge(dl.status)}</p>`;
+  return `<ol class="steps">${steps}</ol>${next}${artForm}${pvBlock}`;
+}
+function showDelivery(id) {
+  const dl = byId(S.deliveries, id); if (!dl) return;
+  showModal(`${dl.number} · ${projectName(dl.projectId)} · ${dl.version}`, deliveryDetailHtml(dl));
+  UI.openDeliveryId = id;
+}
+
+Object.assign(ACTIONS, {
+  prodView: (ds) => { UI.prodView = ds.v; render(); },
+  newTask: () => {
+    if (!S.projects.length) return toast('Créez d’abord un projet.', 'err');
+    openForm({ title: 'Nouvelle tâche', fields: [
+      { name: 'projectId', label: 'Projet', type: 'select', required: true, options: S.projects.map((p) => [p.id, p.name]) },
+      { name: 'title', label: 'Tâche', required: true, full: true },
+      { name: 'responsable', label: 'Responsable' },
+      { name: 'priority', label: 'Priorité', type: 'select', options: D.PRIORITIES.map((x) => [x, x]), value: 'Moyenne' },
+      { name: 'deadline', label: 'Échéance', type: 'date' },
+      { name: 'dependsOn', label: 'Dépend de (optionnel)', type: 'select', options: [['', '— aucune —']].concat(S.tasks.map((t) => [t.id, `${t.title} · ${projectName(t.projectId)}`])) }
+    ], submit: (v) => D.createTask(S, v) });
+  },
+  newDelivery: () => {
+    if (!S.projects.length) return toast('Créez d’abord un projet.', 'err');
+    openForm({ title: 'Nouvelle livraison', fields: [
+      { name: 'projectId', label: 'Projet', type: 'select', required: true, options: S.projects.map((p) => [p.id, p.name]) },
+      { name: 'version', label: 'Version livrée (ex. 1.0.0)', required: true, full: true }
+    ], submit: (v) => D.createDelivery(S, v) });
+  },
+  deliveryDetail: (ds) => showDelivery(ds.id),
+  deliveryAdvance: (ds) => run(() => D.advanceDelivery(S, ds.id)),
+  newTicket: () => {
+    if (!S.clients.length) return toast('Créez d’abord un client.', 'err');
+    openForm({ title: 'Nouveau ticket', fields: [
+      { name: 'clientId', label: 'Client', type: 'select', required: true, options: S.clients.map((c) => [c.id, c.name]) },
+      { name: 'priority', label: 'Priorité (délai)', type: 'select', options: Object.keys(D.TICKET_SLA).map((k) => [k, `${k} · ${D.TICKET_SLA[k]} h`]), value: 'Normale' },
+      { name: 'productId', label: 'Application (optionnel)', type: 'select', options: [['', '— aucune —']].concat(S.products.map((p) => [p.id, p.name])) },
+      { name: 'projectId', label: 'Projet (optionnel)', type: 'select', options: [['', '— aucun —']].concat(S.projects.filter((p) => !p.personal).map((p) => [p.id, p.name])) },
+      { name: 'title', label: 'Objet', required: true, full: true },
+      { name: 'description', label: 'Description', type: 'textarea', full: true }
+    ], submit: (v) => D.createTicket(S, v) });
+  },
+  ticketComment: (ds) => openForm({ title: 'Ajouter un commentaire', fields: [{ name: 'text', label: 'Commentaire', type: 'textarea', required: true, full: true }],
+    submit: (v) => D.commentTicket(S, ds.id, v.text) }),
+  ticketResolve: (ds) => openForm({ title: 'Résoudre le ticket', submitLabel: 'Marquer résolu',
+    fields: [{ name: 'resolution', label: 'Résolution apportée', type: 'textarea', required: true, full: true }],
+    submit: (v) => D.setTicketStatus(S, ds.id, 'résolu', { resolution: v.resolution }) }),
+  ticketClose: (ds) => run(() => D.setTicketStatus(S, ds.id, 'clos')),
+  ticketReopen: (ds) => run(() => D.setTicketStatus(S, ds.id, 'en cours')),
+  ticketRate: (ds) => openForm({ title: 'Satisfaction du client', submitLabel: 'Enregistrer',
+    fields: [{ name: 'score', label: 'Note (1 à 5)', type: 'select', options: [1, 2, 3, 4, 5].map((n) => [String(n), String(n)]), value: '5' }],
+    submit: (v) => D.rateTicket(S, ds.id, v.score) }),
+  newRelance: () => {
+    if (!S.clients.length) return toast('Créez d’abord un client.', 'err');
+    openForm({ title: 'Nouvelle relance', fields: relanceFields() , submit: (v) => D.createRelance(S, v) });
+  },
+  relanceFor: (ds) => openForm({ title: 'Nouvelle relance', fields: relanceFields(ds.id), submit: (v) => D.createRelance(S, v) }),
+  relanceToggle: (ds) => run(() => D.toggleRelance(S, ds.id)),
+  exportCsv: (ds) => {
+    const d = new Date().toISOString().slice(0, 10);
+    if (ds.v === 'pareto') {
+      downloadText(`pareto-${d}.csv`, toCsv(['Produit', 'Valeur commandée', 'Part %', 'Cumul %'],
+        D.pareto(S).map((r) => [r.name, r.value, r.share, r.cumShare])));
+    } else if (ds.v === 'ventes') {
+      downloadText(`ventes-${d}.csv`, toCsv(['Numéro', 'Type', 'Client', 'Date', 'Montant net', 'Encaissé', 'Dû'],
+        S.invoices.map((i) => [i.number, i.type, clientName(i.clientId), i.issuedAt, D.invoiceNet(S, i), D.invoicePaid(S, i.id), D.invoiceDue(S, i)])));
+    } else if (ds.v === 'paiements') {
+      downloadText(`paiements-${d}.csv`, toCsv(['Numéro', 'Facture', 'Montant', 'Mode', 'Référence', 'Statut', 'Date'],
+        S.payments.map((p) => [p.number, (byId(S.invoices, p.invoiceId) || {}).number || '', p.amount, p.method, p.reference, p.status, p.createdAt])));
+    } else if (ds.v === 'tickets') {
+      downloadText(`tickets-${d}.csv`, toCsv(['Numéro', 'Client', 'Objet', 'Priorité', 'Statut', 'Échéance', 'Satisfaction'],
+        S.tickets.map((t) => [t.number, clientName(t.clientId), t.title, t.priority, t.status, t.dueAt, t.satisfaction ?? ''])));
+    }
+    toast('Export téléchargé.', 'ok');
+  }
+});
+
+function relanceFields(preselect = '') {
+  return [
+    { name: 'clientId', label: 'Client', type: 'select', required: true, value: preselect, options: S.clients.map((c) => [c.id, c.name]) },
+    { name: 'dueDate', label: 'Échéance', type: 'date' },
+    { name: 'note', label: 'Motif de la relance', type: 'textarea', required: true, full: true }
+  ];
+}
+
+Object.assign(CHANGES, {
+  prodProject: (ds, el) => { UI.prodProject = el.value; render(); },
+  taskStatus: (ds, el) => {
+    if (el.value === 'Bloqué') {
+      openForm({ title: 'Décrire le blocage', submitLabel: 'Bloquer',
+        fields: [{ name: 'comment', label: 'Blocage', type: 'textarea', required: true, full: true }],
+        submit: (v) => D.setTaskStatus(S, ds.id, 'Bloqué', v.comment) });
+      render();
+    } else run(() => D.setTaskStatus(S, ds.id, el.value));
+  },
+  ticketAssign: (ds, el) => run(() => D.assignTicket(S, ds.id, el.value || null))
+});
+
+Object.assign(FORMS, {
+  appActivate: async (form) => {
+    const code=String(new FormData(form).get('code')||'').trim().toUpperCase();
+    try{
+      const {data}=await v3Request('/v1/activate',{method:'POST',body:{productId:APP.PRODUCT,code,installationId:installationId()}});
+      if(!data.ok||!data.token)throw new Error(data.error||'Activation refusée.');
+      const claims=await verifyLicenseProof(data.token,data.publicKey);
+      const statusResult=await v3Request('/v1/status',{method:'POST',body:{productId:APP.PRODUCT,token:data.token,installationId:installationId()}});
+      if(!statusResult.data.active)throw new Error(statusResult.data.error||'La licence ne passe pas la vérification de statut.');
+      const meta={kind:'license',licenseType:statusResult.data.licenseType||'Licence active',expiresAt:statusResult.data.expiresAt||claims.exp||null,cloudEnabled:!!data.cloudAccess?.enabled,checkedAt:statusResult.data.checkedAt||new Date().toISOString()};
+      await saveAppLicense(data.token,meta);if(data.cloudAccess?.enabled&&data.cloudAccess.token)await saveCloudToken(data.cloudAccess.token,data.cloudAccess.expiresAt);
+      toast('Licence activée et signature vérifiée.','ok');render();
+    }catch(e){toast(e.message||'Activation impossible.','err')}
+  },
+  artifacts: (form) => { const fd = Object.fromEntries(new FormData(form)); run(() => D.setDeliveryArtifacts(S, form.dataset.id, fd)); },
+  pv: (form) => { const fd = Object.fromEntries(new FormData(form)); if (run(() => D.recordDeliveryPV(S, form.dataset.id, fd))) form.reset(); }
+});
+
+/* ===================== LICENCES : actions ===================== */
+Object.assign(ACTIONS, {
+  saveToken: () => openForm({ title: 'Jeton administrateur', async: true, submitLabel: 'Enregistrer',
+    fields: [
+      { type: 'note', label: 'Le jeton est chiffré sur cet appareil et n’est jamais affiché. Ne le partagez pas.' },
+      { name: 'token', label: 'Jeton administrateur', type: 'password', required: true, full: true }
+    ],
+    submit: async (v) => {
+      await saveAdminToken(String(v.token || '').trim());
+      try { await adminApi('/admin/usage'); }
+      catch (e) { forgetAdminToken(); throw new Error('Jeton refusé par le worker : ' + e.message); }
+    } }),
+  forgetToken: () => { forgetAdminToken(); toast('Jeton oublié sur cet appareil.', 'ok'); render(); },
+  syncLicenses: () => runAsync(async () => {
+    const r = await adminApi('/admin/licenses');
+    D.syncLicenseStatuses(S, r.items);
+  }),
+  newLicense: async () => { if (!UI.apps) { try { const a = await adminApi('/admin/apps'); UI.apps = a.items || []; } catch (e) { return toast('Catalogue Worker inaccessible : ' + e.message, 'err'); } } if (!UI.apps.some(a => a.status === 'active')) return toast('Aucune application active : enregistre d’abord le catalogue Worker.', 'err'); return openForm({ title: 'Nouvelle licence', async: true, keepOpen: true, submitLabel: 'Créer et archiver',
+    fields: [
+      { type: 'note', label: 'Trial gratuit 72 h automatique à la première activation cliente. Ce formulaire est réservé aux licences commerciales, Owner et tests internes.' },
+      { name: 'productId', label: 'Application enregistrée active', type: 'select', required: true, value: '', options: UI.apps.filter(a => a.status === 'active').map(a => [a.productId, a.name]) },
+      { name: 'customerName', label: 'Client', required: true },
+      { name: 'customerEmail', label: 'E-mail du client', type: 'email' },
+      { name: 'plan', label: 'Type', type: 'select', value: 'annual', options: [['monthly', 'Mensuelle'], ['annual', 'Annuelle'], ['lifetime', 'À vie'], ['owner', 'Owner'], ['test_day', 'Test interne 1 jour']] },
+      { name: 'maxDevices', label: 'Appareils autorisés', type: 'number', value: 1 },
+      { name: 'paymentReference', label: 'Référence de paiement (INTERNAL-TEST pour un test)', required: true },
+      { name: 'paymentConfirmed', label: 'Paiement confirmé', type: 'checkbox' },
+      { name: 'cloudEnabled', label: 'Cloud V3 + R2 inclus dans ce plan', type: 'checkbox', value: true },
+      { name: 'cloudMb', label: 'Quota D1 (Mo)', type: 'number', step: 'any', value: 100 },
+      { name: 'cloudRequests', label: 'Requêtes Cloud par jour', type: 'number', value: 10000 }
+    ],
+    submit: async (v) => {
+      const res = await adminApi('/admin/licenses', { method: 'POST', body: {
+        productId: v.productId, customerName: v.customerName, customerEmail: v.customerEmail, plan: v.plan,
+        maxDevices: Number(v.maxDevices) || 1, paymentReference: v.paymentReference, paymentConfirmed: v.paymentConfirmed } });
+      codeModal(res.code, res.customerName);            // affiché avant tout chiffrement : le code ne se perd pas
+      const cloud = { enabled: !!v.cloudEnabled, maxBytes: Math.round(Number(v.cloudMb) * 1048576), requestsDay: Number(v.cloudRequests), updatedAt: res.createdAt.slice(0, 10) };
+      let cloudApplied = true;
+      try { await adminApi('/admin/licenses/' + res.id + '/cloud', { method: 'PATCH', body: { enabled: cloud.enabled, maxBytes: cloud.maxBytes, requestsDay: cloud.requestsDay } }); }
+      catch (e) { cloudApplied = false; }
+      const code = await seal(res.code);
+      D.addLicenseRecord(S, { id: res.id, productId: res.productId, customerName: res.customerName, customerEmail: v.customerEmail,
+        plan: res.plan, maxDevices: res.maxDevices, paymentReference: v.paymentReference, createdAt: res.createdAt, expiresAt: res.expiresAt, code,
+        cloud: cloudApplied ? cloud : { enabled: false, maxBytes: 0, requestsDay: 0, updatedAt: null } });
+      if (!cloudApplied) toast('Licence créée, mais droits Cloud non confirmés : Cloud considéré désactivé. Corrigez avec « Droits Cloud » après vérification Worker.', 'err');
+    } }); },
+  revealCode: async (ds) => {
+    const l = byId(S.licenseRegister, ds.id);
+    if (!l || !l.code) return toast('Code introuvable.', 'err');
+    try { codeModal(await unseal(l.code), l.customerName); }
+    catch (e) { toast('Impossible de lire le code sur cet appareil.', 'err'); }
+  },
+  cloudEdit: async (ds) => {
+    const l = byId(S.licenseRegister, ds.id);
+    if (!l) return toast('Licence introuvable.', 'err');
+    const cur = l.cloud || { enabled: false, maxBytes: 104857600, requestsDay: 10000 };
+    openForm({ title: `Droits Cloud · ${l.customerName}`, async: true, submitLabel: 'Enregistrer les droits',
+      fields: [
+        { type: 'note', label: 'Droits de synchronisation de cette licence. Un client n’a le Cloud que s’il l’a payé.' },
+        { name: 'enabled', label: 'Cloud activé', type: 'checkbox', value: cur.enabled },
+        { name: 'mb', label: 'Quota de stockage (Mo)', type: 'number', step: 'any', value: Math.round(cur.maxBytes / 1048576 * 100) / 100 },
+        { name: 'requests', label: 'Requêtes par jour', type: 'number', value: cur.requestsDay }
+      ],
+      submit: async (v) => {
+        const body = { enabled: !!v.enabled, maxBytes: Math.round(Number(v.mb) * 1048576), requestsDay: Number(v.requests) };
+        await adminApi('/admin/licenses/' + l.id + '/cloud', { method: 'PATCH', body });
+        D.setLicenseCloud(S, l.id, body);
+      } });
+  },
+  refreshQuotas: () => runAsync(async () => {
+    const [api, q] = await Promise.all([adminApi('/admin/usage'), adminApi('/admin/quotas')]);
+    UI.quotas = { ...q, api };
+  }),
+  dashboardKpi: (ds) => { UI.route = ds.v || 'reporting'; location.hash = '#/' + UI.route; render(); },
+  appRegister: () => {
+    if (!localStorage.getItem(VAULT.tokenKey)) return toast('Enregistre d’abord le jeton administrateur.', 'err');
+    openForm({ title: 'Enregistrer une application dans le catalogue Worker', async: true, submitLabel: 'Enregistrer + Trial automatique',
+      fields: [
+        { name: 'name', label: 'Nom de l’application', required: true },
+        { name: 'productId', label: 'Product ID unique (A-Z, 0-9, tirets)', required: true },
+        { type: 'note', label: 'Le produit est enregistré côté Worker/D1. Il devient éligible au Trial automatique 72 h. Le compteur ne démarre qu’à la première activation en ligne du client.' }
+      ],
+      submit: async (v) => {
+        const name = String(v.name || '').trim(); const productId = String(v.productId || '').trim().toUpperCase();
+        if (name.length < 2 || name.length > 80) throw new Error('Nom invalide (2 à 80 caractères).');
+        if (!/^[A-Z0-9][A-Z0-9-]{2,63}$/.test(productId)) throw new Error('Product ID invalide : 3 à 64 caractères, majuscules, chiffres et tirets.');
+        if ((UI.apps || []).some(a => a.productId === productId)) throw new Error('Product ID déjà enregistré.');
+        await adminApi('/admin/apps', { method: 'POST', body: { productId, name, status: 'active' } });
+        const a = await adminApi('/admin/apps'); UI.apps = a.items || [];
+        if (!UI.apps.some(a => a.productId === productId && a.status === 'active')) throw new Error('Produit non retrouvé actif après relecture Worker.');
+      }
+    });
+  },
+  refreshApps: () => runAsync(async () => {
+    const [a, l] = await Promise.all([adminApi('/admin/apps'), adminApi('/admin/licenses')]);
+    UI.apps = a.items || [];
+    const counts = {};
+    (l.items || []).forEach((x) => {
+      const c = counts[x.productId] = counts[x.productId] || { active: 0, revoked: 0 };
+      if (x.status === 'active') c.active++; else c.revoked++;
+    });
+    UI.appCounts = counts;
+  }),
+  toggleApp: (ds) => runAsync(async () => {
+    const a = UI.apps.find((x) => x.productId === ds.id);
+    if (!a) throw new Error('Application introuvable : actualisez la liste.');
+    const status = a.status === 'active' ? 'inactive' : 'active';
+    await adminApi('/admin/apps/' + a.productId, { method: 'PATCH', body: { name: a.name, status } });
+    a.status = status;
+  }),
+  licenseEdit: (ds) => {
+    const l = byId(S.licenseRegister, ds.id);
+    if (!l) return toast('Licence introuvable.', 'err');
+    openForm({ title: `Modifier · ${l.customerName}`, async: true, submitLabel: 'Enregistrer',
+      fields: [
+        { name: 'customerName', label: 'Client', required: true, value: l.customerName },
+        { name: 'customerEmail', label: 'E-mail du client', type: 'email', value: l.customerEmail || '' },
+        { name: 'paymentReference', label: 'Référence de paiement', value: l.paymentReference || '' },
+        { name: 'maxDevices', label: 'Appareils autorisés (1 à 10)', type: 'number', value: l.maxDevices }
+      ],
+      submit: async (v) => {
+        const body = { customerName: v.customerName, customerEmail: v.customerEmail, paymentReference: v.paymentReference, maxDevices: Number(v.maxDevices) };
+        await adminApi('/admin/licenses/' + l.id, { method: 'PATCH', body });
+        D.updateLicenseRecord(S, l.id, body);
+      } });
+  },
+  licenseDelete: async (ds) => {
+    const l = byId(S.licenseRegister, ds.id);
+    if (!l) return toast('Licence introuvable.', 'err');
+    if (!confirm(`Supprimer la licence de ${l.customerName} ? Elle sera révoquée côté Worker et retirée de ce registre. Le code ne sera plus lisible ici.`)) return;
+    await runAsync(async () => {
+      await adminApi('/admin/licenses/' + l.id, { method: 'DELETE' });
+      D.deleteLicenseRecord(S, l.id);
+    });
+  },
+  appRename: (ds) => {
+    const a = (UI.apps || []).find((x) => x.productId === ds.id);
+    if (!a) return toast('Actualisez la liste des applications.', 'err');
+    openForm({ title: `Renommer · ${a.productId}`, async: true, submitLabel: 'Enregistrer',
+      fields: [{ name: 'name', label: 'Nom affiché (2 à 80 caractères)', required: true, value: a.name }],
+      submit: async (v) => {
+        const name = String(v.name || '').trim();
+        if (name.length < 2 || name.length > 80) throw new Error('Nom entre 2 et 80 caractères.');
+        await adminApi('/admin/apps/' + a.productId, { method: 'PATCH', body: { name, status: a.status === 'active' ? 'active' : 'inactive' } });
+        a.name = name;
+      } });
+  },
+  appDelete: async (ds) => {
+    const a = (UI.apps || []).find((x) => x.productId === ds.id);
+    if (!a) return toast('Actualisez la liste des applications.', 'err');
+    if (!confirm(`Supprimer « ${a.name} » ? Si elle a des licences, elle sera seulement archivée. Si elle a des licences actives, il faut d’abord les révoquer.`)) return;
+    try {
+      const res = await adminApi('/admin/apps/' + a.productId, { method: 'DELETE' });
+      if (res.archived) { a.status = 'inactive'; toast('Application archivée : elle a encore des licences.', 'ok'); }
+      else { UI.apps = UI.apps.filter((x) => x.productId !== a.productId); toast('Application supprimée.', 'ok'); }
+      render();
+    } catch (e) { toast(e.message, 'err'); }
+  },
+  copyCode: (ds) => { navigator.clipboard.writeText(ds.code).then(() => toast('Code copié.', 'ok'), () => toast('Copie impossible : sélectionnez le code à la main.', 'err')); },
+  revokeLicense: (ds) => runAsync(async () => {
+    await adminApi('/admin/licenses/' + ds.id + '/revoke', { method: 'POST' });
+    D.revokeLicenseRecord(S, ds.id);
+  })
+});
+
+function clientFields(c = {}) {
+  return [
+    { name: 'type', label: 'Type', type: 'select', options: [['entreprise', 'Entreprise'], ['particulier', 'Particulier']], value: c.type || 'entreprise' },
+    { name: 'name', label: 'Nom', required: true, value: c.name || '' },
+    { name: 'contact', label: 'Contact', value: c.contact || '' },
+    { name: 'email', label: 'E-mail', type: 'email', value: c.email || '' },
+    { name: 'phone', label: 'Téléphone', value: c.phone || '' },
+    { name: 'nif', label: 'NIF', value: c.nif || '' },
+    { name: 'stat', label: 'Numéro STAT', value: c.stat || '' },
+    { name: 'address', label: 'Adresse', type: 'textarea', full: true, value: c.address || '' }
+  ];
+}
+function productFields(p = {}, edit = false) {
+  const f = [
+    { name: 'name', label: 'Nom', required: true, value: p.name || '' },
+    { name: 'identifiant', label: 'Identifiant produit', required: !edit, value: p.identifiant || '' },
+    { name: 'type', label: 'Type', type: 'select', options: D.PRODUCT_TYPES.map((t) => [t, t]), value: p.type || 'standard' },
+    { name: 'category', label: 'Catégorie', value: p.category || '' },
+    { name: 'price', label: 'Prix (Ar)', type: 'number', step: 'any', value: p.price ?? 0 },
+    { name: 'licenseType', label: 'Type de licence', type: 'select', options: [['', '— aucun —']].concat(D.LICENSE_TYPES.map((t) => [t, t])), value: p.licenseType || '' },
+    { name: 'duration', label: 'Durée', value: p.duration || '' },
+    { name: 'status', label: 'Statut', type: 'select', options: [['actif', 'Actif'], ['inactif', 'Inactif']], value: p.status || 'actif' },
+    { name: 'description', label: 'Description', type: 'textarea', full: true, value: p.description || '' }
+  ];
+  return edit ? f.filter((x) => x.name !== 'identifiant' && x.name !== 'type') : f;
+}
+
+/* Démonstration : tout passe par le domaine, données préfixées [Démo] */
+function seedDemo() {
+  const now = new Date();
+  const ago = (n) => new Date(now.getTime() - n * 864e5);
+  const ahead = (n) => new Date(now.getTime() + n * 864e5);
+  if (!S.company.name) S.company = { ...S.company, name: 'AppForge Studio (démo)', address: 'Antananarivo, Madagascar' };
+  const c1 = D.createClient(S, { type: 'entreprise', name: '[Démo] Société Ravo', contact: 'Contact démo', email: 'contact@example.com' }, ago(45));
+  const c2 = D.createClient(S, { type: 'particulier', name: '[Démo] Client particulier', contact: 'Contact démo' }, ago(40));
+  const p1 = D.createProduct(S, { name: '[Démo] Gestion de stock', identifiant: 'APP-STOCK', type: 'standard', category: 'Gestion', price: 350000, licenseType: 'annuelle', duration: '12 mois', description: 'Application standard de démonstration', status: 'actif' }, ago(60));
+  D.createProduct(S, { name: '[Démo] Application sur mesure', identifiant: 'SUR-MESURE', type: 'sur mesure', category: 'Développement', price: 0, status: 'actif' }, ago(60));
+  const lead = D.createLead(S, { name: 'Contact démo', company: '[Démo] Boutique', need: 'Gestion des ventes', source: 'Facebook' }, ago(10));
+  D.moveLead(S, lead.id, 'Besoin identifié', 'Démo', ago(8));
+
+  const accepted = (client, lines, date, dep = 30) => {
+    const q = D.createQuote(S, { clientId: client.id, lines, depositPct: dep, globalDiscount: 0, paymentTerms: 'Démo' }, date);
+    D.setQuoteStatus(S, q.id, 'envoyé', date); D.setQuoteStatus(S, q.id, 'accepté', date);
+    return q;
+  };
+  const q1 = accepted(c1, [
+    { productId: p1.id, designation: p1.name, qty: 1, price: p1.price, discount: 0 },
+    { designation: 'Formation (démo)', qty: 1, price: 150000, discount: 0 }
+  ], ago(44));
+  const o1 = D.createOrderFromQuote(S, q1.id, ago(43));
+  const acompte = D.createInvoice(S, { orderId: o1.id, type: 'acompte', amount: round2(o1.total * o1.depositPct / 100), dueDate: D.isoDay(ago(30)) }, ago(43));
+  const pay1 = D.createPayment(S, { invoiceId: acompte.id, amount: acompte.amount, method: 'MVola', reference: 'DEMO-MVOLA-001', proof: 'Capture démo' }, ago(42));
+  D.confirmPayment(S, pay1.id, ago(42));
+  const rest = D.orderSummary(S, o1.id).toInvoice;
+  const solde = D.createInvoice(S, { orderId: o1.id, type: 'solde', amount: rest, dueDate: D.isoDay(ahead(20)) }, ago(5));
+  D.createPayment(S, { invoiceId: solde.id, amount: round2(rest / 2), method: 'Espèces' }, now);
+
+  const q2 = accepted(c2, [{ designation: 'Site vitrine (démo)', qty: 1, price: 200000, discount: 0 }], ago(40));
+  const o2 = D.createOrderFromQuote(S, q2.id, ago(39));
+  D.createInvoice(S, { orderId: o2.id, type: 'standard', amount: o2.total, dueDate: D.isoDay(ago(10)) }, ago(39));
+
+  const pr = D.createProject(S, { name: '[Démo] Gestion de stock — Ravo', personal: false, clientId: c1.id, orderId: o1.id, deadline: D.isoDay(ahead(60)) }, ago(38));
+  for (let i = 0; i < 5; i++) D.advanceProject(S, pr.id, ago(3));
+  D.createProject(S, { name: '[Démo] Outil interne', personal: true, deadline: D.isoDay(ago(5)) }, ago(20));
+  const t1 = D.createTask(S, { projectId: pr.id, title: '[Démo] Maquette des écrans stock', responsable: 'Équipe démo', priority: 'Haute', deadline: D.isoDay(ahead(10)) }, ago(30));
+  D.setTaskStatus(S, t1.id, 'Terminé', '', ago(20));
+  D.createTask(S, { projectId: pr.id, title: '[Démo] Intégration de la base', responsable: 'Équipe démo', priority: 'Moyenne', deadline: D.isoDay(ahead(25)), dependsOn: t1.id }, ago(20));
+  D.createTicket(S, { clientId: c1.id, projectId: pr.id, priority: 'Haute', title: '[Démo] Question sur les droits d’accès', description: 'Exemple de démonstration' }, ago(3));
+  D.createDelivery(S, { projectId: pr.id, version: '0.1.0-démo' }, ago(2));
+}
+
+/* Rendu */
+function renderUserSelect(u) {
+  document.getElementById('userSel').innerHTML = S.users.map((x) => `<option value="${esc(x.id)}" ${x.id === u.id ? 'selected' : ''}>${esc(x.name)} · ${esc(x.role)}</option>`).join('');
+}
+function render() {
+  TSEQ = 0;
+  const u = D.activeUser(S);
+  const allowed = ROUTES.filter((r) => D.can(u.role, r.res));
+  if (!allowed.some((r) => r.id === UI.route)) UI.route = allowed[0] ? allowed[0].id : 'journal';
+  if (location.hash !== '#/' + UI.route) history.replaceState(null, '', '#/' + UI.route);
+  document.getElementById('nav').innerHTML = allowed.map((r) => `<a href="#/${r.id}" class="${r.id === UI.route ? 'active' : ''}">${esc(r.label)}</a>`).join('')
+    + PHASE2.map((p) => `<span class="soon">${esc(p)}<small>bientôt</small></span>`).join('');
+  document.getElementById('mnav').innerHTML = allowed.slice(0, 4).map((r) => `<button class="${r.id === UI.route ? 'on' : ''}" data-act="go" data-v="${r.id}">${esc(r.short)}</button>`).join('') + '<button data-act="more">Plus</button>';
+  const page = PAGES[UI.route]();
+  document.getElementById('title').textContent = page.title;
+  document.getElementById('sub').textContent = page.sub || '';
+  document.getElementById('actions').innerHTML = page.actions || '';
+  document.getElementById('tabs').innerHTML = page.tabs || '';
+  document.getElementById('toolbar').innerHTML = (UI.route === 'crm' || (UI.route === 'production' && UI.prodView === 'kanban')) ? `<input class="search" data-q placeholder="Rechercher…" aria-label="Rechercher" value="${esc(UI.q)}">` : '';
+  document.getElementById('body').innerHTML = page.body();
+  renderUserSelect(u);
+}
+function renderBody() { TSEQ = 0; document.getElementById('body').innerHTML = PAGES[UI.route]().body(); }
+function route() {
+  const m = location.hash.match(/^#\/([a-z]+)/);
+  UI.route = m ? m[1] : 'dashboard';
+  UI.q = '';
+  closeModal();
+  render();
+}
+
+/* Événements */
+document.addEventListener('click', (e) => {
+  const t = e.target.closest('[data-act]');
+  if (!t) return;
+  const fn = ACTIONS[t.dataset.act];
+  if (!fn) return;
+  if (t.tagName !== 'A') e.preventDefault();
+  fn(t.dataset, t);
+});
+document.addEventListener('change', (e) => {
+  const el = e.target;
+  if (el.name === 'l_prod') {
+    const row = el.closest('[data-line]'); const p = byId(S.products, el.value);
+    if (p && row) { row.querySelector('[name=l_des]').value = p.name; row.querySelector('[name=l_price]').value = p.price; }
+    return;
+  }
+  const t = el.closest && el.closest('[data-change]');
+  if (t && CHANGES[t.dataset.change]) CHANGES[t.dataset.change](t.dataset, el);
+});
+document.addEventListener('input', (e) => {
+  if (e.target.matches && e.target.matches('[data-q]')) { UI.q = e.target.value; renderBody(); return; }
+  if (e.target.matches && e.target.matches('[data-qt]')) { const id = e.target.dataset.qt; UI.tq[id] = e.target.value; const el = document.querySelector('[data-tbody="' + id + '"]'); if (el) el.innerHTML = tableContent(id); }
+});
+document.addEventListener('submit', (e) => {
+  const f = e.target;
+  if (f.id === 'mform' && formHandler) { e.preventDefault(); formHandler(Object.fromEntries(new FormData(f)), f); return; }
+  if (f.dataset && f.dataset.form && FORMS[f.dataset.form]) { e.preventDefault(); FORMS[f.dataset.form](f); }
+});
+document.getElementById('overlay').addEventListener('click', (e) => { if (e.target.id === 'overlay') closeModal(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+document.getElementById('importFile').addEventListener('change', (e) => {
+  const el = e.target; const f = el.files[0]; if (!f) return;
+  const r = new FileReader();
+  r.onload = () => {
+    try {
+      const obj = JSON.parse(r.result);
+      const lists = ['users', 'clients', 'products', 'leads', 'quotes', 'orders', 'invoices', 'credits', 'payments', 'projects', 'licenses', 'licenseRegister', 'tasks', 'deliveries', 'tickets', 'relances', 'audit', 'paymentModes'];
+      if (!obj || obj.schema !== 1 || lists.some((k) => !Array.isArray(obj[k]))) throw new Error('format de sauvegarde non reconnu');
+      if (!confirm('Remplacer les données actuelles par cette sauvegarde ? L’état actuel sera conservé dans ce navigateur.')) return;
+      try { localStorage.setItem(APP.KEY + '_before_import', JSON.stringify(S)); } catch (err) { /* stockage plein */ }
+      S = D.ensureP2(obj); run(() => {});
+    } catch (err) { toast('Fichier invalide : ' + err.message, 'err'); }
+    el.value = '';
+  };
+  r.readAsText(f);
+});
+
+document.addEventListener('change',e=>{if(e.target?.id==='cloudAttachmentsToggle'){try{setCloudAttachments(e.target.checked);const file=document.getElementById('r2File'),upload=document.querySelector('[data-act=\"cloudUpload\"]');if(file)file.disabled=!e.target.checked;if(upload)upload.disabled=!e.target.checked;toast(e.target.checked?'Synchronisation R2 activée pour les nouveaux envois.':'R2 désactivé pour les nouveaux envois; fichiers Cloud conservés.','ok')}catch(err){e.target.checked=false;toast('Préférence non enregistrée localement.','err')}}});
+window.addEventListener('hashchange', route);
+(function init() {
+  const theme = localStorage.getItem(APP.THEME);
+  if (theme) document.documentElement.dataset.theme = theme;
+  route();
+})();
+
+// Toggle R2 attachment-sync preference.
+document.addEventListener('change',e=>{if(e.target?.id==='cloudAttachmentsToggle'){try{setCloudAttachments(e.target.checked);const file=document.getElementById('r2File'),upload=document.querySelector('[data-act=\"cloudUpload\"]');if(file)file.disabled=!e.target.checked;if(upload)upload.disabled=!e.target.checked;toast(e.target.checked?'Synchronisation R2 activée pour les nouveaux envois.':'R2 désactivé pour les nouveaux envois; fichiers Cloud conservés.','ok')}catch(err){e.target.checked=false;toast('Préférence non enregistrée localement.','err')}}});
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'com.rmlala.appforgebusiness'
+    compileSdk 35
+    defaultConfig {
+        applicationId 'com.rmlala.appforgebusiness'
+        minSdk 23
+        targetSdk 35
+        versionCode 111
+        versionName '1.1.1'
+    }
+    signingConfigs {
+        release {
+            storeFile file(System.getenv('TEST_KEYSTORE') ?: 'test-release.keystore')
+            storePassword System.getenv('TEST_STORE_PASSWORD') ?: 'test-password'
+            keyAlias System.getenv('TEST_KEY_ALIAS') ?: 'test-key'
+            keyPassword System.getenv('TEST_KEY_PASSWORD') ?: 'test-password'
+        }
+    }
+    buildTypes {
+        debug { applicationIdSuffix '.debug'; versionNameSuffix '-debug' }
+        release { minifyEnabled false; signingConfig signingConfigs.release }
+    }
+}
