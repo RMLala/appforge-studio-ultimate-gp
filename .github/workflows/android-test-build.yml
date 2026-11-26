@@ -9,9 +9,9 @@ jobs:
   build:
     runs-on: ubuntu-24.04
     env:
-      ANDROID_HOME: /usr/local/lib/android/sdk
-      ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
-      PATH: /usr/local/lib/android/sdk/cmdline-tools/latest/bin:/usr/local/lib/android/sdk/platform-tools:/usr/local/lib/android/sdk/build-tools/35.0.0:/usr/local/lib/android/sdk/tools/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      ANDROID_HOME: /usr/local/android/sdk
+      ANDROID_SDK_ROOT: /usr/local/android/sdk
+      PATH: /usr/local/android/sdk/cmdline-tools/latest/bin:/usr/local/android/sdk/platform-tools:/usr/local/android/sdk/build-tools/35.0.0:/usr/local/android/sdk/tools/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
@@ -27,20 +27,20 @@ jobs:
           gradle-version: '8.9'
       - name: Create temporary test signing key (not production key)
         run: keytool -genkeypair -v -keystore app/test-release.keystore -storepass test-password -alias test-key -keypass test-password -keyalg RSA -keysize 2048 -validity 3650 -dname 'CN=AppForge Test Build, OU=QA, O=RMLala, L=Antananarivo, C=MG'
-      - name: Build Debug and signed Test Release APK
-        run: gradle --no-daemon assembleDebug assembleRelease
+      - name: Build four APK variants
+        run: gradle --no-daemon assembleApi23Debug assembleApi23Release assembleApi29Debug assembleApi29Release
       - name: Verify APK outputs and signatures
         run: |
           set -e
-          test -s app/build/outputs/apk/debug/app-debug.apk
-          test -s app/build/outputs/apk/release/app-release.apk
-          apksigner verify --verbose app/build/outputs/apk/debug/app-debug.apk
-          apksigner verify --verbose app/build/outputs/apk/release/app-release.apk
-          ls -lh app/build/outputs/apk/{debug,release}/*.apk
+          for apk in app/build/outputs/apk/*/*/*.apk; do
+            test -s "$apk"
+            apksigner verify --verbose "$apk"
+            echo "Verified: $apk"
+            ls -lh "$apk"
+          done
+          test "$(find app/build/outputs/apk -name '*.apk' | wc -l)" -eq 4
       - uses: actions/upload-artifact@v4
         with:
-          name: AppForge-Business-Ultimate-Android-v1.1.1-test
-          path: |
-            app/build/outputs/apk/debug/app-debug.apk
-            app/build/outputs/apk/release/app-release.apk
+          name: AppForge-Business-Ultimate-Android-v1.1.1-API23-API29
+          path: app/build/outputs/apk/*/*/*.apk
           retention-days: 30
