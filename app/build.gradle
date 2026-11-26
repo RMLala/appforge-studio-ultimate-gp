@@ -5,10 +5,20 @@ android {
     compileSdk 35
     defaultConfig {
         applicationId 'com.rmlala.appforgebusiness'
-        minSdk 23
         targetSdk 35
         versionCode 111
         versionName '1.1.1'
+    }
+    flavorDimensions 'sdkcompat'
+    productFlavors {
+        api23 {
+            dimension 'sdkcompat'
+            minSdk 23
+        }
+        api29 {
+            dimension 'sdkcompat'
+            minSdk 29
+        }
     }
     signingConfigs {
         release {
