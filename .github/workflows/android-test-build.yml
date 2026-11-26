@@ -8,20 +8,19 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-24.04
-    env:
-      ANDROID_HOME: /usr/local/android/sdk
-      ANDROID_SDK_ROOT: /usr/local/android/sdk
-      PATH: /usr/local/android/sdk/cmdline-tools/latest/bin:/usr/local/android/sdk/platform-tools:/usr/local/android/sdk/build-tools/35.0.0:/usr/local/android/sdk/tools/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
-      - name: Accept Android SDK licenses non-interactively
-        run: yes | sdkmanager --licenses || true
-      - name: Install Android SDK platform/build tools
-        run: sdkmanager --install 'platforms;android-35' 'build-tools;35.0.0' 'platform-tools'
+      # Official setup action installs cmdline tools and exposes sdkmanager on PATH.
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          cmdline-tools-version: 12266719
+          accept-android-sdk-licenses: true
+          packages: 'platforms;android-35,build-tools;35.0.0,platform-tools'
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.9'
