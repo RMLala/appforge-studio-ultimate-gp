@@ -118,6 +118,31 @@ pre{white-space:pre-wrap;word-break:break-word;background:var(--bg);padding:10px
 .nav-group-label{margin:14px 0 5px;padding:0 10px;color:var(--mu);font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
 @media(max-width:760px){.brand{margin-bottom:10px}.nav-group-label{margin-top:10px}}
 
+
+/* Mobile QA refinements — compact KPI and categorized menu */
+.categorized-menu{max-height:68vh;overflow-y:auto;padding:4px 2px 10px;}
+.categorized-menu .nav-group-label{margin:12px 0 4px;padding:0 8px;font-size:10px;letter-spacing:.12em;}
+.categorized-menu a{display:flex;align-items:center;gap:10px;padding:10px 9px;margin:2px 0;border-radius:10px;color:var(--tx);text-decoration:none;font-size:14px;line-height:1.2;min-height:42px;}
+.categorized-menu a:active,.categorized-menu a:hover{background:color-mix(in srgb,var(--p1) 8%,var(--card));}
+.categorized-menu .nav-icon{width:20px;height:20px;flex:0 0 20px;}
+.categorized-menu .nav-icon svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+@media(max-width:600px){
+ html,body{max-width:100%;overflow-x:hidden;}
+ .kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:12px;}
+ .kpi{min-width:0;padding:9px 8px;border-radius:14px;}
+ .kpi span{font-size:11px;line-height:1.25;overflow-wrap:anywhere;}
+ .kpi strong{font-size:15px;line-height:1.2;overflow-wrap:anywhere;}
+ .kpi small{font-size:10px;line-height:1.25;overflow-wrap:anywhere;display:block;}
+ .grid2{grid-template-columns:1fr;gap:10px;}
+ .card{padding:13px;border-radius:15px;}
+ .modal{width:min(100%,560px);max-height:84dvh;}
+ .modal>.mbody{padding:12px;}
+ .modal>header{padding:12px 14px;}
+ .modal .categorized-menu{max-height:calc(84dvh - 130px);}
+ .page-title h1{font-size:23px;line-height:1.2;}
+ .page-title .sub{font-size:13px;line-height:1.4;}
+}
+
 </style>
 </head>
 <body>
@@ -1678,10 +1703,28 @@ const ACTIONS = {
       {title:'Licences & Cloud', ids:['licences','activation','cloud','applications']},
       {title:'Administration', ids:['admin','journal']}
     ];
+    const mobileIcons = {
+      dashboard:'<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
+      reporting:'<path d="M4 19V5M4 19h17M7 15l4-4 3 2 5-6"/>',
+      crm:'<circle cx="9" cy="8" r="3"/><path d="M3 20v-1a6 6 0 0 1 12 0v1M17 5a3 3 0 0 1 0 6"/>',
+      catalogue:'<path d="M4 5h16v14H6a2 2 0 0 1-2-2zM8 9h10M8 13h8"/>',
+      ventes:'<path d="M4 4h2l2.5 12h11l2-8H7"/><circle cx="10" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/>',
+      renouvellement:'<path d="M20 7v5h-5M4 17v-5h5M6.5 9A7 7 0 0 1 19 6l1 1M5 17l1 1a7 7 0 0 0 12-3"/>',
+      projets:'<rect x="3" y="5" width="18" height="15" rx="2"/><path d="M8 5V3h8v2M7 10h10M7 14h6"/>',
+      production:'<path d="M4 7h16v13H4zM8 7V4h8v3M8 12h8M8 16h5"/>',
+      livraisons:'<path d="M3 7h12v10H3zM15 10h4l3 3v4h-7z"/><circle cx="7" cy="19" r="2"/><circle cx="18" cy="19" r="2"/>',
+      support:'<circle cx="12" cy="12" r="9"/><path d="M8 9a4 4 0 0 1 8 0c0 3-4 3-4 5M12 17v.1"/>',
+      licences:'<rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/>',
+      activation:'<path d="M12 3 20 6v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="m8 12 2.5 2.5L16 9"/>',
+      cloud:'<path d="M7 18a5 5 0 0 1 0-10 7 7 0 0 1 13 3 4 4 0 0 1 0 7H7z"/>',
+      applications:'<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 11h6M9 16h3"/>',
+      admin:'<circle cx="12" cy="12" r="3"/><path d="M19 14.5 21 17l-2 2-2.5-1.2-1.5.6-.5 2.6h-3l-.5-2.6-1.5-.6L7 19l-2-2 1.2-2.5-.6-1.5L3 10.5v-3l2.6-.5.6-1.5L5 3.5l2-2 2.5 1.2 1.5-.6.5-2.6h3l.5 2.6 1.5.6L19 1.5l2 2-1.2 2.5.6 1.5 2.6.5v3l-2.6.5-.6 1.5"/>',
+      journal:'<path d="M5 4h14v17H5zM8 8h8M8 12h8M8 16h5"/>'
+    };
     const links = navGroups.map(g => {
       const items = ROUTES.filter(r => g.ids.includes(r.id) && D.can(u.role,r.res));
       if(!items.length) return '';
-      return `<div class="nav-group-label">${g.title}</div>`+items.map(r=>`<a href="#/${r.id}"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true">${'<path d="M4 4h16v16H4zM8 8h8M8 12h8M8 16h5"/>'}</svg></span><span class="nav-text">${esc(r.label)}</span></a>`).join('');
+      return `<div class="nav-group-label">${g.title}</div>`+items.map(r=>`<a href="#/${r.id}"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true">${mobileIcons[r.id]||mobileIcons.applications}</svg></span><span class="nav-text">${esc(r.label)}</span></a>`).join('');
     }).join('');
     showModal('Menu', `<div class="menu categorized-menu">${links}</div><p class="note gap">Bientôt : ${PHASE2.map(esc).join(', ')}.</p>`);
   },
