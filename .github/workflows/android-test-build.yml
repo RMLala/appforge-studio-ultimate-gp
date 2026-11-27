@@ -44,6 +44,6 @@ jobs:
           test "$(find app/build/outputs/apk -name '*.apk' | wc -l)" -eq 4
       - uses: actions/upload-artifact@v4
         with:
-          name: AppForge-Business-Ultimate-Android-v1.1.1-API23-API29
+          name: AppForge-Business-Ultimate-Android-v1.1.2-API23-API29
           path: app/build/outputs/apk/*/*/*.apk
           retention-days: 30
