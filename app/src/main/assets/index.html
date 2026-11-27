@@ -1671,8 +1671,19 @@ const ACTIONS = {
   go: (ds) => { location.hash = '#/' + ds.v; },
   more: () => {
     const u = D.activeUser(S);
-    const links = ROUTES.filter((r) => D.can(u.role, r.res)).map((r) => `<a href="#/${r.id}">${esc(r.label)}</a>`).join('');
-    showModal('Menu', `<div class="menu">${links}</div><p class="note gap">Bientôt : ${PHASE2.map(esc).join(', ')}.</p>`);
+    const navGroups = [
+      {title:'Pilotage', ids:['dashboard','reporting']},
+      {title:'Commercial', ids:['crm','catalogue','ventes','renouvellement']},
+      {title:'Opérations', ids:['projets','production','livraisons','support']},
+      {title:'Licences & Cloud', ids:['licences','activation','cloud','applications']},
+      {title:'Administration', ids:['admin','journal']}
+    ];
+    const links = navGroups.map(g => {
+      const items = ROUTES.filter(r => g.ids.includes(r.id) && D.can(u.role,r.res));
+      if(!items.length) return '';
+      return `<div class="nav-group-label">${g.title}</div>`+items.map(r=>`<a href="#/${r.id}"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true">${navIcons[r.id]||navIcons.dashboard}</svg></span><span class="nav-text">${esc(r.label)}</span></a>`).join('');
+    }).join('');
+    showModal('Menu', `<div class="menu categorized-menu">${links}</div><p class="note gap">Bientôt : ${PHASE2.map(esc).join(', ')}.</p>`);
   },
   toggleTheme: () => {
     const el = document.documentElement; const dark = el.dataset.theme === 'dark';
