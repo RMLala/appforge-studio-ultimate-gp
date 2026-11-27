@@ -1681,7 +1681,7 @@ const ACTIONS = {
     const links = navGroups.map(g => {
       const items = ROUTES.filter(r => g.ids.includes(r.id) && D.can(u.role,r.res));
       if(!items.length) return '';
-      return `<div class="nav-group-label">${g.title}</div>`+items.map(r=>`<a href="#/${r.id}"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true">${navIcons[r.id]||navIcons.dashboard}</svg></span><span class="nav-text">${esc(r.label)}</span></a>`).join('');
+      return `<div class="nav-group-label">${g.title}</div>`+items.map(r=>`<a href="#/${r.id}"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true">${'<path d="M4 4h16v16H4zM8 8h8M8 12h8M8 16h5"/>'}</svg></span><span class="nav-text">${esc(r.label)}</span></a>`).join('');
     }).join('');
     showModal('Menu', `<div class="menu categorized-menu">${links}</div><p class="note gap">Bientôt : ${PHASE2.map(esc).join(', ')}.</p>`);
   },
